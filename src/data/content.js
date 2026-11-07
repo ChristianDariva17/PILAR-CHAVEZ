@@ -1,259 +1,281 @@
 export const artistInfo = {
-  name: "Pilar González",
+  fullName: "Elena del Pilar Chávez Gutiérrez",
+  name: "Elena Chávez",
+  artisticName: "Elena del Pilar",
   brandName: "ARTE PILAR",
-  tagline: "Artes Plásticas, Expresionismo Abstracto y Gráfica Contemporánea",
-  manifestoQuote: "El arte no reproduce lo visible; hace visible lo que late en la memoria de la materia y el color.",
+  origin: "Pucallpa, Ucayali — Amazonía Peruana",
+  tagline: "Artista Profesional • Pintura al Óleo, Texturas & Muralismo Amazónico",
+  manifestoQuote: "No veo la naturaleza como un escenario estático, sino como un organismo vivo en constante diálogo con la huella humana.",
   statement: {
-    title: "Declaración del Artista (Artist Statement)",
-    lead: "Mi investigación plástica explora la tensión entre el caos orgánico y la geometría emocional de los paisajes urbanos e interiores.",
+    title: "Declaración Artística",
+    lead: "Mi obra explora la conexión vital entre la exuberancia de la selva de Ucayali y la disciplina del arte profesional.",
     paragraphs: [
-      "Trabajo desde la materia cruda: pigmentos minerales, óleo puro, resinas naturales y veladuras superpuestas sobre lino belga y papel de algodón artesanal. Para mí, el lienzo no es una superficie pasiva, sino un campo de batalla poético donde el gesto visceral dialoga con la precisión botánica y tipográfica.",
-      "Inspirada por la gráfica popular latinoamericana, la fuerza del muralismo callejero y la introspección del neoexpresionismo, cada pieza busca detener el ruido cotidiano y confrontar al espectador con una vibración cromática inmersiva que desafía la fugacidad digital."
+      "A través del óleo y el uso estratégico de texturas, busco capturar la majestuosidad y el alma vigilante de la Amazonía. Mi enfoque se centra en transformar la observación de la naturaleza en una experiencia de paz y contemplación, donde cada pincelada de color vibrante —desde el dinámico vuelo de un colibrí hasta la mirada profunda del jaguar— es un homenaje a la identidad de mi tierra y a la belleza de la creación.",
+      "En la elaboración de mis obras utilizo acrílico y el óleo sobre el lienzo ambiental en una experiencia estética tangible. Busco un equilibrio entre el caos del crecimiento silvestre y la armonía de los ciclos naturales, creando piezas que invitan a la contemplación silenciosa y al respeto por lo no humano. Mi práctica artística nace de una profunda inquietud por el estado actual de nuestro entorno natural. No veo la naturaleza como un escenario estático, sino como un organismo vivo en constante diálogo con la huella humana. Mi visión busca reivindicar la belleza de lo orgánico y alertar sobre la fragilidad de los ecosistemas, transformando la conciencia.",
+      "El arte en Pucallpa no es solo observación, es una vivencia sensorial. La formación profesional me ha permitido darle una estructura y un propósito más profundo a esa herencia amazónica. Durante estos 4 años de formación rigurosa, mi trabajo ha evolucionado en la búsqueda constante por perfeccionar el manejo del color y la composición."
     ]
   },
   bio: {
-    city: "Lima & Madrid",
-    experienceYears: "14 años de trayectoria",
-    disciplines: ["Óleo & Mixta", "Gran Formato / Mural", "Serigrafía Artesanal", "Grabado"],
-    avatar: "https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?auto=format&fit=crop&w=1200&q=85",
+    city: "Pucallpa, Ucayali / Lima, Perú",
+    academicStatus: "4to año — Carrera de Artista Profesional",
+    experienceYears: "Trayectoria independiente y académica",
+    disciplines: ["Óleo con Texturas", "Acrílico sobre Lienzo", "Muralismo Amazónico", "Pintura Rápida / Plein Air"],
+    biographyFull: [
+      "Nacida en el corazón de la Amazonía peruana, Pucallpa (Ucayali), Elena Chávez es una artista cuya identidad está profundamente arraigada a la biodiversidad de su tierra natal.",
+      "Desde sus primeros pasos en el mundo del arte, Elena Chávez demostró una capacidad natural para capturar la esencia de la selva. Sus primeras obras, cargadas de la luz y el misterio de Ucayali, encontraron rápidamente resonancia en el público. Sus cuadros comenzaron a venderse de manera independiente desde sus inicios, lo que validó su propuesta estética y le permitió entender el arte no solo como expresión, sino como un puente de comunicación con el coleccionista.",
+      "A pesar del éxito comercial temprano, Elena tomó la decisión de profundizar en su lenguaje visual a través del estudio formal. Actualmente, se encuentra cursando el cuarto año de la carrera de Artista Profesional, un proceso que ha transformado su técnica y su capacidad conceptual.",
+      "Esto le ha permitido participar en concursos de pintura rápida y murales, dándole mayor versatilidad y seguridad en su arte, además de ayudar a forjar su carácter artístico.",
+      "Hoy en día, Elena del Pilar se perfila como una artista integral que combina la frescura de sus raíces pucallpinas con la solidez de una formación académica en curso. Su obra es un diálogo constante entre la diversidad de la selva y el cuidado y preservación de la misma."
+    ],
+    avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=1200&q=85",
     studioImage: "https://images.unsplash.com/photo-1513364776144-60967b0f800f?auto=format&fit=crop&w=1600&q=85"
   },
   contact: {
-    email: "estudio@artepilar.com",
-    phone: "+51 987 654 321",
-    whatsapp: "+51987654321",
-    instagram: "@arte.pilar",
-    location: "Estudio & Galería: Barranco, Lima — Visitas con cita previa"
+    email: "contacto@elenachavez.art",
+    phone: "+51 961 000 000",
+    whatsapp: "+51961000000",
+    instagram: "@elenadelpilar.art",
+    location: "Estudio & Taller: Pucallpa (Ucayali) & Envíos a todo el Perú y el extranjero"
   }
 };
 
 export const artworksData = [
   {
     id: "obra-01",
-    title: "Resonancia del Fuego Nocturno",
+    title: "El Alma Vigilante (La Mirada del Otorongo)",
     year: 2024,
-    category: "pintura",
-    categoryLabel: "Pintura & Óleo",
-    technique: "Óleo empastado y pigmentos minerales sobre lino belga",
-    dimensions: "180 x 140 cm",
-    materials: "Lino belga de 450g, óleo Winsor & Newton, polvo de mica, barniz dammar",
-    series: "Serie 'Territorios Ocultos'",
-    status: "disponible", // disponible | coleccion_privada | bajo_cotizacion
+    category: "oleo-texturas",
+    categoryLabel: "Óleo & Texturas",
+    technique: "Óleo empastado y espátula con texturas táctiles sobre lienzo",
+    dimensions: "160 x 130 cm",
+    materials: "Lienzo de algodón de alto gramaje, óleo profesional, empastes con arenas naturales",
+    series: "Serie 'Fauna Sagrada de Ucayali'",
+    status: "disponible",
     statusLabel: "Pieza Original Disponible",
-    price: "$3,800 USD",
+    price: "$2,800 USD",
     hasPrints: true,
-    printPrice: "$340 USD",
-    image: "https://images.unsplash.com/photo-1541701494587-cb58502866ab?auto=format&fit=crop&w=1600&q=85",
-    description: "Exploración de la luz que persiste en la sombra densa. Construida a través de más de doce capas de veladuras y empastes a espátula.",
-    curatorNotes: "Seleccionada para la Bienal de Arte Contemporáneo 2024. Obra central de la muestra individual en Galería Forum."
+    printPrice: "$260 USD",
+    image: "https://images.unsplash.com/photo-1561731216-c3a4d99437d5?auto=format&fit=crop&w=1600&q=85",
+    description: "Captura la mirada profunda y el espíritu protector del jaguar en el corazón de la selva. Texturas densas que recrean el follaje y la piel del felino.",
+    curatorNotes: "Obra emblemática de su 4to año de formación profesional. Destaca por el balance entre la fuerza del trazo y la serenidad contemplativa."
   },
   {
     id: "obra-02",
-    title: "Grito Botánico en Magenta",
+    title: "Danza del Colibrí en la Niebla Amazónica",
     year: 2024,
-    category: "gran-formato",
-    categoryLabel: "Gran Formato & Mural",
-    technique: "Acrílico industrial, tintas tipográficas y carbón vegetal sobre madera prensada",
-    dimensions: "240 x 200 cm (Díptico)",
-    materials: "Paneles de madera sellada, spray Montana Gold, tintas resistentes UV",
-    series: "Serie 'Fuerza Vital'",
+    category: "oleo-texturas",
+    categoryLabel: "Óleo & Texturas",
+    technique: "Óleo y acrílico sobre lienzo con veladuras lumínicas",
+    dimensions: "120 x 100 cm",
+    materials: "Bastidor de madera amazónica, pigmentos brillantes y médiums reflectantes",
+    series: "Serie 'Vuelo y Vitalidad'",
+    status: "disponible",
+    statusLabel: "Pieza Original Disponible",
+    price: "$1,950 USD",
+    hasPrints: true,
+    printPrice: "$220 USD",
+    image: "https://images.unsplash.com/photo-1549887534-1541e9326642?auto=format&fit=crop&w=1600&q=85",
+    description: "El dinámico vuelo del colibrí descompuesto en pinceladas de color vibrante que celebran la biodiversidad aérea de Pucallpa.",
+    curatorNotes: "Pieza seleccionada en muestra colectiva regional de jóvenes talentos de Ucayali."
+  },
+  {
+    id: "obra-03",
+    title: "Respiración del Río Ucayali al Ocaso",
+    year: 2023,
+    category: "paisaje-sensorial",
+    categoryLabel: "Paisaje Sensorial",
+    technique: "Óleo sobre lienzo con técnica de pintura rápida al aire libre (Plein Air)",
+    dimensions: "90 x 120 cm",
+    materials: "Lienzo montado, óleos al natural, captación de luz crepuscular directa",
+    series: "Serie 'Aguas Vivas'",
     status: "bajo_cotizacion",
     statusLabel: "Bajo Cotización para Coleccionistas",
     price: "Consultar",
     hasPrints: true,
-    printPrice: "$420 USD",
-    image: "https://images.unsplash.com/photo-1579783902614-a3fb3927b675?auto=format&fit=crop&w=1600&q=85",
-    description: "Homenaje a la flora andina reinterpretada con la bravura del cartelismo callejero y tipografía gestual de trazo continuo.",
-    curatorNotes: "Presentada en la feria internacional Art Lima. Una pieza que domina el espacio arquitectónico con energía vibrante."
-  },
-  {
-    id: "obra-03",
-    title: "El Abrazo de la Caligrafía Invisible",
-    year: 2023,
-    category: "serigrafia",
-    categoryLabel: "Serigrafía & Gráfica",
-    technique: "Serigrafía a 6 tintas directas sobre papel algodón Hahnemühle",
-    dimensions: "70 x 100 cm",
-    materials: "Papel de algodón 300g, tintas ecológicas con acabado mate aterciopelado",
-    series: "Edición Limitada (Serie de 25 ejemplares)",
-    status: "disponible",
-    statusLabel: "Prints Disponibles (Quedan 4/25)",
-    price: "$290 USD",
-    hasPrints: true,
-    printPrice: "$290 USD",
-    image: "https://images.unsplash.com/photo-1549887534-1541e9326642?auto=format&fit=crop&w=1600&q=85",
-    description: "Cada pliego fue estampado a mano uno a uno por la artista en su taller de grabado, firmado, sellado en seco y numerado.",
-    curatorNotes: "Incluye Certificado de Autenticidad foliado y holograma de seguridad."
+    printPrice: "$240 USD",
+    image: "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=1600&q=85",
+    description: "La luz dorada y el misterio del río Ucayali. Realizada en sesión directa a orillas del río, capturando la vivencia sensorial del clima tropical.",
+    curatorNotes: "Premiada en certamen de pintura rápida regional por su dominio de la atmósfera y el reflejo del agua."
   },
   {
     id: "obra-04",
-    title: "Sedimentos del Tiempo y la Ceniza",
-    year: 2023,
-    category: "mixta",
-    categoryLabel: "Técnica Mixta & Escultura",
-    technique: "Arena volcánica, óxidos ferrosos, pan de oro 22k y cera de abejas",
-    dimensions: "120 x 120 cm",
-    materials: "Bastidor de cedro, tela de yute grueso, tierras naturales, resina polimérica",
-    series: "Serie 'Vestigios Minerales'",
-    status: "coleccion_privada",
-    statusLabel: "Colección Privada (Madrid)",
-    price: "Vendida",
-    hasPrints: false,
-    image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=85",
-    description: "Una meditación táctil sobre la erosión geológica y los ciclos de decadencia y regeneración de la tierra.",
-    curatorNotes: "Adquirida por la Colección Fundación Valenzuela tras su exhibición en Matadero Madrid."
+    title: "Mural: Raíces Vivas y el Cuidado de la Selva",
+    year: 2024,
+    category: "murales",
+    categoryLabel: "Muralismo & Arte Público",
+    technique: "Acrílico de alta resistencia y spray sobre muro de concreto exterior",
+    dimensions: "12 x 4 metros",
+    materials: "Esmalte acrílico con filtro UV, pigmentos orgánicos para intemperie",
+    series: "Intervenciones Comunitarias",
+    status: "mural_publico",
+    statusLabel: "Mural Público Permanente (Pucallpa)",
+    price: "Comisión Pública",
+    hasPrints: true,
+    printPrice: "$280 USD",
+    image: "https://images.unsplash.com/photo-1561055657-b9e0bf0fa360?auto=format&fit=crop&w=1600&q=85",
+    description: "Intervención de gran escala en Pucallpa alertando sobre la fragilidad del bosque frente a la deforestación y la huella humana.",
+    curatorNotes: "Proyecto apoyado por gestores ambientales y culturales de Ucayali. Fotografía de archivo disponible como Print oficial."
   },
   {
     id: "obra-05",
-    title: "Latido Urbano: La Resistencia del Color",
-    year: 2024,
-    category: "gran-formato",
-    categoryLabel: "Gran Formato & Mural",
-    technique: "Esmalte sintético, aerosol y acrílico sobre muro exterior",
-    dimensions: "14 x 4.5 metros",
-    materials: "Muro de concreto preparado con sellador elastomérico, pintura de alta intemperie",
-    series: "Intervención de Arte Público",
-    status: "mural_publico",
-    statusLabel: "Mural Público Permanente",
-    price: "Encargo Institucional",
+    title: "Caos Silvestre y Floración Sagrada",
+    year: 2023,
+    category: "oleo-texturas",
+    categoryLabel: "Óleo & Texturas",
+    technique: "Técnica mixta: acrílico, óleo y pigmentos botánicos sobre lienzo",
+    dimensions: "140 x 110 cm",
+    materials: "Lienzo de lino grueso, tintes naturales, óleo y pasta de modelar",
+    series: "Serie 'Fragilidad de los Ecosistemas'",
+    status: "coleccion_privada",
+    statusLabel: "Colección Privada (Lima)",
+    price: "Vendida",
     hasPrints: true,
-    printPrice: "$310 USD",
-    image: "https://images.unsplash.com/photo-1561055657-b9e0bf0fa360?auto=format&fit=crop&w=1600&q=85",
-    description: "Mural monumental comisionado en el distrito cultural, celebrando la identidad popular y la resiliencia comunitaria.",
-    curatorNotes: "Fotografía de archivo documental de autor disponible como print de colección."
+    printPrice: "$250 USD",
+    image: "https://images.unsplash.com/photo-1579783902614-a3fb3927b675?auto=format&fit=crop&w=1600&q=85",
+    description: "Equilibrio visual entre la maraña indómita de la vegetación y la delicadeza de las orquídeas y flores medicinales amazónicas.",
+    curatorNotes: "Adquirida por coleccionista particular tras su exhibición en el festival de arte de Pucallpa."
   },
   {
     id: "obra-06",
-    title: "Alquimia Celeste en Tres Movimientos",
+    title: "Atardecer en la Laguna de Yarinacocha",
     year: 2024,
-    category: "pintura",
-    categoryLabel: "Pintura & Óleo",
-    technique: "Óleo, temple al huevo y pan de plata sobre tabla de roble",
-    dimensions: "150 x 110 cm",
-    materials: "Tabla estucada a la creta tradicional, pigmentos puros de lapislázuli",
-    series: "Serie 'Cielos Antiguos'",
+    category: "paisaje-sensorial",
+    categoryLabel: "Paisaje Sensorial",
+    technique: "Óleo empastado con espátula sobre tabla entelada",
+    dimensions: "80 x 100 cm",
+    materials: "Madera sellada, imprimación artesanal, óleo Winsor & Newton",
+    series: "Serie 'Aguas Vivas'",
     status: "disponible",
     statusLabel: "Pieza Original Disponible",
-    price: "$3,400 USD",
+    price: "$1,600 USD",
     hasPrints: true,
-    printPrice: "$320 USD",
+    printPrice: "$190 USD",
     image: "https://images.unsplash.com/photo-1577083552431-6e5fd01aa342?auto=format&fit=crop&w=1600&q=85",
-    description: "Fusión de técnicas renacentistas con una composición abstracta desbordante en azules cobalto y blancos atmosféricos.",
-    curatorNotes: "Disponible con marco artesanal flotante en madera de nogal diseñado por el estudio."
+    description: "Pintura rápida capturando el reflejo de las nubes tormentosas y la serenidad de los botes tradicionales en Yarinacocha.",
+    curatorNotes: "Firma y certificado de autenticidad sellado en el reverso."
   }
 ];
 
 export const workshopsData = [
   {
     id: "ws-01",
-    title: "Masterclass: Alquimia de la Materia y Óleo Contemporáneo",
-    type: "Presencial — En el Taller de la Artista",
-    duration: "Intensivo de Fin de Semana (16 horas lectivas)",
-    dates: "23 y 24 de Noviembre, 2024",
-    location: "Estudio Pilar, Barranco (Lima)",
+    title: "Taller: Óleo Texturado y Colores de la Selva",
+    type: "Presencial — En Estudio (Pucallpa)",
+    duration: "Intensivo de 2 Días (14 horas)",
+    dates: "14 y 15 de Diciembre, 2024",
+    location: "Taller Elena Chávez — Pucallpa (Ucayali)",
     seatsTotal: 8,
     seatsAvailable: 3,
-    price: "$280 USD",
-    includes: ["Todos los materiales de grado profesional incluidos (pigmentos, lienzos y óleos)", "Almuerzo y cata de café en el estudio", "Certificado de participación firmado por la artista"],
+    price: "$180 USD / S/. 680 PEN",
+    includes: [
+      "Materiales incluidos: lienzos entelados, óleos profesionales y espátulas",
+      "Demostración en vivo de preparación de empastes y texturas táctiles",
+      "Certificado firmado por la artista"
+    ],
     syllabus: [
-      "Preparación artesanal de imprimaturas tradicionales y soportes de gran resistencia.",
-      "Composición cromática visceral: mezclas directas con pigmentos minerales.",
-      "Técnicas de empaste, veladuras, raspados y texturas matéricas.",
-      "Asesoría individual para el desarrollo del lenguaje plástico propio."
+      "Composición cromática amazónica: del verde denso a las luces cálidas del atardecer.",
+      "Técnica de espátula y empaste matérico para crear relieve orgánico.",
+      "Interpretación visual de flora y texturas vivas.",
+      "Asesoría individualizada en tu propio proyecto sobre lienzo."
     ]
   },
   {
     id: "ws-02",
-    title: "Taller de Serigrafía Gráfica y Cartelismo de Autor",
-    type: "Presencial — Taller de Grabado",
-    duration: "4 Sesiones prácticas (Sábados continuos)",
-    dates: "7 al 28 de Diciembre, 2024",
-    location: "Taller Gráfico Arte Pilar",
+    title: "Masterclass Plein Air: Pintura Rápida en Yarinacocha",
+    type: "Práctica al Aire Libre (En la Naturaleza)",
+    duration: "Jornada Completa de Pintura en Vivo",
+    dates: "18 de Enero, 2025",
+    location: "Laguna de Yarinacocha, Pucallpa",
     seatsTotal: 6,
     seatsAvailable: 2,
-    price: "$240 USD",
-    includes: ["Shablones profesionales, tintas ecológicas y pliegos de papel de algodón", "Tiraje personal de 10 copias numeradas por participante", "Carpeta protectora de archivo"],
+    price: "$140 USD / S/. 520 PEN",
+    includes: [
+      "Caballete portátil de campo, paleta y soporte preparado",
+      "Traslado en bote tradicional por la laguna y almuerzo típico",
+      "Crítica curatorial personalizada de la obra final"
+    ],
     syllabus: [
-      "De la idea al fotolito manual: dibujo directo, tipografía y corte de matrices.",
-      "Emulsionado, insolado y revelado de pantallas.",
-      "Registro perfecto en policromía a varias tintas.",
-      "Firma, numeración de ediciones y criterios de conservación gráfica."
+      "Lectura rápida de la luz tropical y el reflejo del agua.",
+      "Técnica de manchas gestuales para capturar el momento antes de que cambie la luz.",
+      "Manejo de la humedad y el secado en clima amazónico.",
+      "Composición de paisaje con elementos de navegación ribereña."
     ]
   },
   {
     id: "ws-03",
-    title: "Mentoría 1-a-1: Dirección de Obra y Portafolio para Artistas",
-    type: "Sesión Virtual o Presencial",
-    duration: "Programa personalizado de 4 semanas",
-    dates: "Convocatoria Abierta — Cupos Mensuales",
-    location: "Online (Vía Zoom) o Presencial en Estudio",
+    title: "Mentoría de Portafolio: De la Raíz a la Academia",
+    type: "Sesión Virtual 1-a-1 (Vía Zoom)",
+    duration: "Programa Intensivo de 3 Semanas",
+    dates: "Convocatoria Abierta — Cupos Limitados",
+    location: "Online (Acceso global)",
     seatsTotal: 4,
     seatsAvailable: 1,
-    price: "$450 USD",
-    includes: ["Revisión curatorial exhaustiva de tu cuerpo de obra actual", "Redacción y pulido de tu Artist Statement y Dossier", "Estrategia de posicionamiento ante galerías, residencias y coleccionistas"],
+    price: "$280 USD / S/. 1,050 PEN",
+    includes: [
+      "Revisión integral de cuerpo de obra y enfoque estético",
+      "Estructuración de tu Artist Statement y carpeta para convocatorias",
+      "Estrategia de venta independiente y relación con coleccionistas"
+    ],
     syllabus: [
-      "Diagnóstico conceptual y técnico de tu trayectoria.",
-      "Estructuración de series y narrativa visual coherente.",
-      "Preparación de carpetas de postulación y cotización de mercado.",
-      "Acompañamiento en el montaje o lanzamiento de tu proyecto."
+      "Cómo pasar de la intuición creativa a un cuerpo de obra sólido.",
+      "Construcción de fichas técnicas y dossier curatorial profesional.",
+      "Participación en concursos de pintura rápida y murales.",
+      "Posicionamiento ante coleccionistas y galerías."
     ]
   }
 ];
 
 export const cvData = {
-  statementSummary: "Egresada con honores de la Escuela Nacional Superior Autónoma de Bellas Artes. Ha desarrollado residencias de creación artística en Ciudad de México, Barcelona y Buenos Aires.",
+  statementSummary: "Estudiante de 4to año de la carrera de Artista Profesional. Artista nacida en Pucallpa (Ucayali) con trayectoria en pintura al óleo, concursos de pintura rápida y muralismo de conservación ambiental.",
   soloExhibitions: [
-    { year: "2024", title: "Territorios Ocultos", gallery: "Galería Forum", city: "Lima, Perú" },
-    { year: "2023", title: "La Memoria del Pigmento", gallery: "Espacio Valverde", city: "Madrid, España" },
-    { year: "2021", title: "Fuerza y Fractura", gallery: "Centro Cultural Recoleta", city: "Buenos Aires, Argentina" },
-    { year: "2019", title: "Caligrafías del Viento", gallery: "Sala Luis Miró Quesada Garland", city: "Lima, Perú" }
+    { year: "2024", title: "El Alma Vigilante de la Selva", gallery: "Galería de Arte Regional", city: "Pucallpa, Ucayali" },
+    { year: "2023", title: "Ucayali: Luz y Misterio", gallery: "Espacio Cultural Amazónico", city: "Pucallpa, Perú" },
+    { year: "2022", title: "Vivencia Sensorial", gallery: "Muestra de Obra Independiente", city: "Pucallpa, Perú" }
   ],
   groupExhibitions: [
-    { year: "2024", title: "Bienal Internacional de Arte Contemporáneo", gallery: "Museo de Arte Contemporáneo (MAC)", city: "Lima, Perú" },
-    { year: "2023", title: "Voces Gráficas del Sur", gallery: "Matadero Madrid", city: "Madrid, España" },
-    { year: "2022", title: "Feria Iberoamericana PArC", gallery: "Casa Prado", city: "Lima, Perú" },
-    { year: "2020", title: "Muralistas del Siglo XXI", gallery: "Museo Tamayo / Espacio Urbano", city: "CDMX, México" }
+    { year: "2024", title: "Muestra Colectiva de Artistas Profesionales", gallery: "Salón de Bellas Artes", city: "Lima, Perú" },
+    { year: "2023", title: "Voces de la Amazonía Viva", gallery: "Centro Cultural de Pucallpa", city: "Ucayali, Perú" },
+    { year: "2022", title: "Salón de Jóvenes Creadores Amazónicos", gallery: "Galería Municipal", city: "Iquitos / Pucallpa" }
   ],
   awardsAndResidencies: [
-    { year: "2023", title: "Residencia Artística de Creación Gráfica", entity: "Fundación BilbaoArte, España" },
-    { year: "2022", title: "Primer Premio Nacional de Artes Plásticas", entity: "Concurso Nacional de Pintura BCR" },
-    { year: "2020", title: "Beca de Producción Cultural", entity: "Ministerio de Cultura" },
-    { year: "2018", title: "Mención de Honor en el Salón Nacional de Grabado", entity: "Instituto Cultural Peruano Norteamericano" }
+    { year: "2024", title: "Mención Destacada en Concurso de Pintura Rápida al Aire Libre", entity: "Certamen Regional Ucayali" },
+    { year: "2023", title: "Comisión y Ejecución de Mural Comunitario Ambiental", entity: "Proyecto de Preservación de Ecosistemas" },
+    { year: "2022", title: "Selección Oficial para Proyecto de Muralismo Urbano", entity: "Municipalidad Provincial de Coronel Portillo" },
+    { year: "2021", title: "Ingreso a la Carrera Profesional de Artes Plásticas (4to año en curso)", entity: "Escuela Superior de Formación Artística" }
   ],
   press: [
-    { media: "El Comercio (Luces)", quote: "La obra de Pilar logra una alquimia poco común: la potencia callejera del cartel se eleva a una sofisticación pictórica deslumbrante." },
-    { media: "Revista Artishock", quote: "Pilar desafía los límites del soporte tradicional con una materialidad táctil que invita al coleccionismo reflexivo." },
-    { media: "Cosas Arte & Diseño", quote: "Una de las artistas visuales más contundentes y con mayor proyección internacional de su generación." }
+    { media: "Diario Ahora Ucayali", quote: "Elena Chávez combina con maestría la frescura de sus raíces amazónicas con la disciplina y el rigor del estudio formal de la pintura." },
+    { media: "Gaceta Cultural Amazónica", quote: "Sus lienzos no son un simple paisaje: son una alerta sensible sobre la fragilidad de nuestro ecosistema y un homenaje vivo al jaguar y al río." },
+    { media: "Portal Arte Peruano", quote: "Una artista emergente que ha sabido construir un puente sólido y genuino con sus coleccionistas desde sus inicios." }
   ]
 };
 
 export const agendaEvents = [
   {
     id: "ev-01",
-    date: "15 — 19 Enero, 2025",
-    status: "Confirmado",
-    title: "Participación en Feria Internacional de Arte Contemporáneo (ArtBo)",
-    location: "Corferias, Bogotá — Stand Galería Forum",
-    type: "Feria Internacional",
-    description: "Presentación de 4 nuevas piezas de gran formato de la serie 'Territorios Ocultos' y catálogo de obra para coleccionistas."
+    date: "14 — 15 Diciembre, 2024",
+    status: "Inscripciones Abiertas",
+    title: "Taller Presencial de Texturas en Óleo y Paleta Amazónica",
+    location: "Taller de la Artista — Pucallpa, Ucayali",
+    type: "Workshop Presencial",
+    description: "Espacio intensivo para aprender técnicas de empaste, espátula y manejo de color selvático junto a Elena Chávez."
   },
   {
     id: "ev-02",
-    date: "08 Febrero, 2025",
-    status: "Inscripciones Abiertas",
-    title: "Jornada de 'Open Studio' y Visita Guiada de Coleccionistas",
-    location: "Estudio & Taller Pilar — Barranco, Lima",
-    type: "Visita de Estudio",
-    description: "Acceso exclusivo para miembros del Club de Coleccionistas para observar obras en proceso, bocetos y conversar directamente con la artista."
+    date: "18 Enero, 2025",
+    status: "Cupos Confirmados",
+    title: "Jornada de Pintura Rápida en Yarinacocha (Plein Air)",
+    location: "Laguna de Yarinacocha — Puerto Callao",
+    type: "Pintura en Vivo",
+    description: "Sesión abierta de captura de luz tropical y paisaje acuático con un grupo reducido de creadores."
   },
   {
     id: "ev-03",
-    date: "24 Marzo — 30 Abril, 2025",
+    date: "25 Febrero — 15 Marzo, 2025",
     status: "Próximamente",
-    title: "Exposición Individual: 'La Materia del Silencio'",
-    location: "Sala Principal de Galería Enlace Arte Contemporáneo",
-    type: "Exposición Individual",
-    description: "Muestra antológica con más de 20 piezas inéditas entre óleos sobre lino, relieves escultóricos y serie gráfica serigráfica."
+    title: "Exposición Colectiva: 'Ecosistemas en Resistencia'",
+    location: "Sala de Exposiciones de Ucayali",
+    type: "Exposición en Galería",
+    description: "Muestra de cierre de ciclo con obras de gran formato en óleo y acrílico dedicadas a la preservación del bosque."
   }
 ];
-

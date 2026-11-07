@@ -24,21 +24,21 @@ export default function Hero({ onOpenInquiry }) {
           {/* Left Column: Headlines & Concept */}
           <div className="lg:col-span-7 space-y-6">
             <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/5 border border-white/10 text-xs tracking-widest uppercase text-zinc-300">
-              <span className="w-2 h-2 rounded-full bg-[#ff3366] animate-pulse"></span>
-              <span>Portafolio Oficial & Estudio de Arte</span>
+              <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+              <span>Portafolio Oficial • Pucallpa (Ucayali)</span>
             </div>
 
             <h1 className="text-5xl sm:text-7xl lg:text-8xl font-black tracking-tighter uppercase font-display leading-[0.92]">
-              EL ARTE <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#ff3366] via-[#ff758c] to-[#ffbe76]">
-                COMO VOZ
+              EL ALMA <br />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-teal-300 to-amber-300">
+                AMAZÓNICA
               </span> <br />
-              VISCERAL.
+              EN EL LIENZO.
             </h1>
 
             <p className="text-lg sm:text-xl text-zinc-300 font-light max-w-xl leading-relaxed">
-              Extensión digital de la obra de <span className="font-semibold text-white">{artistInfo.name}</span>. 
-              Pintura matérica, gran formato y gráfica contemporánea concebidos para coleccionistas, curadores y amantes de la materia viva.
+              Extensión digital de la obra de <span className="font-semibold text-white">{artistInfo.fullName}</span> ({artistInfo.artisticName}). 
+              Un diálogo vivo entre la exuberancia de la selva de Ucayali, el óleo con texturas y la formación artística profesional.
             </p>
 
             <blockquote className="border-l-2 border-[#ff3366] pl-4 py-1 italic text-sm text-zinc-400 font-serif-art max-w-lg">
@@ -96,21 +96,21 @@ export default function Hero({ onOpenInquiry }) {
 
               <div className="relative overflow-hidden rounded-xl border border-white/20 bg-zinc-900 shadow-2xl">
                 <img
-                  src="https://images.unsplash.com/photo-1541701494587-cb58502866ab?auto=format&fit=crop&w=1200&q=85"
-                  alt="Obra emblemática Pilar"
+                  src="https://images.unsplash.com/photo-1561731216-c3a4d99437d5?auto=format&fit=crop&w=1200&q=85"
+                  alt="Obra emblemática Elena Chávez"
                   className="w-full h-[460px] object-cover object-center group-hover:scale-105 transition duration-700"
                 />
 
                 {/* Artwork Quick Overlay Spec */}
                 <div className="absolute bottom-0 inset-x-0 p-5 bg-gradient-to-t from-black via-black/80 to-transparent backdrop-blur-[2px]">
-                  <span className="text-[10px] uppercase font-bold tracking-widest text-[#ff3366] bg-[#ff3366]/10 px-2 py-0.5 rounded border border-[#ff3366]/30">
-                    Obra Destacada 2024
+                  <span className="text-[10px] uppercase font-bold tracking-widest text-emerald-400 bg-emerald-950/80 px-2 py-0.5 rounded border border-emerald-500/30">
+                    Obra Emblemática 2024
                   </span>
                   <h3 className="text-lg font-bold text-white mt-1.5 font-display">
-                    Resonancia del Fuego Nocturno
+                    El Alma Vigilante (La Mirada del Otorongo)
                   </h3>
                   <p className="text-xs text-zinc-300">
-                    Óleo y pigmentos sobre lino belga • 180 x 140 cm
+                    Óleo empastado y espátula sobre lienzo • 160 x 130 cm
                   </p>
                   
                   <div className="flex items-center justify-between mt-3 pt-3 border-t border-white/15">
@@ -118,8 +118,8 @@ export default function Hero({ onOpenInquiry }) {
                       ● Original Disponible
                     </span>
                     <button
-                      onClick={() => onOpenInquiry({ title: "Resonancia del Fuego Nocturno", id: "obra-01", price: "$3,800 USD" })}
-                      className="text-xs font-bold text-white hover:text-[#ff3366] transition-colors flex items-center gap-1 cursor-pointer"
+                      onClick={() => onOpenInquiry({ title: "El Alma Vigilante (La Mirada del Otorongo)", id: "obra-01", price: "$2,800 USD" })}
+                      className="text-xs font-bold text-white hover:text-emerald-400 transition-colors flex items-center gap-1 cursor-pointer"
                     >
                       <span>Solicitar Ficha Técnica</span>
                       <ArrowUpRight className="w-3.5 h-3.5" />
