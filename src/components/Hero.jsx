@@ -96,8 +96,8 @@ export default function Hero({ onOpenInquiry }) {
 
               <div className="relative overflow-hidden rounded-xl border border-white/20 bg-zinc-900 shadow-2xl">
                 <img
-                  src="https://images.unsplash.com/photo-1561731216-c3a4d99437d5?auto=format&fit=crop&w=1200&q=85"
-                  alt="Obra emblemática Elena Chávez"
+                  src="/obras/yanapuma.jpg"
+                  alt="Obra Yanapuma de Elena Chávez"
                   className="w-full h-[460px] object-cover object-center group-hover:scale-105 transition duration-700"
                 />
 
@@ -107,18 +107,18 @@ export default function Hero({ onOpenInquiry }) {
                     Obra Emblemática 2024
                   </span>
                   <h3 className="text-lg font-bold text-white mt-1.5 font-display">
-                    El Alma Vigilante (La Mirada del Otorongo)
+                    Yanapuma (Jaguar Negro Protector)
                   </h3>
                   <p className="text-xs text-zinc-300">
-                    Óleo empastado y espátula sobre lienzo • 160 x 130 cm
+                    Acrílico sobre lienzo • 30 x 40 cm • S/. 150
                   </p>
                   
                   <div className="flex items-center justify-between mt-3 pt-3 border-t border-white/15">
                     <span className="text-xs font-semibold text-emerald-400">
-                      ● Original Disponible
+                      ● Pieza Original Disponible
                     </span>
                     <button
-                      onClick={() => onOpenInquiry({ title: "El Alma Vigilante (La Mirada del Otorongo)", id: "obra-01", price: "$2,800 USD" })}
+                      onClick={() => onOpenInquiry({ title: "Yanapuma (Jaguar Negro Protector)", id: "obra-01", price: "S/. 150" })}
                       className="text-xs font-bold text-white hover:text-emerald-400 transition-colors flex items-center gap-1 cursor-pointer"
                     >
                       <span>Solicitar Ficha Técnica</span>

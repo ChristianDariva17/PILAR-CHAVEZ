@@ -11,12 +11,14 @@ import FloatingWhatsApp from './components/FloatingWhatsApp';
 import ArtworkDetailModal from './components/ArtworkDetailModal';
 import InquiryModal from './components/InquiryModal';
 import WorkshopModal from './components/WorkshopModal';
+import DossierModal from './components/DossierModal';
 
 export default function App() {
   const [selectedArtwork, setSelectedArtwork] = useState(null);
   const [inquiryModalOpen, setInquiryModalOpen] = useState(false);
   const [inquiryItem, setInquiryItem] = useState(null);
   const [selectedWorkshop, setSelectedWorkshop] = useState(null);
+  const [dossierModalOpen, setDossierModalOpen] = useState(false);
 
   const handleOpenInquiry = (item = null) => {
     setInquiryItem(item);
@@ -57,7 +59,10 @@ export default function App() {
         <CollectorNewsletter />
 
         {/* 4. Generar credibilidad y difundir tu agenda (CV artístico + Calendario) */}
-        <CredibilityAgenda onOpenInquiry={handleOpenInquiry} />
+        <CredibilityAgenda 
+          onOpenInquiry={handleOpenInquiry} 
+          onOpenDossier={() => setDossierModalOpen(true)}
+        />
       </main>
 
       {/* Footer */}
@@ -86,6 +91,12 @@ export default function App() {
         <WorkshopModal
           workshop={selectedWorkshop}
           onClose={() => setSelectedWorkshop(null)}
+        />
+      )}
+
+      {dossierModalOpen && (
+        <DossierModal
+          onClose={() => setDossierModalOpen(false)}
         />
       )}
     </div>

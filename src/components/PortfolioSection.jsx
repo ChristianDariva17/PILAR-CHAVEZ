@@ -7,10 +7,10 @@ export default function PortfolioSection({ onSelectArtwork, onOpenInquiry }) {
 
   const categories = [
     { id: 'todas', label: 'Todas las Obras' },
-    { id: 'pintura', label: 'Pintura & Óleo' },
-    { id: 'gran-formato', label: 'Gran Formato & Mural' },
-    { id: 'serigrafia', label: 'Serigrafía & Gráfica' },
-    { id: 'mixta', label: 'Técnica Mixta' },
+    { id: 'fauna-mistica', label: 'Fauna Sagrada (Yanapuma / Aves)' },
+    { id: 'identidad-amazona', label: 'Identidad & Retrato' },
+    { id: 'gran-formato', label: 'Gran Formato (Garza)' },
+    { id: 'paisaje-sensorial', label: 'Flora & Micro-fauna' },
   ];
 
   const filteredArtworks = activeCategory === 'todas'

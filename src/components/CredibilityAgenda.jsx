@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Award, Calendar, Download, ExternalLink, Newspaper, MapPin, CheckCircle, ChevronRight, Bookmark } from 'lucide-react';
 import { cvData, agendaEvents } from '../data/content';
 
-export default function CredibilityAgenda({ onOpenInquiry }) {
+export default function CredibilityAgenda({ onOpenInquiry, onOpenDossier }) {
   const [cvTab, setCvTab] = useState('individuales');
 
   return (
@@ -26,11 +26,11 @@ export default function CredibilityAgenda({ onOpenInquiry }) {
 
           <div className="flex items-center gap-3">
             <button
-              onClick={() => alert("Dossier Curatorial / CV Oficial descargado (Simulación en PDF con fichas de obra y bio)")}
-              className="inline-flex items-center gap-2 text-xs uppercase font-bold tracking-wider bg-white/10 hover:bg-white text-white hover:text-zinc-950 px-5 py-3 rounded-xl border border-white/15 transition-all cursor-pointer"
+              onClick={onOpenDossier}
+              className="inline-flex items-center gap-2 text-xs uppercase font-bold tracking-wider bg-emerald-500/10 hover:bg-emerald-500 text-emerald-400 hover:text-zinc-950 px-5 py-3 rounded-xl border border-emerald-500/30 transition-all cursor-pointer shadow-lg shadow-emerald-500/10"
             >
               <Download className="w-4 h-4" />
-              <span>Descargar CV Artístico (PDF)</span>
+              <span>Ver / Descargar Dossier Curatorial (PDF)</span>
             </button>
           </div>
         </div>
