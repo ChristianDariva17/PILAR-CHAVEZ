@@ -1,16 +1,16 @@
 import React, { useState } from 'react';
-import { X, Send, Check, MessageCircle, ShieldCheck } from 'lucide-react';
+import { X, Send, Check, MessageCircle, ShieldCheck, Truck } from 'lucide-react';
 import { artistInfo } from '../data/content';
 
 export default function InquiryModal({ selectedItem, onClose }) {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [phone, setPhone] = useState('');
-  const [collectorType, setCollectorType] = useState('coleccionista');
+  const [city, setCity] = useState('');
   const [message, setMessage] = useState(
     selectedItem?.title
-      ? `Hola Pilar, quisiera consultar la disponibilidad, ficha técnica y condiciones de envío para "${selectedItem.title}".`
-      : 'Hola Pilar, me gustaría ponerme en contacto con el estudio para conocer más sobre tus obras y disponibilidad.'
+      ? `Hola Elena, quisiera consultar la compra de tu obra "${selectedItem.title}" (${selectedItem.dimensions || ''}).`
+      : 'Hola Elena, me gustaría consultar la disponibilidad de tus obras originales o encargar una pieza a medida.'
   );
   const [submitted, setSubmitted] = useState(false);
 
@@ -20,7 +20,7 @@ export default function InquiryModal({ selectedItem, onClose }) {
       name,
       email,
       phone,
-      collectorType,
+      city,
       item: selectedItem?.title || 'Consulta General',
       message,
       date: new Date().toISOString()
@@ -38,13 +38,13 @@ export default function InquiryModal({ selectedItem, onClose }) {
   };
 
   const whatsappMessage = encodeURIComponent(
-    `Hola Pilar, soy ${name || 'un coleccionista'}. Quisiera consultar sobre: ${selectedItem?.title || 'obras del catálogo'}.\nMensaje: ${message}`
+    `Hola Elena, soy ${name || 'un coleccionista'}${city ? ` desde ${city}` : ''}.\nQuisiera consultar sobre: ${selectedItem?.title || 'obras en lienzo'}.\nMensaje: ${message}`
   );
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-md overflow-y-auto">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/90 backdrop-blur-md overflow-y-auto">
       <div 
-        className="relative w-full max-w-xl bg-[#131417] border border-white/15 rounded-3xl p-6 sm:p-8 shadow-2xl my-auto animate-in fade-in zoom-in-95 duration-200"
+        className="relative w-full max-w-xl bg-[#08140e] border border-emerald-500/30 rounded-3xl p-6 sm:p-8 shadow-2xl my-auto animate-in fade-in zoom-in-95 duration-200 text-zinc-100"
         onClick={(e) => e.stopPropagation()}
       >
         <button
@@ -55,14 +55,14 @@ export default function InquiryModal({ selectedItem, onClose }) {
         </button>
 
         <div className="mb-6">
-          <span className="text-[10px] uppercase font-bold tracking-widest text-[#ff3366] bg-[#ff3366]/10 px-2.5 py-1 rounded-full border border-[#ff3366]/30">
-            Atención Directa para Coleccionistas
+          <span className="text-[10px] uppercase font-bold tracking-widest text-emerald-400 bg-emerald-950 px-2.5 py-1 rounded-full border border-emerald-500/30">
+            Atención Directa del Estudio en Pucallpa
           </span>
           <h3 className="text-2xl font-black text-white mt-2 font-display">
-            {selectedItem?.title ? `Consulta: ${selectedItem.title}` : 'Contacto con el Estudio'}
+            {selectedItem?.title ? `Consulta: ${selectedItem.title}` : 'Contacto con Elena del Pilar'}
           </h3>
-          <p className="text-xs text-zinc-400 mt-1">
-            Ficha técnica, dossier de procedencia, cotización confidencial o agendamiento de cita.
+          <p className="text-xs text-zinc-300 mt-1">
+            Ficha técnica, coordinación de pago por Yape / Transferencia y cotización de envío por Olva/Shalom.
           </p>
         </div>
 
@@ -75,16 +75,16 @@ export default function InquiryModal({ selectedItem, onClose }) {
               Mensaje Enviado con Éxito
             </h4>
             <p className="text-xs text-zinc-300 max-w-md mx-auto">
-              Gracias, <strong className="text-white">{name}</strong>. El equipo curatorial del estudio de Pilar revisará tu solicitud y se pondrá en contacto contigo en menos de 24 horas.
+              Gracias, <strong className="text-white">{name}</strong>. Elena del Pilar o el equipo de su taller se pondrán en contacto contigo en breve para coordinar los detalles.
             </p>
             <div className="pt-4 flex flex-col sm:flex-row gap-3 justify-center">
               <a
-                href={`https://wa.me/51987654321?text=${whatsappMessage}`}
+                href={`https://wa.me/51961000000?text=${whatsappMessage}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold"
+                className="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-zinc-950 text-xs font-black uppercase tracking-wider"
               >
-                <MessageCircle className="w-4 h-4" />
+                <MessageCircle className="w-4 h-4 fill-current" />
                 <span>Continuar por WhatsApp</span>
               </a>
               <button
@@ -100,7 +100,7 @@ export default function InquiryModal({ selectedItem, onClose }) {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               <div>
                 <label className="text-[11px] font-semibold text-zinc-300 uppercase tracking-wider block mb-1">
-                  Nombre Completo *
+                  Tu Nombre *
                 </label>
                 <input
                   type="text"
@@ -108,21 +108,21 @@ export default function InquiryModal({ selectedItem, onClose }) {
                   value={name}
                   onChange={(e) => setName(e.target.value)}
                   placeholder="Ej. Roberto Salgado"
-                  className="w-full bg-white/5 border border-white/10 rounded-xl px-3.5 py-2.5 text-xs text-white placeholder-zinc-500 focus:outline-none focus:border-[#ff3366]"
+                  className="w-full bg-[#050b07] border border-emerald-500/20 rounded-xl px-3.5 py-2.5 text-xs text-white placeholder-zinc-500 focus:outline-none focus:border-emerald-400"
                 />
               </div>
 
               <div>
                 <label className="text-[11px] font-semibold text-zinc-300 uppercase tracking-wider block mb-1">
-                  Email *
+                  Tu Teléfono / WhatsApp *
                 </label>
                 <input
-                  type="email"
+                  type="tel"
                   required
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  placeholder="tu@email.com"
-                  className="w-full bg-white/5 border border-white/10 rounded-xl px-3.5 py-2.5 text-xs text-white placeholder-zinc-500 focus:outline-none focus:border-[#ff3366]"
+                  value={phone}
+                  onChange={(e) => setPhone(e.target.value)}
+                  placeholder="+51 987 654 321"
+                  className="w-full bg-[#050b07] border border-emerald-500/20 rounded-xl px-3.5 py-2.5 text-xs text-white placeholder-zinc-500 focus:outline-none focus:border-emerald-400"
                 />
               </div>
             </div>
@@ -130,75 +130,71 @@ export default function InquiryModal({ selectedItem, onClose }) {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               <div>
                 <label className="text-[11px] font-semibold text-zinc-300 uppercase tracking-wider block mb-1">
-                  Teléfono / WhatsApp
+                  Email
                 </label>
                 <input
-                  type="tel"
-                  value={phone}
-                  onChange={(e) => setPhone(e.target.value)}
-                  placeholder="+51 987 654 321"
-                  className="w-full bg-white/5 border border-white/10 rounded-xl px-3.5 py-2.5 text-xs text-white placeholder-zinc-500 focus:outline-none focus:border-[#ff3366]"
+                  type="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  placeholder="tu@email.com"
+                  className="w-full bg-[#050b07] border border-emerald-500/20 rounded-xl px-3.5 py-2.5 text-xs text-white placeholder-zinc-500 focus:outline-none focus:border-emerald-400"
                 />
               </div>
 
               <div>
                 <label className="text-[11px] font-semibold text-zinc-300 uppercase tracking-wider block mb-1">
-                  Perfil del Solicitante
+                  Ciudad de Envío (Perú / Exterior)
                 </label>
-                <select
-                  value={collectorType}
-                  onChange={(e) => setCollectorType(e.target.value)}
-                  className="w-full bg-zinc-900 border border-white/10 rounded-xl px-3.5 py-2.5 text-xs text-white focus:outline-none focus:border-[#ff3366]"
-                >
-                  <option value="coleccionista">Coleccionista Particular</option>
-                  <option value="galeria">Galería / Curador</option>
-                  <option value="arquitecto">Arquitecto / Diseñador de Interiores</option>
-                  <option value="institucion">Institución o Empresa</option>
-                </select>
+                <input
+                  type="text"
+                  value={city}
+                  onChange={(e) => setCity(e.target.value)}
+                  placeholder="Ej. Lima, Arequipa, Pucallpa"
+                  className="w-full bg-[#050b07] border border-emerald-500/20 rounded-xl px-3.5 py-2.5 text-xs text-white placeholder-zinc-500 focus:outline-none focus:border-emerald-400"
+                />
               </div>
             </div>
 
             <div>
               <label className="text-[11px] font-semibold text-zinc-300 uppercase tracking-wider block mb-1">
-                Detalle de la Consulta / Requerimiento
+                Consulta o Detalle del Pedido
               </label>
               <textarea
                 rows={3}
                 required
                 value={message}
                 onChange={(e) => setMessage(e.target.value)}
-                className="w-full bg-white/5 border border-white/10 rounded-xl p-3 text-xs text-white placeholder-zinc-500 focus:outline-none focus:border-[#ff3366]"
+                className="w-full bg-[#050b07] border border-emerald-500/20 rounded-xl p-3 text-xs text-white placeholder-zinc-500 focus:outline-none focus:border-emerald-400"
               />
             </div>
 
             <div className="pt-2 flex flex-col sm:flex-row gap-3">
-              <button
-                type="submit"
-                className="flex-1 py-3.5 rounded-xl bg-[#ff3366] hover:bg-[#ff1751] text-white font-bold text-xs uppercase tracking-wider transition-all flex items-center justify-center gap-2 cursor-pointer shadow-lg shadow-[#ff3366]/20"
-              >
-                <Send className="w-4 h-4" />
-                <span>Enviar Consulta Formal</span>
-              </button>
-
               <a
-                href={`https://wa.me/51987654321?text=${whatsappMessage}`}
+                href={`https://wa.me/51961000000?text=${whatsappMessage}`}
                 target="_blank"
                 rel="noopener noreferrer"
+                className="flex-1 py-3.5 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-zinc-950 font-black text-xs uppercase tracking-wider transition-all flex items-center justify-center gap-2 cursor-pointer shadow-lg shadow-emerald-500/20"
+              >
+                <MessageCircle className="w-4 h-4 fill-current" />
+                <span>Enviar por WhatsApp Inmediato</span>
+              </a>
+
+              <button
+                type="submit"
                 className="px-5 py-3.5 rounded-xl bg-white/10 hover:bg-white/20 text-white font-bold text-xs uppercase tracking-wider transition-colors flex items-center justify-center gap-2"
               >
-                <MessageCircle className="w-4 h-4 text-emerald-400" />
-                <span>Chat Directo</span>
-              </a>
+                <Send className="w-4 h-4" />
+                <span>Enviar al Correo</span>
+              </button>
             </div>
 
-            <p className="text-[10px] text-zinc-500 text-center flex items-center justify-center gap-1">
-              <ShieldCheck className="w-3 h-3" />
-              Gestión confidencial. Ficha curatorial y cotización enviada por canal seguro.
-            </p>
+            <div className="flex items-center justify-center gap-2 pt-1 text-[11px] text-zinc-400">
+              <Truck className="w-3.5 h-3.5 text-emerald-400" />
+              <span>Envíos seguros desde Pucallpa con embalaje reforzado.</span>
+            </div>
           </form>
         )}
       </div>
     </div>
   );
 }
-
