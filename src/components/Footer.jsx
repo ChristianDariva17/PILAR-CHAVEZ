@@ -12,7 +12,7 @@ function InstagramIcon({ className = "w-4 h-4" }) {
   );
 }
 
-export default function Footer({ onOpenInquiry }) {
+export default function Footer({ onOpenInquiry, onOpenCertificate }) {
   const cleanPhone = (artistInfo.contact.whatsapp || "+51961000000").replace(/[^0-9]/g, '');
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -140,10 +140,13 @@ export default function Footer({ onOpenInquiry }) {
               <span>Subir</span>
               <ArrowUp className="w-3.5 h-3.5" />
             </button>
-            <div className="text-[11px] text-zinc-500 mt-6 lg:mt-0 flex items-center gap-1.5">
-              <ShieldCheck className="w-4 h-4 text-zinc-700" />
-              <span>Certificado de Autoría</span>
-            </div>
+            <button
+              onClick={onOpenCertificate}
+              className="text-[11px] text-zinc-600 hover:text-zinc-950 mt-6 lg:mt-0 flex items-center gap-1.5 cursor-pointer transition-colors"
+            >
+              <ShieldCheck className="w-4 h-4 text-zinc-800" />
+              <span className="underline">Certificado de Autoría</span>
+            </button>
           </div>
 
         </div>

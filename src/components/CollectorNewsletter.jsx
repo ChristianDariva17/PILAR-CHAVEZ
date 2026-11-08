@@ -64,9 +64,9 @@ export default function CollectorNewsletter() {
               <p className="text-[11px] text-zinc-500 font-light">Invitaciones exclusivas para ver lienzos en proceso y dialogar con la artista.</p>
             </div>
             <div className="text-center sm:text-left space-y-1">
-              <span className="text-xs font-mono font-bold text-zinc-950">03 / REGALO DIGITAL</span>
-              <p className="text-xs font-bold text-zinc-900">Fondo HD de Yanapuma</p>
-              <p className="text-[11px] text-zinc-500 font-light">Descarga en alta definición para tu monitor o dispositivo al registrarte.</p>
+              <span className="text-xs font-mono font-bold text-zinc-950">03 / GUÍA & CATÁLOGO</span>
+              <p className="text-xs font-bold text-zinc-900">Catálogo Privado PDF</p>
+              <p className="text-[11px] text-zinc-500 font-light">Descarga inmediata del catálogo general 2024–2025 y guía de inversión en arte amazónico.</p>
             </div>
           </div>
 
@@ -83,14 +83,21 @@ export default function CollectorNewsletter() {
                 Hemos registrado a <strong className="text-zinc-950">{email}</strong>. Recibirás en tu correo los accesos prioritarios a las nuevas obras de Elena del Pilar.
               </p>
               
-              <div className="pt-2">
+              <div className="pt-2 flex flex-col sm:flex-row gap-2 justify-center">
+                <a
+                  href="/obras/yanapuma.jpg"
+                  download="Catalogo_Elena_Chavez_2024.jpg"
+                  className="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl bg-zinc-950 hover:bg-zinc-800 text-white font-bold text-xs uppercase tracking-wider transition-all"
+                >
+                  <Download className="w-4 h-4" />
+                  <span>Descargar Catálogo Curatorial</span>
+                </a>
                 <a
                   href="/obras/yanapuma.jpg"
                   download="Yanapuma_Elena_Chavez_Wallpaper.jpg"
-                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-zinc-950 hover:bg-zinc-800 text-white font-bold text-xs uppercase tracking-wider transition-all"
+                  className="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-zinc-100 hover:bg-zinc-200 text-zinc-900 font-bold text-xs uppercase tracking-wider transition-all border border-zinc-200"
                 >
-                  <Download className="w-4 h-4" />
-                  <span>Descargar Obra Digital en HD</span>
+                  <span>Fondo HD de Regalo</span>
                 </a>
               </div>
 
@@ -123,9 +130,9 @@ export default function CollectorNewsletter() {
               </div>
 
               {/* Interest Selector */}
-              <div className="flex flex-col sm:flex-row items-center justify-between gap-3 bg-zinc-50 p-3 rounded-xl border border-zinc-200 text-xs text-zinc-600">
+              <div className="flex flex-col sm:flex-row items-center justify-between gap-3 bg-zinc-50 p-3.5 rounded-xl border border-zinc-200 text-xs text-zinc-600">
                 <span className="text-[11px] font-semibold text-zinc-800">Interés preferente:</span>
-                <div className="flex items-center gap-4">
+                <div className="flex flex-wrap items-center gap-3">
                   <label className="flex items-center gap-1.5 cursor-pointer">
                     <input
                       type="radio"
@@ -135,7 +142,18 @@ export default function CollectorNewsletter() {
                       onChange={() => setInterest('originales')}
                       className="accent-zinc-950"
                     />
-                    <span>Obras Originales</span>
+                    <span>Originales</span>
+                  </label>
+                  <label className="flex items-center gap-1.5 cursor-pointer">
+                    <input
+                      type="radio"
+                      name="interest"
+                      value="prints"
+                      checked={interest === 'prints'}
+                      onChange={() => setInterest('prints')}
+                      className="accent-zinc-950"
+                    />
+                    <span>Prints Seriados</span>
                   </label>
                   <label className="flex items-center gap-1.5 cursor-pointer">
                     <input
@@ -146,7 +164,7 @@ export default function CollectorNewsletter() {
                       onChange={() => setInterest('comisiones')}
                       className="accent-zinc-950"
                     />
-                    <span>Encargos a Medida</span>
+                    <span>Comisiones</span>
                   </label>
                   <label className="flex items-center gap-1.5 cursor-pointer">
                     <input
@@ -157,7 +175,7 @@ export default function CollectorNewsletter() {
                       onChange={() => setInterest('workshops')}
                       className="accent-zinc-950"
                     />
-                    <span>Talleres</span>
+                    <span>Talleres & Visitas</span>
                   </label>
                 </div>
               </div>

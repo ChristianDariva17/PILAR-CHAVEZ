@@ -7,7 +7,7 @@ import Zoom from 'yet-another-react-lightbox/plugins/zoom';
 import 'yet-another-react-lightbox/styles.css';
 import { artistInfo } from '../data/content';
 
-export default function ArtworkDetailModal({ artwork, open, onClose, onClosed, onOpenInquiry, restoreFocusRef, skipFocusRestoreRef }) {
+export default function ArtworkDetailModal({ artwork, open, onClose, onClosed, onOpenInquiry, onOpenCertificate, restoreFocusRef, skipFocusRestoreRef }) {
   if (!artwork) return null;
 
   const [viewMode, setViewMode] = useState('detalle'); // 'detalle' | 'lupa' | 'en_pared'
@@ -378,6 +378,20 @@ export default function ArtworkDetailModal({ artwork, open, onClose, onClosed, o
                   <p className="text-[11px]">
                     <strong>Envío a todo el Perú:</strong> Desde Pucallpa vía Olva Courier / Shalom / Agencia con embalaje rígido reforzado.
                   </p>
+                </div>
+
+                {/* Certificate of Authenticity badge */}
+                <div className="flex items-center justify-between p-3 rounded-lg bg-[#faf9f5] border border-zinc-200 text-xs text-zinc-700">
+                  <div className="flex items-center gap-2">
+                    <ShieldCheck className="w-4 h-4 text-zinc-900 shrink-0" />
+                    <span className="text-[11px] font-medium">Incluye Certificado Oficial firmado y sellado</span>
+                  </div>
+                  <button
+                    onClick={() => onOpenCertificate && onOpenCertificate(artwork)}
+                    className="text-[11px] font-bold text-zinc-950 underline hover:text-black cursor-pointer"
+                  >
+                    Ver Certificado COA
+                  </button>
                 </div>
               </div>
 

@@ -84,9 +84,15 @@ export default function ArtworkCanvasCard({ artwork, onSelectArtwork, onOpenInqu
               </span>
             </div>
 
-            <span className="text-[10px] font-mono font-bold uppercase tracking-wider px-2 py-0.5 rounded bg-zinc-100 text-zinc-700 border border-zinc-200/70">
-              {artwork.dimensions}
-            </span>
+            {artwork.status === 'coleccion-privada' ? (
+              <span className="text-[10px] font-mono font-medium text-amber-900 bg-amber-50 px-2.5 py-0.5 rounded-full border border-amber-200 shadow-xs">
+                {artwork.statusLabel}
+              </span>
+            ) : (
+              <span className="text-[10px] font-mono font-bold uppercase tracking-wider px-2 py-0.5 rounded bg-zinc-100 text-zinc-700 border border-zinc-200/70">
+                {artwork.dimensions}
+              </span>
+            )}
           </div>
 
           {/* Artwork Canvas Image */}
@@ -181,13 +187,24 @@ export default function ArtworkCanvasCard({ artwork, onSelectArtwork, onOpenInqu
                   <span className="hidden sm:inline text-[11px]">Pared</span>
                 </button>
 
-                <button
-                  onClick={() => onOpenInquiry(artwork)}
-                  className="text-xs font-bold uppercase tracking-wider bg-zinc-950 hover:bg-zinc-800 text-white px-4 py-2.5 rounded-xl transition-all flex items-center gap-1.5 cursor-pointer shadow-sm hover:shadow"
-                >
-                  <span>Adquirir</span>
-                  <ArrowUpRight className="w-3.5 h-3.5" />
-                </button>
+                {artwork.status === 'coleccion-privada' ? (
+                  <button
+                    onClick={() => onOpenInquiry({ ...artwork, isCommissionSimilar: true, title: `Encargo similar a ${artwork.title}` })}
+                    className="text-xs font-bold uppercase tracking-wider bg-zinc-100 hover:bg-zinc-200 text-zinc-800 px-3.5 py-2.5 rounded-xl transition-all flex items-center gap-1.5 cursor-pointer border border-zinc-300"
+                    title="Obra en colección privada. Puedes solicitar una pieza similar a medida."
+                  >
+                    <span>Pedir Similar</span>
+                    <ArrowUpRight className="w-3.5 h-3.5" />
+                  </button>
+                ) : (
+                  <button
+                    onClick={() => onOpenInquiry(artwork)}
+                    className="text-xs font-bold uppercase tracking-wider bg-zinc-950 hover:bg-zinc-800 text-white px-4 py-2.5 rounded-xl transition-all flex items-center gap-1.5 cursor-pointer shadow-sm hover:shadow"
+                  >
+                    <span>Adquirir</span>
+                    <ArrowUpRight className="w-3.5 h-3.5" />
+                  </button>
+                )}
               </div>
             </div>
 

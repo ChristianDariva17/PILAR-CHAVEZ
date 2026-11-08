@@ -1,9 +1,19 @@
 import React, { useState } from 'react';
-import { Palette, Building2, Calendar, Users, Clock, Check, ArrowUpRight, MessageCircle } from 'lucide-react';
-import { workshopsData, artworksData } from '../data/content';
+import { Palette, Building2, Calendar, Users, Clock, Check, ArrowUpRight, MessageCircle, Sparkles, Printer, ShieldCheck } from 'lucide-react';
+import { workshopsData, artworksData, printsData } from '../data/content';
 
 export default function StoreMonetization({ onOpenInquiry, onSelectWorkshop }) {
-  const [activeTab, setActiveTab] = useState('comisiones'); // 'comisiones' | 'murales' | 'workshops'
+  const [activeTab, setActiveTab] = useState('comisiones'); // 'comisiones' | 'prints' | 'murales' | 'workshops'
+  const [selectedPrintSizes, setSelectedPrintSizes] = useState({
+    'print-01': 0,
+    'print-02': 0,
+    'print-03': 0,
+    'print-04': 0,
+  });
+
+  const handleSizeChange = (printId, sizeIdx) => {
+    setSelectedPrintSizes((prev) => ({ ...prev, [printId]: sizeIdx }));
+  };
 
   return (
     <section id="comisiones" className="py-24 bg-[#faf9f5] relative border-t border-zinc-200/80">
@@ -36,6 +46,18 @@ export default function StoreMonetization({ onOpenInquiry, onSelectWorkshop }) {
             >
               <Palette className="w-3.5 h-3.5" />
               <span>Encargos a Medida</span>
+            </button>
+
+            <button
+              onClick={() => setActiveTab('prints')}
+              className={`text-xs uppercase tracking-wider font-semibold px-4 py-2 rounded-xl transition-all flex items-center gap-1.5 cursor-pointer ${
+                activeTab === 'prints'
+                  ? 'bg-zinc-950 text-white font-bold shadow-xs'
+                  : 'text-zinc-600 hover:text-zinc-950'
+              }`}
+            >
+              <Sparkles className="w-3.5 h-3.5" />
+              <span>Prints Seriados (S/. 60+)</span>
             </button>
 
             <button
@@ -158,6 +180,128 @@ export default function StoreMonetization({ onOpenInquiry, onSelectWorkshop }) {
                 </p>
               </div>
 
+            </div>
+          </div>
+        )}
+
+        {/* TAB: Prints & Reproducciones de Autor */}
+        {activeTab === 'prints' && (
+          <div className="space-y-8 animate-in fade-in duration-300">
+            {/* Header banner */}
+            <div className="p-6 sm:p-8 rounded-3xl bg-white border border-zinc-200/90 shadow-xs flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+              <div className="space-y-2 max-w-2xl">
+                <span className="text-[10px] font-mono uppercase tracking-widest text-zinc-700 bg-zinc-100 px-3 py-1 rounded-full border border-zinc-200">
+                  Edición Limitada & Certificada
+                </span>
+                <h3 className="text-2xl sm:text-3xl font-black text-zinc-950 font-display">
+                  Reproducciones Fine Art en Papel de Algodón
+                </h3>
+                <p className="text-xs sm:text-sm text-zinc-600 leading-relaxed font-light">
+                  Lleva una pieza de Elena del Pilar a tu hogar con impresión de calidad museo. Cada reproducción es numerada a mano del 01 al 50, firmada por la artista y sellada en relieve para garantizar su autenticidad.
+                </p>
+              </div>
+
+              <div className="flex flex-col sm:flex-row gap-3 text-xs text-zinc-600 shrink-0">
+                <div className="p-3 bg-zinc-50 rounded-xl border border-zinc-200">
+                  <span className="font-bold text-zinc-950 block">Papel 310g</span>
+                  <span className="text-[11px] text-zinc-500 font-mono">100% Algodón libre de ácido</span>
+                </div>
+                <div className="p-3 bg-zinc-50 rounded-xl border border-zinc-200">
+                  <span className="font-bold text-zinc-950 block">Tintas de Archivo</span>
+                  <span className="text-[11px] text-zinc-500 font-mono">Durabilidad 100+ años</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Prints Grid */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {printsData.map((item) => {
+                const currentSizeIdx = selectedPrintSizes[item.id] || 0;
+                const activeSize = item.sizes[currentSizeIdx] || item.sizes[0];
+                const cleanPhone = "51961000000";
+                const whatsappUrl = `https://wa.me/${cleanPhone}?text=${encodeURIComponent(
+                  `Hola Elena, quisiera adquirir el Print Seriado de autor de "${item.title}" en formato ${activeSize.size} (${activeSize.price}). ¿Cómo coordinamos el envío?`
+                )}`;
+
+                return (
+                  <div
+                    key={item.id}
+                    className="bg-white rounded-2xl border border-zinc-200/90 hover:border-zinc-300 transition-all p-5 flex flex-col justify-between shadow-xs hover:shadow-md"
+                  >
+                    <div>
+                      {/* Thumbnail with gallery mat */}
+                      <div className="aspect-[4/3] rounded-xl overflow-hidden bg-zinc-100 p-2 border border-zinc-200/60 mb-4 shadow-inner">
+                        <img
+                          src={item.image}
+                          alt={item.title}
+                          className="w-full h-full object-cover rounded-lg"
+                        />
+                      </div>
+
+                      <span className="text-[10px] font-mono text-zinc-500 uppercase tracking-wider block">
+                        {item.series}
+                      </span>
+                      <h4 className="text-base font-bold text-zinc-950 font-display mt-0.5 leading-snug">
+                        {item.title}
+                      </h4>
+                      <p className="text-[11px] text-zinc-600 mt-1.5 line-clamp-2 font-light">
+                        {item.description}
+                      </p>
+
+                      {/* Size Selector */}
+                      <div className="mt-4 pt-3 border-t border-zinc-100 space-y-1.5">
+                        <span className="text-[10px] uppercase font-mono font-bold text-zinc-700 block">
+                          Elige Formato:
+                        </span>
+                        <div className="grid grid-cols-1 gap-1">
+                          {item.sizes.map((s, sIdx) => (
+                            <button
+                              key={sIdx}
+                              onClick={() => handleSizeChange(item.id, sIdx)}
+                              className={`flex items-center justify-between px-2.5 py-1.5 rounded-lg text-xs transition-all cursor-pointer ${
+                                currentSizeIdx === sIdx
+                                  ? 'bg-zinc-950 text-white font-bold shadow-xs'
+                                  : 'bg-zinc-50 text-zinc-700 hover:bg-zinc-100 border border-zinc-200/70'
+                              }`}
+                            >
+                              <span>{s.size}</span>
+                              <span className="font-mono">{s.price}</span>
+                            </button>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Bottom Action */}
+                    <div className="mt-6 pt-3 border-t border-zinc-100 space-y-2">
+                      <div className="flex items-baseline justify-between">
+                        <span className="text-[10px] text-zinc-500 uppercase font-mono">Inversión</span>
+                        <span className="text-lg font-bold font-mono text-zinc-950">{activeSize.price}</span>
+                      </div>
+
+                      <div className="grid grid-cols-2 gap-1.5">
+                        <a
+                          href={whatsappUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="py-2.5 rounded-xl bg-zinc-950 hover:bg-zinc-800 text-white font-bold text-[11px] uppercase tracking-wider transition-all flex items-center justify-center gap-1 shadow-xs cursor-pointer"
+                        >
+                          <MessageCircle className="w-3.5 h-3.5 fill-current" />
+                          <span>Pedir</span>
+                        </a>
+
+                        <button
+                          onClick={() => onOpenInquiry({ title: `Print: ${item.title} (${activeSize.size})` })}
+                          className="py-2.5 rounded-xl bg-zinc-100 hover:bg-zinc-200 text-zinc-900 font-bold text-[11px] uppercase tracking-wider transition-all flex items-center justify-center gap-1 border border-zinc-200 cursor-pointer"
+                        >
+                          <span>Cotizar</span>
+                          <ArrowUpRight className="w-3 h-3" />
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                );
+              })}
             </div>
           </div>
         )}

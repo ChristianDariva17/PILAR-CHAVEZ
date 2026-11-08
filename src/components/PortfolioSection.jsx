@@ -4,8 +4,9 @@ import { Truck, SlidersHorizontal, ShieldCheck } from 'lucide-react';
 import { artworksData } from '../data/content';
 import ArtworkCanvasCard from './ArtworkCanvasCard';
 
-export default function PortfolioSection({ onSelectArtwork, onOpenInquiry }) {
+export default function PortfolioSection({ onSelectArtwork, onOpenInquiry, onOpenCertificate }) {
   const [activeCategory, setActiveCategory] = useState('todas');
+  const [availabilityFilter, setAvailabilityFilter] = useState('todas'); // 'todas' | 'disponible' | 'coleccion-privada'
   const [sortBy, setSortBy] = useState('curatorial'); // 'curatorial' | 'price-asc' | 'price-desc'
   const shouldReduceMotion = useReducedMotion();
 
@@ -17,9 +18,11 @@ export default function PortfolioSection({ onSelectArtwork, onOpenInquiry }) {
     { id: 'paisaje-mistico', label: 'Mística & Agua' },
   ];
 
-  let filteredArtworks = activeCategory === 'todas'
-    ? [...artworksData]
-    : artworksData.filter((item) => item.category === activeCategory);
+  let filteredArtworks = artworksData.filter((item) => {
+    const matchCategory = activeCategory === 'todas' || item.category === activeCategory;
+    const matchAvailability = availabilityFilter === 'todas' || item.status === availabilityFilter;
+    return matchCategory && matchAvailability;
+  });
 
   if (sortBy === 'price-asc') {
     filteredArtworks.sort((a, b) => a.priceNum - b.priceNum);
@@ -32,7 +35,7 @@ export default function PortfolioSection({ onSelectArtwork, onOpenInquiry }) {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Section Header: Minimalist Editorial Style */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-14 gap-6">
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-6">
           <div>
             <div className="inline-flex items-center gap-2 text-xs font-mono font-bold uppercase tracking-widest text-zinc-500 mb-2">
               <span className="w-4 h-[1.5px] bg-zinc-950"></span>
@@ -46,39 +49,73 @@ export default function PortfolioSection({ onSelectArtwork, onOpenInquiry }) {
             </p>
           </div>
 
-          {/* Controls: Filter Pills & Sorter */}
-          <div className="flex flex-col sm:flex-row sm:items-center gap-3">
-            {/* Filter Pills */}
-            <div className="flex flex-wrap gap-1.5 p-1 bg-white rounded-2xl border border-zinc-200 shadow-xs">
-              {categories.map((cat) => (
-                <button
-                  key={cat.id}
-                  onClick={() => setActiveCategory(cat.id)}
-                  className={`text-xs uppercase tracking-wider font-semibold px-3.5 py-1.5 rounded-xl transition-all cursor-pointer ${
-                    activeCategory === cat.id
-                      ? 'bg-zinc-950 text-white font-bold shadow-xs'
-                      : 'text-zinc-600 hover:text-zinc-950 hover:bg-zinc-50'
-                  }`}
-                >
-                  {cat.label}
-                </button>
-              ))}
-            </div>
+          {/* Availability Pills (Disponibles vs Colección Privada) */}
+          <div className="flex items-center gap-1.5 p-1 bg-white rounded-2xl border border-zinc-200 shadow-xs text-xs">
+            <button
+              onClick={() => setAvailabilityFilter('todas')}
+              className={`px-3.5 py-1.5 rounded-xl font-semibold transition-all cursor-pointer ${
+                availabilityFilter === 'todas'
+                  ? 'bg-zinc-950 text-white font-bold shadow-xs'
+                  : 'text-zinc-600 hover:text-zinc-950 hover:bg-zinc-50'
+              }`}
+            >
+              Catálogo Completo
+            </button>
+            <button
+              onClick={() => setAvailabilityFilter('disponible')}
+              className={`px-3.5 py-1.5 rounded-xl font-semibold transition-all cursor-pointer ${
+                availabilityFilter === 'disponible'
+                  ? 'bg-zinc-950 text-white font-bold shadow-xs'
+                  : 'text-zinc-600 hover:text-zinc-950 hover:bg-zinc-50'
+              }`}
+            >
+              Disponibles Hoy ({artworksData.filter(a => a.status === 'disponible').length})
+            </button>
+            <button
+              onClick={() => setAvailabilityFilter('coleccion-privada')}
+              className={`px-3.5 py-1.5 rounded-xl font-semibold transition-all cursor-pointer ${
+                availabilityFilter === 'coleccion-privada'
+                  ? 'bg-zinc-950 text-white font-bold shadow-xs'
+                  : 'text-zinc-600 hover:text-zinc-950 hover:bg-zinc-50'
+              }`}
+            >
+              Colección Privada ({artworksData.filter(a => a.status === 'coleccion-privada').length})
+            </button>
+          </div>
+        </div>
 
-            {/* Sorter Selector */}
-            <div className="flex items-center gap-2 bg-white px-3 py-1.5 rounded-xl border border-zinc-200 text-xs shadow-xs">
-              <SlidersHorizontal className="w-3.5 h-3.5 text-zinc-500 shrink-0" />
-              <select
-                value={sortBy}
-                onChange={(e) => setSortBy(e.target.value)}
-                className="bg-transparent text-zinc-800 text-xs font-medium focus:outline-none cursor-pointer"
-                aria-label="Ordenar obras por"
+        {/* Secondary Bar: Thematic Filters & Sorter */}
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-12">
+          {/* Filter Pills */}
+          <div className="flex flex-wrap gap-1.5 p-1 bg-white rounded-2xl border border-zinc-200 shadow-xs">
+            {categories.map((cat) => (
+              <button
+                key={cat.id}
+                onClick={() => setActiveCategory(cat.id)}
+                className={`text-xs uppercase tracking-wider font-semibold px-3.5 py-1.5 rounded-xl transition-all cursor-pointer ${
+                  activeCategory === cat.id
+                    ? 'bg-zinc-950 text-white font-bold shadow-xs'
+                    : 'text-zinc-600 hover:text-zinc-950 hover:bg-zinc-50'
+                }`}
               >
-                <option value="curatorial">Orden de Catálogo</option>
-                <option value="price-asc">Inversión: Menor a Mayor</option>
-                <option value="price-desc">Inversión: Mayor a Menor</option>
-              </select>
-            </div>
+                {cat.label}
+              </button>
+            ))}
+          </div>
+
+          {/* Sorter Selector */}
+          <div className="flex items-center gap-2 bg-white px-3 py-1.5 rounded-xl border border-zinc-200 text-xs shadow-xs">
+            <SlidersHorizontal className="w-3.5 h-3.5 text-zinc-500 shrink-0" />
+            <select
+              value={sortBy}
+              onChange={(e) => setSortBy(e.target.value)}
+              className="bg-transparent text-zinc-800 text-xs font-medium focus:outline-none cursor-pointer"
+              aria-label="Ordenar obras por"
+            >
+              <option value="curatorial">Orden de Catálogo</option>
+              <option value="price-asc">Inversión: Menor a Mayor</option>
+              <option value="price-desc">Inversión: Mayor a Menor</option>
+            </select>
           </div>
         </div>
 
@@ -110,12 +147,21 @@ export default function PortfolioSection({ onSelectArtwork, onOpenInquiry }) {
               </p>
             </div>
           </div>
-          <button
-            onClick={() => onOpenInquiry({ title: "Consulta sobre envíos y cotización" })}
-            className="shrink-0 text-xs uppercase tracking-wider font-bold bg-zinc-950 hover:bg-zinc-800 text-white px-5 py-3 rounded-xl transition-all cursor-pointer shadow-sm"
-          >
-            Consultar Envíos
-          </button>
+          <div className="flex flex-wrap items-center gap-3">
+            <button
+              onClick={() => onOpenCertificate && onOpenCertificate()}
+              className="shrink-0 text-xs uppercase tracking-wider font-bold bg-white hover:bg-zinc-100 text-zinc-900 px-4 py-3 rounded-xl border border-zinc-300 transition-all cursor-pointer shadow-xs flex items-center gap-1.5"
+            >
+              <ShieldCheck className="w-4 h-4 text-zinc-800" />
+              <span>Ver Certificado COA</span>
+            </button>
+            <button
+              onClick={() => onOpenInquiry({ title: "Consulta sobre envíos y cotización" })}
+              className="shrink-0 text-xs uppercase tracking-wider font-bold bg-zinc-950 hover:bg-zinc-800 text-white px-5 py-3 rounded-xl transition-all cursor-pointer shadow-sm"
+            >
+              Consultar Envíos
+            </button>
+          </div>
         </div>
 
       </div>

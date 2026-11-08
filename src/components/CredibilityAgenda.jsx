@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Award, Calendar, Download, Newspaper, MapPin, ChevronRight } from 'lucide-react';
 import { cvData, agendaEvents } from '../data/content';
 
-export default function CredibilityAgenda({ onOpenInquiry, onOpenDossier }) {
+export default function CredibilityAgenda({ onOpenInquiry, onOpenDossier, onOpenStudioVisit }) {
   const [cvTab, setCvTab] = useState('individuales');
 
   return (
@@ -220,19 +220,28 @@ export default function CredibilityAgenda({ onOpenInquiry, onOpenDossier }) {
                 ))}
               </div>
 
-              {/* Studio visit box */}
-              <div className="mt-6 p-5 rounded-2xl bg-zinc-100 border border-zinc-200 text-center space-y-2">
-                <p className="text-xs font-bold text-zinc-950 uppercase tracking-wider font-display">
-                  ¿Deseas una visita privada al taller?
-                </p>
-                <p className="text-[11px] text-zinc-600 font-light leading-relaxed">
-                  Recibimos a coleccionistas, curadores y amantes del arte en nuestro taller de Pucallpa (Ucayali) con cita concertada previa. Envíos de obras a todo el Perú y al extranjero.
-                </p>
+              {/* Studio visit box: Open Studio Pucallpa */}
+              <div className="mt-6 p-5 rounded-2xl bg-[#faf9f5] border border-zinc-200 text-left space-y-3">
+                <div className="flex items-center justify-between">
+                  <span className="text-[10px] uppercase font-mono font-bold tracking-widest text-zinc-700 bg-zinc-100 px-2.5 py-0.5 rounded border border-zinc-200">
+                    Open Studio
+                  </span>
+                  <span className="text-[11px] font-mono text-zinc-600">Pucallpa, Ucayali</span>
+                </div>
+                <div>
+                  <h4 className="text-sm font-bold text-zinc-950 font-display">
+                    Visitas Guiadas al Taller de la Artista
+                  </h4>
+                  <p className="text-xs text-zinc-600 font-light leading-relaxed mt-1">
+                    Recorrido de 45 min por el estudio: observa lienzos en caballete, conoce los pigmentos amazónicos y conversa directamente con Elena del Pilar.
+                  </p>
+                </div>
                 <button
-                  onClick={() => onOpenInquiry({ title: "Visita Privada al Taller en Pucallpa", isStudioVisit: true })}
-                  className="text-xs uppercase tracking-wider font-bold text-zinc-950 hover:underline pt-1 inline-block cursor-pointer font-mono"
+                  onClick={onOpenStudioVisit}
+                  className="w-full text-xs uppercase tracking-wider font-bold bg-zinc-950 hover:bg-zinc-800 text-white py-2.5 px-4 rounded-xl transition-all shadow-xs flex items-center justify-center gap-1.5 cursor-pointer"
                 >
-                  Agendar Cita en Taller →
+                  <Calendar className="w-3.5 h-3.5" />
+                  <span>Agendar Visita al Taller</span>
                 </button>
               </div>
 

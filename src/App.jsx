@@ -14,6 +14,8 @@ const ArtworkDetailModal = lazy(() => import('./components/ArtworkDetailModal'))
 const InquiryModal = lazy(() => import('./components/InquiryModal'));
 const WorkshopModal = lazy(() => import('./components/WorkshopModal'));
 const DossierModal = lazy(() => import('./components/DossierModal'));
+const StudioVisitModal = lazy(() => import('./components/StudioVisitModal'));
+const CertificateModal = lazy(() => import('./components/CertificateModal'));
 
 export default function App() {
   const [selectedArtwork, setSelectedArtwork] = useState(null);
@@ -26,6 +28,11 @@ export default function App() {
   const [workshopDialogOpen, setWorkshopDialogOpen] = useState(false);
   const [workshopDialogMounted, setWorkshopDialogMounted] = useState(false);
   const [dossierModalOpen, setDossierModalOpen] = useState(false);
+  const [studioVisitModalOpen, setStudioVisitModalOpen] = useState(false);
+  const [studioVisitMounted, setStudioVisitMounted] = useState(false);
+  const [certificateModalOpen, setCertificateModalOpen] = useState(false);
+  const [certificateMounted, setCertificateMounted] = useState(false);
+  const [certificateArtwork, setCertificateArtwork] = useState(null);
   const restoreFocusRef = useRef(null);
   const skipArtworkFocusRestoreRef = useRef(false);
 
@@ -81,6 +88,19 @@ export default function App() {
     setWorkshopDialogMounted(false);
   };
 
+  const handleOpenCertificate = (artwork = null) => {
+    rememberActiveElement();
+    setCertificateArtwork(artwork);
+    setCertificateMounted(true);
+    setCertificateModalOpen(true);
+  };
+
+  const handleOpenStudioVisit = () => {
+    rememberActiveElement();
+    setStudioVisitMounted(true);
+    setStudioVisitModalOpen(true);
+  };
+
   return (
     <div className="min-h-screen bg-[#faf9f5] text-zinc-900 selection:bg-[#14532d] selection:text-white">
       {/* Skip to Content for Accessibility (WCAG 2.2) */}
@@ -102,6 +122,7 @@ export default function App() {
         <PortfolioSection 
           onSelectArtwork={handleSelectArtwork}
           onOpenInquiry={handleOpenInquiry}
+          onOpenCertificate={handleOpenCertificate}
         />
 
         {/* 1. Narrativa del Artista (Statement + Biografía + Enfoque) */}
@@ -120,11 +141,15 @@ export default function App() {
         <CredibilityAgenda 
           onOpenInquiry={handleOpenInquiry} 
           onOpenDossier={() => setDossierModalOpen(true)}
+          onOpenStudioVisit={handleOpenStudioVisit}
         />
       </main>
 
       {/* Footer */}
-      <Footer onOpenInquiry={handleOpenInquiry} />
+      <Footer 
+        onOpenInquiry={handleOpenInquiry} 
+        onOpenCertificate={() => handleOpenCertificate(null)}
+      />
 
       {/* Floating Collector WhatsApp Widget */}
       <FloatingWhatsApp onOpenInquiry={handleOpenInquiry} />
@@ -138,6 +163,7 @@ export default function App() {
             onClose={() => setArtworkDialogOpen(false)}
             onClosed={handleArtworkClosed}
             onOpenInquiry={handleOpenInquiry}
+            onOpenCertificate={handleOpenCertificate}
             restoreFocusRef={restoreFocusRef}
             skipFocusRestoreRef={skipArtworkFocusRestoreRef}
           />
@@ -166,6 +192,28 @@ export default function App() {
         {dossierModalOpen && (
           <DossierModal
             onClose={() => setDossierModalOpen(false)}
+          />
+        )}
+
+        {studioVisitMounted && (
+          <StudioVisitModal
+            open={studioVisitModalOpen}
+            onClose={() => setStudioVisitModalOpen(false)}
+            onClosed={() => setStudioVisitMounted(false)}
+            restoreFocusRef={restoreFocusRef}
+          />
+        )}
+
+        {certificateMounted && (
+          <CertificateModal
+            artwork={certificateArtwork}
+            open={certificateModalOpen}
+            onClose={() => setCertificateModalOpen(false)}
+            onClosed={() => {
+              setCertificateMounted(false);
+              setCertificateArtwork(null);
+            }}
+            restoreFocusRef={restoreFocusRef}
           />
         )}
       </Suspense>

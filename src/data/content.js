@@ -74,8 +74,8 @@ export const artworksData = [
     dimensions: "69 x 80 cm",
     materials: "Lienzo de algodón, acrílico de alta resistencia, pigmentos puros, orquídeas y follaje detallado",
     series: "Serie 'Hijas de la Selva'",
-    status: "disponible",
-    statusLabel: "Pieza Original Disponible",
+    status: "coleccion-privada",
+    statusLabel: "Colección Privada (Lima)",
     price: "S/. 500",
     priceNum: 500,
     hasPrints: true,
@@ -206,8 +206,8 @@ export const artworksData = [
     dimensions: "30 x 40 cm",
     materials: "Lienzo de algodón, acrílico profesional, veladuras nocturnas en azul prusia y verde esmeralda",
     series: "Serie 'Noches de Luna en Ucayali'",
-    status: "disponible",
-    statusLabel: "Pieza Original Disponible",
+    status: "coleccion-privada",
+    statusLabel: "Colección Privada (Pucallpa)",
     price: "S/. 150",
     priceNum: 150,
     hasPrints: true,
@@ -363,3 +363,75 @@ export const agendaEvents = [
     description: "Presentación de obras de gran formato en acrílico dedicadas a la flora, fauna y preservación de la selva."
   }
 ];
+
+export const printsData = [
+  {
+    id: "print-01",
+    artworkId: "obra-01",
+    title: "Yanapuma (Jaguar Negro Protector)",
+    series: "Edición Limitada de 50 copias seriadas",
+    paper: "Papel de algodón Fine Art Hahnemühle 310g o Canvas Mate",
+    sizes: [
+      { size: "A4 (21 × 30 cm)", price: "S/. 60 PEN" },
+      { size: "A3 (30 × 42 cm)", price: "S/. 90 PEN" },
+      { size: "Galería (40 × 50 cm)", price: "S/. 130 PEN" }
+    ],
+    image: "/obras/yanapuma.jpg",
+    description: "Reproducción Giclée con tintas pigmentadas de archivo de 100 años de durabilidad. Cada print viaja numerado y firmado a mano por Elena del Pilar."
+  },
+  {
+    id: "print-02",
+    artworkId: "obra-03",
+    title: "Garza Solitaria",
+    series: "Edición Limitada de 50 copias seriadas",
+    paper: "Papel de algodón Fine Art Hahnemühle 310g",
+    sizes: [
+      { size: "A3 (30 × 42 cm)", price: "S/. 100 PEN" },
+      { size: "Galería (50 × 70 cm)", price: "S/. 180 PEN" }
+    ],
+    image: "/obras/garza-solitaria.jpg",
+    description: "Impresión de alta resolución que reproduce los matices dorados del río Ucayali y la pincelada de espátula de la obra original."
+  },
+  {
+    id: "print-03",
+    artworkId: "obra-04",
+    title: "La Danza de los Colibríes",
+    series: "Edición Limitada de 50 copias seriadas",
+    paper: "Papel de algodón Fine Art Hahnemühle 310g",
+    sizes: [
+      { size: "A4 (21 × 30 cm)", price: "S/. 60 PEN" },
+      { size: "A3 (30 × 42 cm)", price: "S/. 110 PEN" },
+      { size: "Galería (40 × 50 cm)", price: "S/. 150 PEN" }
+    ],
+    image: "/obras/la-danza-de-los-colibries.jpg",
+    description: "Gama cromática fiel a los verdes y turquesas del dosel amazónico, con sello en relieve del taller y certificado de serie."
+  },
+  {
+    id: "print-04",
+    artworkId: "obra-06",
+    title: "Pelejo (Oso Perezoso en el Atardecer)",
+    series: "Edición Limitada de 50 copias seriadas",
+    paper: "Papel de algodón Fine Art Hahnemühle 310g",
+    sizes: [
+      { size: "A4 (21 × 30 cm)", price: "S/. 60 PEN" },
+      { size: "A3 (30 × 42 cm)", price: "S/. 90 PEN" }
+    ],
+    image: "/obras/pelejo.jpg",
+    description: "Colores cálidos crepusculares protegidos con barniz UV de archivo. Ideal para colecciones de arte botánico y fauna."
+  }
+];
+
+export const openStudioInfo = {
+  title: "Open Studio & Visitas Guiadas al Taller",
+  lead: "Conoce el espacio de creación en Pucallpa, observa lienzos en caballete y dialoga directamente con la artista.",
+  location: "Estudio Elena del Pilar — Pucallpa (Ucayali), Perú",
+  schedule: "Lunes a Sábado • Turnos previa reserva (10:00 AM y 3:30 PM)",
+  duration: "45 minutos",
+  includes: [
+    "Recorrido privado por el taller y obras en proceso",
+    "Demostración de pigmentos y texturas amazónicas",
+    "Degustación de café orgánico o infusión de la selva",
+    "Acceso preferente al catálogo de piezas disponibles"
+  ],
+  price: "Acceso Gratuito con Registro Previo"
+};
