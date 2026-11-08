@@ -14,7 +14,7 @@ the existing artistic direction or introducing backend work.
 - Preserve pre-existing untracked `.agents/`, `.atl/`, `.claude/`, and `skills-lock.json`.
 
 ## Work unit
-- [ ] T1: Deliver accessible dialogs and artwork inspection as one coherent frontend unit.
+- [x] T1: Deliver accessible dialogs and artwork inspection as one coherent frontend unit.
   - Replace modal plumbing with controlled Radix primitives and accessible labels.
   - Preserve focus restoration and the artwork-to-inquiry handoff.
   - Embed the zoom viewer without a competing modal focus scope.
@@ -47,7 +47,18 @@ touches multiple non-trivial component files. One writer owns all implementation
 - Native risk and candidate consent remain provider-owned; no review approval inferred.
 - Implementation diff: 252 authored changed lines, plus this tracking document;
   generated `package-lock.json` excluded from that count. No delivery split needed.
-- Commit and committed-candidate review disposition: pending.
+- Work-unit commit: `784e8c39e25387a4187a820301e15219e50827a1`.
+- Running authored count: 356 including this tracking checkpoint; generated
+  lockfile excluded. Source work-unit commit accounts for 332 authored changes.
+- Slice: one source work-unit commit plus a passive tracking-only checkpoint.
+- Native disposition: unavailable, not approved. Committed assessment returned
+  high/unassessable (`review_due=true`); exact preflight STATUS stopped with
+  `immutable_review_transport_unsupported`, `mutation_outcome=not_started`.
+- No START binding, consent, receipt, or acknowledgement was created; review mode
+  remains on. No retries, mode changes, alternate lineage, or substitute review.
+- High/unassessable fallback proof: writer checks, parent build spot check, and
+  independent functional verification recorded below. Delivery remains unmanaged.
+- The reviewed boundary has not advanced; this source commit has no native receipt.
 - Push, PR creation, and merge are not authorized.
 
 ## Progress and evidence
@@ -71,10 +82,13 @@ touches multiple non-trivial component files. One writer owns all implementation
   unrelated layout fix is included. Runtime verification therefore reports partial.
 - No automated suite exists; no RED/GREEN, screen-reader or WCAG-conformance claim.
 - Initial current-worktree assessment was high/unassessable due unrelated untracked
-  files; committed-only assessment and native consent remain pending.
+  files. Committed assessment and one preflight confirmed unavailable immutable
+  transport; no authority or repository mutation was started by review.
 - Browser tooling created untracked `.playwright-mcp/`; it is excluded from commits.
-- Engram mirror: `odd/accessible-artwork-viewer/tasks` (synchronized at task creation).
+- Engram mirror: `odd/accessible-artwork-viewer/tasks` (synchronized at this checkpoint).
 
 ## Rollback boundary and next step
 The work unit can be reverted independently: dependency additions, the five affected
-frontend files, and accompanying documentation. Next: work-unit commit and native review.
+frontend files, and accompanying documentation. T1 implementation and its proportional
+checks are complete with the explicit runtime/native limitations above. Next: user
+visual acceptance; any page-wide overflow repair needs separate scope authorization.
