@@ -42,6 +42,8 @@ export const artistInfo = {
 export const artworksData = [
   {
     id: "obra-01",
+    catalogNumber: "CAT. Nº 001/09",
+    scaleType: "featured",
     title: "Yanapuma (Jaguar Negro Protector)",
     year: 2024,
     category: "fauna-mistica",
@@ -62,6 +64,8 @@ export const artworksData = [
   },
   {
     id: "obra-02",
+    catalogNumber: "CAT. Nº 002/09",
+    scaleType: "medium",
     title: "Mujer del Amazonas",
     year: 2024,
     category: "identidad-amazona",
@@ -82,6 +86,8 @@ export const artworksData = [
   },
   {
     id: "obra-03",
+    catalogNumber: "CAT. Nº 003/09",
+    scaleType: "monumental",
     title: "Garza Solitaria",
     year: 2024,
     category: "paisaje-mistico",
@@ -102,6 +108,8 @@ export const artworksData = [
   },
   {
     id: "obra-04",
+    catalogNumber: "CAT. Nº 004/09",
+    scaleType: "medium",
     title: "La Danza de los Colibríes",
     year: 2024,
     category: "aves-amazonia",
@@ -122,6 +130,8 @@ export const artworksData = [
   },
   {
     id: "obra-05",
+    catalogNumber: "CAT. Nº 005/09",
+    scaleType: "medium",
     title: "Libélulas al Viento",
     year: 2024,
     category: "paisaje-mistico",
@@ -142,6 +152,8 @@ export const artworksData = [
   },
   {
     id: "obra-06",
+    catalogNumber: "CAT. Nº 006/09",
+    scaleType: "compact",
     title: "Pelejo (Oso Perezoso en el Atardecer)",
     year: 2024,
     category: "fauna-mistica",
@@ -162,6 +174,8 @@ export const artworksData = [
   },
   {
     id: "obra-07",
+    catalogNumber: "CAT. Nº 007/09",
+    scaleType: "compact",
     title: "Atardecer (Loros en la Cascada)",
     year: 2024,
     category: "aves-amazonia",
@@ -182,6 +196,8 @@ export const artworksData = [
   },
   {
     id: "obra-08",
+    catalogNumber: "CAT. Nº 008/09",
+    scaleType: "compact",
     title: "Aves Enamoradas",
     year: 2024,
     category: "aves-amazonia",
@@ -202,6 +218,8 @@ export const artworksData = [
   },
   {
     id: "obra-09",
+    catalogNumber: "CAT. Nº 009/09",
+    scaleType: "compact",
     title: "Observando la Naturaleza",
     year: 2024,
     category: "fauna-mistica",
