@@ -141,7 +141,7 @@ export default function CertificateModal({ artwork, open, onClose, onClosed, res
               <div className="w-24 h-24 rounded-full border-2 border-dashed border-zinc-400 flex flex-col items-center justify-center p-2 text-center text-zinc-500">
                 <ShieldCheck className="w-5 h-5 text-zinc-700" />
                 <span className="text-[8px] font-mono uppercase font-bold tracking-widest mt-1">Sello Oficial</span>
-                <span className="text-[7px] font-mono text-zinc-400">ARTE PILAR</span>
+                <span className="text-[7px] font-mono text-zinc-400">PILAR CHAVEZ</span>
               </div>
 
               <div className="text-center sm:text-right text-[10px] text-zinc-500 font-mono">
@@ -156,3 +156,4 @@ export default function CertificateModal({ artwork, open, onClose, onClosed, res
     </Dialog.Root>
   );
 }
+

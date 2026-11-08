@@ -2,7 +2,7 @@ export const artistInfo = {
   fullName: "Elena del Pilar Chávez Gutiérrez",
   name: "Elena Chávez",
   artisticName: "Elena del Pilar",
-  brandName: "ARTE PILAR",
+  brandName: "PILAR CHAVEZ",
   origin: "Pucallpa, Ucayali — Amazonía Peruana",
   tagline: "Artista Profesional • Acrílico sobre Lienzo, Texturas & Identidad Amazónica",
   manifestoQuote: "No veo la naturaleza como un escenario estático, sino como un organismo vivo en constante diálogo con la huella humana.",
@@ -12,28 +12,28 @@ export const artistInfo = {
     paragraphs: [
       "A través del acrílico, el óleo y el uso estratégico de texturas, busco capturar la majestuosidad y el alma vigilante de la Amazonía. Mi enfoque se centra en transformar la observación de la naturaleza en una experiencia de paz y contemplación, donde cada pincelada de color vibrante —desde el dinámico vuelo de un colibrí hasta la mirada profunda del jaguar— es un homenaje a la identidad de mi tierra y a la belleza de la creación.",
       "En la elaboración de mis obras utilizo acrílico y el óleo sobre el lienzo ambiental en una experiencia estética tangible. Busco un equilibrio entre el caos del crecimiento silvestre y la armonía de los ciclos naturales, creando piezas que invitan a la contemplación silenciosa y al respeto por lo no humano. Mi práctica artística nace de una profunda inquietud por el estado actual de nuestro entorno natural. No veo la naturaleza como un escenario estático, sino como un organismo vivo en constante diálogo con la huella humana. Mi visión busca reivindicar la belleza de lo orgánico y alertar sobre la fragilidad de los ecosistemas, transformando la conciencia.",
-      "El arte en Pucallpa no es solo observación, es una vivencia sensorial. La formación profesional me ha permitido darle una estructura y un propósito más profundo a esa herencia amazónica. Durante estos 4 años de formación rigurosa, mi trabajo ha evolucionado en la búsqueda constante por perfeccionar el manejo del color y la composición."
+      "El arte en Pucallpa no es solo observación, es una vivencia sensorial. La formación profesional me ha permitido darle una estructura y un propósito más profundo a esa herencia amazónica, evolucionando en la búsqueda constante por perfeccionar el manejo del color y la composición."
     ]
   },
   bio: {
     city: "Pucallpa, Ucayali (Perú)",
-    academicStatus: "4to año — Carrera de Artista Profesional",
+    academicStatus: "Artista Plástica Profesional",
     experienceYears: "Trayectoria independiente y académica",
     disciplines: ["Acrílico sobre Lienzo", "Óleo & Texturas", "Muralismo Amazónico", "Pintura Rápida al Aire Libre"],
     biographyFull: [
       "Nacida en el corazón de la Amazonía peruana, Pucallpa (Ucayali), Elena Chávez es una artista cuya identidad está profundamente arraigada a la biodiversidad de su tierra natal.",
       "Desde sus primeros pasos en el mundo del arte, Elena Chávez demostró una capacidad natural para capturar la esencia de la selva. Sus primeras obras, cargadas de la luz y el misterio de Ucayali, encontraron rápidamente resonancia en el público. Sus cuadros comenzaron a venderse de manera independiente desde sus inicios, lo que validó su propuesta estética y le permitió entender el arte no solo como expresión, sino como un puente de comunicación con el coleccionista.",
-      "A pesar del éxito comercial temprano, Elena tomó la decisión de profundizar en su lenguaje visual a través del estudio formal. Actualmente, se encuentra cursando el cuarto año de la carrera de Artista Profesional, un proceso que ha transformado su técnica y su capacidad conceptual.",
+      "A pesar del éxito comercial temprano, Elena tomó la decisión de profundizar y consolidar su lenguaje visual a través del estudio formal en la carrera de Artista Profesional, un proceso que ha transformado su técnica y su capacidad conceptual.",
       "Esto le ha permitido participar en concursos de pintura rápida y murales, dándole mayor versatilidad y seguridad en su arte, además de ayudar a forjar su carácter artístico.",
-      "Hoy en día, Elena del Pilar se perfila como una artista integral que combina la frescura de sus raíces pucallpinas con la solidez de una formación académica en curso. Su obra es un diálogo constante entre la diversidad de la selva y el cuidado y preservación de la misma."
+      "Hoy en día, Elena del Pilar se perfila como una artista integral que combina la frescura de sus raíces pucallpinas con la solidez de una rigurosa formación académica. Su obra es un diálogo constante entre la diversidad de la selva y el cuidado y preservación de la misma."
     ],
     avatar: "/obras/elena-chavez-perfil.jpg",
     studioImage: "/obras/elena-chavez-perfil.jpg"
   },
   contact: {
     email: "contacto@elenachavez.art",
-    phone: "+51 961 000 000",
-    whatsapp: "+51961000000",
+    phone: "+51 990 142 825",
+    whatsapp: "+51990142825",
     instagram: "@elenadelpilar.art",
     location: "Taller & Estudio: Pucallpa, Ucayali — Envíos a todo el Perú y al extranjero"
   }
@@ -310,7 +310,7 @@ export const workshopsData = [
 ];
 
 export const cvData = {
-  statementSummary: "Estudiante de 4to año de la carrera de Artista Profesional. Artista nacida en Pucallpa (Ucayali) con trayectoria en acrílico sobre lienzo, concursos de pintura rápida y muralismo de conservación ambiental.",
+  statementSummary: "Artista Plástica Profesional nacida en Pucallpa (Ucayali) con trayectoria en acrílico sobre lienzo, concursos de pintura rápida y muralismo de conservación ambiental.",
   soloExhibitions: [
     { year: "2024", title: "El Alma Vigilante de Ucayali", gallery: "Galería de Arte Regional", city: "Pucallpa, Ucayali" },
     { year: "2023", title: "Luz y Misterio de la Selva", gallery: "Espacio Cultural Amazónico", city: "Pucallpa, Perú" },
@@ -325,7 +325,7 @@ export const cvData = {
     { year: "2024", title: "Participación Destacada en Concurso de Pintura Rápida al Aire Libre", entity: "Certamen Regional Ucayali" },
     { year: "2023", title: "Ejecución de Mural Comunitario sobre Preservación Ambiental", entity: "Proyecto de Conservación de Ecosistemas" },
     { year: "2022", title: "Selección en Proyecto de Muralismo Urbano", entity: "Pucallpa, Ucayali" },
-    { year: "2021", title: "Ingreso a la Carrera Profesional de Artes Plásticas (4to año en curso)", entity: "Formación Artística Profesional" }
+    { year: "2021", title: "Formación en la Carrera Profesional de Artes Plásticas", entity: "Escuela Superior de Formación Artística" }
   ],
   press: [
     { media: "Diario Ahora Ucayali", quote: "Elena Chávez combina con maestría la frescura de sus raíces amazónicas con la disciplina y el rigor del estudio formal de la pintura." },

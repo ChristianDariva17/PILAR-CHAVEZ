@@ -1,4 +1,4 @@
-# Arte Pilar — Plataforma Web Oficial & Portafolio Curatorial
+# Pilar Chávez — Plataforma Web Oficial & Portafolio Curatorial
 
 Plataforma web diseñada a medida para el sector del **arte y las artes plásticas**, concebida como una **extensión digital de obra, estudio y galería**, tomando como referencia estética y funcional la web de [Elliott Túpac](https://elliottupac.com/).
 

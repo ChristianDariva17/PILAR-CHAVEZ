@@ -17,7 +17,7 @@ export default function ArtworkDetailModal({ artwork, open, onClose, onClosed, o
   const loupeContainerRef = useRef(null);
   const [loupePos, setLoupePos] = useState({ x: 50, y: 50, show: false, pageX: 0, pageY: 0 });
 
-  const cleanPhone = (artistInfo.contact.whatsapp || "+51961000000").replace(/[^0-9]/g, '');
+  const cleanPhone = (artistInfo.contact.whatsapp || "+51990142825").replace(/[^0-9]/g, '');
 
   const whatsappBuyUrl = `https://wa.me/${cleanPhone}?text=${encodeURIComponent(
     `Hola Elena, me interesa adquirir tu obra original "${artwork.title}" (${artwork.dimensions}, precio ${artwork.price}). ¿Sigue disponible y cómo coordinamos el envío?`

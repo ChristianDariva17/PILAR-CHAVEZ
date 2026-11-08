@@ -105,7 +105,7 @@ export default function Hero({ onOpenInquiry, onSelectArtwork }) {
                 <p className="text-[11px] text-zinc-500 font-mono">Ucayali — Perú</p>
               </div>
               <div>
-                <p className="text-xl sm:text-2xl font-black font-display text-zinc-950">4to Año</p>
+                <p className="text-xl sm:text-2xl font-black font-display text-zinc-950">Bellas Artes</p>
                 <p className="text-[11px] text-zinc-500 font-mono">Artista Profesional</p>
               </div>
               <div>

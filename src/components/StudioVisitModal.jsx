@@ -14,7 +14,7 @@ export default function StudioVisitModal({ open, onClose, onClosed, restoreFocus
   const [notes, setNotes] = useState('');
   const [confirmed, setConfirmed] = useState(false);
 
-  const cleanPhone = (artistInfo.contact.whatsapp || "+51961000000").replace(/[^0-9]/g, '');
+  const cleanPhone = (artistInfo.contact.whatsapp || "+51990142825").replace(/[^0-9]/g, '');
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -239,3 +239,4 @@ export default function StudioVisitModal({ open, onClose, onClosed, restoreFocus
     </Dialog.Root>
   );
 }
+

@@ -13,10 +13,10 @@ export default function ArtistStatement({ onOpenInquiry }) {
       text: "Nacida en Pucallpa (Ucayali), Elena demostró una capacidad natural para capturar la luz y el misterio de la selva. Sus primeros cuadros encontraron pronta resonancia y comenzaron a venderse de manera independiente desde sus comienzos, forjando su comprensión del arte como un puente directo de comunicación con el coleccionista."
     },
     {
-      period: "2021 — 2024",
-      tag: "Formación Formal",
-      title: "La Decisión Académica: 4 Años de Rigor Profesional",
-      text: "Lejos de conformarse con las ventas tempranas, Elena decidió profundizar en el lenguaje visual a través del estudio formal. Actualmente cursa el 4to año de la carrera de Artista Profesional, un proceso que ha transformado su técnica, su manejo del color, la composición y su solidez conceptual."
+      period: "Trayectoria Formal",
+      tag: "Formación Profesional",
+      title: "La Decisión Académica: Rigor y Maestría Técnica",
+      text: "Lejos de conformarse con las ventas tempranas, Elena decidió profundizar en el lenguaje visual a través del estudio formal en la carrera de Artista Profesional, un proceso que ha transformado su técnica, su manejo del color, la composición y su solidez conceptual."
     },
     {
       period: "Presente & Futuro",
@@ -89,7 +89,7 @@ export default function ArtistStatement({ onOpenInquiry }) {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
                 <div className="absolute bottom-5 left-5 right-5 space-y-1">
                   <span className="text-[10px] uppercase font-bold tracking-widest text-white bg-black/70 backdrop-blur-md px-2.5 py-0.5 rounded border border-white/20">
-                    Artista Profesional (4to Año)
+                    Artista Plástica Profesional
                   </span>
                   <p className="text-2xl font-black uppercase text-white font-display">
                     {artistInfo.fullName}
@@ -109,7 +109,7 @@ export default function ArtistStatement({ onOpenInquiry }) {
                 <span>Formación Académica Formal</span>
               </div>
               <p className="text-zinc-600 text-xs leading-relaxed font-light">
-                4to año de la carrera de Artista Profesional. Combinando la frescura intuitiva de Ucayali con la solidez de la composición clásica.
+                Carrera de Artista Profesional en Artes Plásticas. Combinando la frescura intuitiva de Ucayali con la solidez de la composición clásica.
               </p>
               <div className="pt-2 border-t border-zinc-100 flex items-center justify-between text-[11px] text-zinc-500">
                 <span>Especialidad: Acrílico & Texturas</span>

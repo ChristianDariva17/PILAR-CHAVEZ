@@ -38,7 +38,7 @@ export default function InquiryModal({ selectedItem, open, onClose, onClosed, re
     setSubmitted(true);
   };
 
-  const cleanPhone = (artistInfo.contact.whatsapp || "+51961000000").replace(/[^0-9]/g, '');
+  const cleanPhone = (artistInfo.contact.whatsapp || "+51990142825").replace(/[^0-9]/g, '');
 
   const whatsappMessage = encodeURIComponent(
     `Hola Elena, soy ${name || 'un coleccionista'}${city ? ` desde ${city}` : ''}.\nQuisiera consultar sobre: ${selectedItem?.title || 'obras en lienzo'}.\nMensaje: ${message}`

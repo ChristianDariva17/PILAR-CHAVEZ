@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import { Palette, Building2, Calendar, Users, Clock, Check, ArrowUpRight, MessageCircle, Sparkles, Printer, ShieldCheck } from 'lucide-react';
-import { workshopsData, artworksData, printsData } from '../data/content';
+import { workshopsData, artworksData, printsData, artistInfo } from '../data/content';
 
 export default function StoreMonetization({ onOpenInquiry, onSelectWorkshop }) {
   const [activeTab, setActiveTab] = useState('comisiones'); // 'comisiones' | 'prints' | 'murales' | 'workshops'
+  const cleanPhone = (artistInfo?.contact?.whatsapp || "+51990142825").replace(/[^0-9]/g, '');
   const [selectedPrintSizes, setSelectedPrintSizes] = useState({
     'print-01': 0,
     'print-02': 0,
@@ -123,7 +124,7 @@ export default function StoreMonetization({ onOpenInquiry, onSelectWorkshop }) {
 
                 <div className="pt-2 flex flex-wrap items-center gap-3">
                   <a
-                    href={`https://wa.me/51961000000?text=${encodeURIComponent(
+                    href={`https://wa.me/${cleanPhone}?text=${encodeURIComponent(
                       "Hola Elena, me gustaría consultar la cotización de una obra por encargo personalizado en acrílico sobre lienzo."
                     )}`}
                     target="_blank"
@@ -218,7 +219,6 @@ export default function StoreMonetization({ onOpenInquiry, onSelectWorkshop }) {
               {printsData.map((item) => {
                 const currentSizeIdx = selectedPrintSizes[item.id] || 0;
                 const activeSize = item.sizes[currentSizeIdx] || item.sizes[0];
-                const cleanPhone = "51961000000";
                 const whatsappUrl = `https://wa.me/${cleanPhone}?text=${encodeURIComponent(
                   `Hola Elena, quisiera adquirir el Print Seriado de autor de "${item.title}" en formato ${activeSize.size} (${activeSize.price}). ¿Cómo coordinamos el envío?`
                 )}`;
@@ -348,7 +348,7 @@ export default function StoreMonetization({ onOpenInquiry, onSelectWorkshop }) {
                   <span className="font-bold text-zinc-950">Cotización por metro cuadrado:</span> Ajustada según dimensiones, superficie y ubicación.
                 </div>
                 <a
-                  href={`https://wa.me/51961000000?text=${encodeURIComponent(
+                  href={`https://wa.me/${cleanPhone}?text=${encodeURIComponent(
                     "Hola Elena, quisiera consultar la cotización de un proyecto de muralismo para un espacio comercial / hotel."
                   )}`}
                   target="_blank"

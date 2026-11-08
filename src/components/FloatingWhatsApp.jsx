@@ -4,7 +4,7 @@ import { artistInfo } from '../data/content';
 
 export default function FloatingWhatsApp({ onOpenInquiry }) {
   const [isOpen, setIsOpen] = useState(false);
-  const cleanPhone = (artistInfo.contact.whatsapp || "+51961000000").replace(/[^0-9]/g, '');
+  const cleanPhone = (artistInfo.contact.whatsapp || "+51990142825").replace(/[^0-9]/g, '');
 
   return (
     <div className="fixed bottom-6 right-6 z-40 flex flex-col items-end">
@@ -22,7 +22,7 @@ export default function FloatingWhatsApp({ onOpenInquiry }) {
                 <span className="absolute bottom-0 right-0 w-2.5 h-2.5 rounded-full bg-emerald-600 border-2 border-white"></span>
               </div>
               <div>
-                <p className="text-xs font-bold text-zinc-950 font-display">Estudio Arte Pilar</p>
+                <p className="text-xs font-bold text-zinc-950 font-display">Estudio Pilar Chávez</p>
                 <p className="text-[10px] text-zinc-500 font-mono">● En línea para coleccionistas</p>
               </div>
             </div>
@@ -43,7 +43,7 @@ export default function FloatingWhatsApp({ onOpenInquiry }) {
           <div className="pt-2 flex flex-col gap-2">
             <a
               href={`https://wa.me/${cleanPhone}?text=${encodeURIComponent(
-                "Hola Elena, visité el sitio oficial de Arte Pilar y me gustaría recibir información sobre tus obras en lienzo y catálogo disponible."
+                "Hola Elena, visité el sitio oficial de Pilar Chávez y me gustaría recibir información sobre tus obras en lienzo y catálogo disponible."
               )}`}
               target="_blank"
               rel="noopener noreferrer"

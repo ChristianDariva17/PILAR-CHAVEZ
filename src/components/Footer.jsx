@@ -13,7 +13,7 @@ function InstagramIcon({ className = "w-4 h-4" }) {
 }
 
 export default function Footer({ onOpenInquiry, onOpenCertificate }) {
-  const cleanPhone = (artistInfo.contact.whatsapp || "+51961000000").replace(/[^0-9]/g, '');
+  const cleanPhone = (artistInfo.contact.whatsapp || "+51990142825").replace(/[^0-9]/g, '');
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
