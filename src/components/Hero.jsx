@@ -55,7 +55,7 @@ export default function Hero({ onOpenInquiry, onSelectArtwork }) {
               <span>Estudio Oficial • Pucallpa (Ucayali)</span>
             </motion.div>
 
-            <motion.h1 variants={itemVariants} className="text-5xl sm:text-7xl lg:text-8xl font-black tracking-tight uppercase font-display leading-[0.92] text-zinc-950">
+            <motion.h1 variants={itemVariants} className="text-4xl sm:text-7xl lg:text-8xl font-bold tracking-tight uppercase font-display leading-[0.95] text-zinc-950">
               EL ALMA <br />
               <span className="font-serif-art italic font-normal text-emerald-950 lowercase">
                 Amazónica
@@ -63,20 +63,20 @@ export default function Hero({ onOpenInquiry, onSelectArtwork }) {
               EN EL LIENZO.
             </motion.h1>
 
-            <motion.p variants={itemVariants} className="text-lg sm:text-xl text-zinc-600 font-light max-w-xl leading-relaxed">
+            <motion.p variants={itemVariants} className="text-base sm:text-xl text-zinc-700 font-normal max-w-xl leading-relaxed">
               Extensión digital de la obra de <span className="font-semibold text-zinc-900">{artistInfo.fullName}</span> ({artistInfo.artisticName}). 
               Un diálogo contemporáneo entre la exuberancia viva de Ucayali, el acrílico sobre lienzo y el rigor académico profesional.
             </motion.p>
 
-            <motion.blockquote variants={itemVariants} className="border-l-2 border-zinc-950 pl-4 py-1.5 italic text-sm text-zinc-700 font-serif-art max-w-lg bg-zinc-100/60 rounded-r-lg">
+            <motion.blockquote variants={itemVariants} className="border-l-2 border-zinc-950 pl-4 py-1.5 italic text-sm sm:text-base text-zinc-700 font-serif-art max-w-lg bg-zinc-100/60 rounded-r-lg">
               "{artistInfo.manifestoQuote}"
             </motion.blockquote>
 
-            {/* CTAs */}
-            <motion.div variants={itemVariants} className="flex flex-wrap items-center gap-4 pt-2">
+            {/* CTAs with Mobile Full-Width Responsive Hierarchy */}
+            <motion.div variants={itemVariants} className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-4 pt-2">
               <a
                 href="#portafolio"
-                className="inline-flex items-center gap-2 bg-zinc-950 hover:bg-zinc-800 text-white font-bold px-7 py-3.5 rounded-full text-xs uppercase tracking-wider transition-all shadow-md hover:shadow-xl hover:scale-102"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-zinc-950 hover:bg-zinc-800 text-white font-bold px-7 py-3.5 rounded-full text-xs uppercase tracking-wider transition-all shadow-md hover:shadow-xl active:scale-98"
               >
                 <span>Explorar Obras Originales</span>
                 <Eye className="w-4 h-4 text-zinc-300" />
@@ -84,7 +84,7 @@ export default function Hero({ onOpenInquiry, onSelectArtwork }) {
 
               <a
                 href="#comisiones"
-                className="inline-flex items-center gap-2 bg-white hover:bg-zinc-50 text-zinc-900 border border-zinc-300 font-bold px-7 py-3.5 rounded-full text-xs uppercase tracking-wider transition-all shadow-xs"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-white hover:bg-zinc-50 text-zinc-900 border border-zinc-300 font-bold px-7 py-3.5 rounded-full text-xs uppercase tracking-wider transition-all shadow-xs active:scale-98"
               >
                 <span>Encargar Obra a Medida</span>
                 <ArrowUpRight className="w-4 h-4 text-emerald-800" />
@@ -92,25 +92,25 @@ export default function Hero({ onOpenInquiry, onSelectArtwork }) {
 
               <a
                 href="#el-artista"
-                className="inline-flex items-center gap-2 text-zinc-600 hover:text-zinc-950 font-medium text-xs uppercase tracking-wider px-3 py-3 transition-colors"
+                className="text-center sm:text-left inline-flex items-center justify-center gap-2 text-zinc-600 hover:text-zinc-950 font-medium text-xs uppercase tracking-wider px-3 py-2 transition-colors"
               >
                 <span>Biografía & Trayectoria</span>
               </a>
             </motion.div>
 
             {/* Real Social Proof / Metrics */}
-            <motion.div variants={itemVariants} className="pt-8 grid grid-cols-3 gap-6 border-t border-zinc-200 max-w-lg">
+            <motion.div variants={itemVariants} className="pt-8 grid grid-cols-3 gap-3 sm:gap-6 border-t border-zinc-200 max-w-lg">
               <div>
-                <p className="text-xl sm:text-2xl font-black font-display text-zinc-950">Pucallpa</p>
-                <p className="text-[11px] text-zinc-500 font-mono">Ucayali — Perú</p>
+                <p className="text-lg sm:text-2xl font-bold font-display text-zinc-950">Pucallpa</p>
+                <p className="text-[10px] sm:text-[11px] text-zinc-500 font-mono">Ucayali — Perú</p>
               </div>
               <div>
-                <p className="text-xl sm:text-2xl font-black font-display text-zinc-950">Bellas Artes</p>
-                <p className="text-[11px] text-zinc-500 font-mono">Artista Profesional</p>
+                <p className="text-lg sm:text-2xl font-bold font-display text-zinc-950">Bellas Artes</p>
+                <p className="text-[10px] sm:text-[11px] text-zinc-500 font-mono">Artista Profesional</p>
               </div>
               <div>
-                <p className="text-xl sm:text-2xl font-black font-display text-zinc-950">100%</p>
-                <p className="text-[11px] text-zinc-500 font-mono">Originales en Lienzo</p>
+                <p className="text-lg sm:text-2xl font-bold font-display text-zinc-950">100%</p>
+                <p className="text-[10px] sm:text-[11px] text-zinc-500 font-mono">Originales en Lienzo</p>
               </div>
             </motion.div>
           </motion.div>

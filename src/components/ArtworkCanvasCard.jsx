@@ -26,6 +26,8 @@ export default function ArtworkCanvasCard({ artwork, onSelectArtwork, onOpenInqu
 
   const handleMouseMove = (e) => {
     if (shouldReduceMotion || !cardRef.current) return;
+    // Skip 3D tilt calculations on touch screens to save GPU battery & prevent scroll jitter
+    if (typeof window !== 'undefined' && window.matchMedia && !window.matchMedia('(hover: hover)').matches) return;
     const rect = cardRef.current.getBoundingClientRect();
     const x = (e.clientX - rect.left) / rect.width;
     const y = (e.clientY - rect.top) / rect.height;
@@ -68,7 +70,7 @@ export default function ArtworkCanvasCard({ artwork, onSelectArtwork, onOpenInqu
             rotateY: shouldReduceMotion ? 0 : rotateY,
             transformStyle: 'preserve-3d',
           }}
-          className={`relative h-full rounded-2xl bg-white border border-zinc-200/90 transition-all duration-300 flex flex-col justify-between overflow-hidden shadow-[0_10px_30px_rgba(0,0,0,0.05)] p-5 sm:p-6 ${
+          className={`relative h-full rounded-2xl bg-white border border-zinc-200/90 transition-all duration-300 flex flex-col justify-between overflow-hidden shadow-[0_10px_30px_rgba(0,0,0,0.05)] p-4 sm:p-6 active:scale-[0.99] sm:active:scale-100 ${
             isHovered ? 'border-zinc-400 shadow-[0_22px_50px_rgba(0,0,0,0.1)]' : ''
           }`}
         >

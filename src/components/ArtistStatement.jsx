@@ -37,11 +37,11 @@ export default function ArtistStatement({ onOpenInquiry }) {
             <span>Biografía & Manifiesto • Elena del Pilar</span>
           </div>
 
-          {/* Interactive Navigation Pills */}
-          <div className="inline-flex p-1 rounded-2xl bg-white border border-zinc-200 shadow-xs">
+          {/* Interactive Navigation Pills with Mobile Horizontal Scroll */}
+          <div className="flex items-center gap-1 p-1 rounded-2xl bg-white border border-zinc-200 shadow-xs overflow-x-auto no-scrollbar max-w-full">
             <button
               onClick={() => setActiveTab('timeline')}
-              className={`text-xs uppercase tracking-wider font-semibold px-4 py-2 rounded-xl transition-all cursor-pointer flex items-center gap-1.5 ${
+              className={`shrink-0 whitespace-nowrap text-xs uppercase tracking-wider font-semibold px-4 py-2 rounded-xl transition-all cursor-pointer flex items-center gap-1.5 ${
                 activeTab === 'timeline'
                   ? 'bg-zinc-950 text-white font-bold shadow-xs'
                   : 'text-zinc-600 hover:text-zinc-950'
@@ -52,7 +52,7 @@ export default function ArtistStatement({ onOpenInquiry }) {
             </button>
             <button
               onClick={() => setActiveTab('declaracion')}
-              className={`text-xs uppercase tracking-wider font-semibold px-4 py-2 rounded-xl transition-all cursor-pointer flex items-center gap-1.5 ${
+              className={`shrink-0 whitespace-nowrap text-xs uppercase tracking-wider font-semibold px-4 py-2 rounded-xl transition-all cursor-pointer flex items-center gap-1.5 ${
                 activeTab === 'declaracion'
                   ? 'bg-zinc-950 text-white font-bold shadow-xs'
                   : 'text-zinc-600 hover:text-zinc-950'
@@ -63,7 +63,7 @@ export default function ArtistStatement({ onOpenInquiry }) {
             </button>
             <button
               onClick={() => setActiveTab('proceso')}
-              className={`text-xs uppercase tracking-wider font-semibold px-4 py-2 rounded-xl transition-all cursor-pointer flex items-center gap-1.5 ${
+              className={`shrink-0 whitespace-nowrap text-xs uppercase tracking-wider font-semibold px-4 py-2 rounded-xl transition-all cursor-pointer flex items-center gap-1.5 ${
                 activeTab === 'proceso'
                   ? 'bg-zinc-950 text-white font-bold shadow-xs'
                   : 'text-zinc-600 hover:text-zinc-950'

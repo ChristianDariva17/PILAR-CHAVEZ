@@ -58,7 +58,7 @@ export default function ArtworkDetailModal({ artwork, open, onClose, onClosed, o
           }}
         >
           {/* Top bar with Close & View Switcher */}
-          <div className="flex flex-wrap items-center justify-between gap-3 px-6 py-4 border-b border-zinc-200/80 bg-[#faf9f5]">
+          <div className="flex flex-wrap items-center justify-between gap-2 sm:gap-3 px-4 sm:px-6 py-3 sm:py-4 border-b border-zinc-200/80 bg-[#faf9f5]">
             <div className="flex items-center gap-2">
               <span className="w-2 h-2 rounded-full bg-zinc-800"></span>
               <span className="text-xs font-mono font-bold uppercase tracking-widest text-zinc-800">
@@ -70,44 +70,47 @@ export default function ArtworkDetailModal({ artwork, open, onClose, onClosed, o
               </span>
             </div>
 
-            <div className="flex items-center gap-3">
+            <div className="flex items-center gap-2 sm:gap-3">
               {/* View Mode Toggle: Detalle vs Lupa vs En la Pared */}
-              <div className="flex items-center bg-zinc-100 p-1 rounded-full border border-zinc-200 text-xs">
+              <div className="flex items-center bg-zinc-100 p-0.5 sm:p-1 rounded-full border border-zinc-200 text-xs">
                 <button
                   onClick={() => setViewMode('detalle')}
-                  className={`px-3 py-1.5 rounded-full font-bold transition-all cursor-pointer flex items-center gap-1.5 ${
+                  className={`px-2.5 sm:px-3 py-1.5 rounded-full font-bold transition-all cursor-pointer flex items-center gap-1 sm:gap-1.5 ${
                     viewMode === 'detalle' ? 'bg-zinc-900 text-white font-bold shadow-xs' : 'text-zinc-600 hover:text-zinc-950'
                   }`}
                 >
                   <Eye className="w-3.5 h-3.5" />
-                  <span>Obra Completa</span>
+                  <span className="hidden sm:inline">Obra Completa</span>
+                  <span className="sm:hidden text-[11px]">Lienzo</span>
                 </button>
 
                 <button
                   onClick={() => setViewMode('lupa')}
-                  className={`px-3 py-1.5 rounded-full font-bold transition-all cursor-pointer flex items-center gap-1.5 ${
+                  className={`px-2.5 sm:px-3 py-1.5 rounded-full font-bold transition-all cursor-pointer flex items-center gap-1 sm:gap-1.5 ${
                     viewMode === 'lupa' ? 'bg-zinc-900 text-white font-bold shadow-xs' : 'text-zinc-600 hover:text-zinc-950'
                   }`}
                 >
                   <Search className="w-3.5 h-3.5" />
-                  <span>Lupa de Textura (2.8x)</span>
+                  <span className="hidden sm:inline">Lupa de Textura (2.8x)</span>
+                  <span className="sm:hidden text-[11px]">Lupa 2.8x</span>
                 </button>
 
                 <button
                   onClick={() => setViewMode('en_pared')}
-                  className={`px-3 py-1.5 rounded-full font-bold transition-all cursor-pointer flex items-center gap-1.5 ${
+                  className={`px-2.5 sm:px-3 py-1.5 rounded-full font-bold transition-all cursor-pointer flex items-center gap-1 sm:gap-1.5 ${
                     viewMode === 'en_pared' ? 'bg-zinc-900 text-white font-bold shadow-xs' : 'text-zinc-600 hover:text-zinc-950'
                   }`}
                 >
                   <Layers className="w-3.5 h-3.5" />
-                  <span>En la Pared</span>
+                  <span className="hidden sm:inline">En la Pared</span>
+                  <span className="sm:hidden text-[11px]">Pared</span>
                 </button>
               </div>
 
               <Dialog.Close asChild>
                 <button
                   aria-label="Cerrar detalles de la obra"
-                  className="w-9 h-9 rounded-full bg-zinc-100 hover:bg-zinc-200 text-zinc-700 hover:text-zinc-950 flex items-center justify-center transition-colors cursor-pointer border border-zinc-200"
+                  className="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-zinc-100 hover:bg-zinc-200 text-zinc-700 hover:text-zinc-950 flex items-center justify-center transition-colors cursor-pointer border border-zinc-200 shrink-0"
                 >
                   <X className="w-4 h-4" />
                 </button>
@@ -315,7 +318,7 @@ export default function ArtworkDetailModal({ artwork, open, onClose, onClosed, o
             </div>
 
             {/* Right Column: Ficha Técnica, Storytelling & WhatsApp Purchase (5 cols) */}
-            <div className="lg:col-span-5 p-6 sm:p-8 flex flex-col justify-between space-y-6 bg-white">
+            <div className="lg:col-span-5 p-4 sm:p-8 flex flex-col justify-between space-y-5 sm:space-y-6 bg-white">
               <div className="space-y-4">
                 <div>
                   <div className="flex items-center gap-2 mb-1">

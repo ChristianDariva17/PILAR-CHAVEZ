@@ -50,10 +50,10 @@ export default function PortfolioSection({ onSelectArtwork, onOpenInquiry, onOpe
           </div>
 
           {/* Availability Pills (Disponibles vs Colección Privada) */}
-          <div className="flex items-center gap-1.5 p-1 bg-white rounded-2xl border border-zinc-200 shadow-xs text-xs">
+          <div className="flex items-center gap-1.5 p-1 bg-white rounded-2xl border border-zinc-200 shadow-xs text-xs overflow-x-auto no-scrollbar max-w-full">
             <button
               onClick={() => setAvailabilityFilter('todas')}
-              className={`px-3.5 py-1.5 rounded-xl font-semibold transition-all cursor-pointer ${
+              className={`shrink-0 whitespace-nowrap px-3.5 py-1.5 rounded-xl font-semibold transition-all cursor-pointer ${
                 availabilityFilter === 'todas'
                   ? 'bg-zinc-950 text-white font-bold shadow-xs'
                   : 'text-zinc-600 hover:text-zinc-950 hover:bg-zinc-50'
@@ -63,17 +63,17 @@ export default function PortfolioSection({ onSelectArtwork, onOpenInquiry, onOpe
             </button>
             <button
               onClick={() => setAvailabilityFilter('disponible')}
-              className={`px-3.5 py-1.5 rounded-xl font-semibold transition-all cursor-pointer ${
+              className={`shrink-0 whitespace-nowrap px-3.5 py-1.5 rounded-xl font-semibold transition-all cursor-pointer ${
                 availabilityFilter === 'disponible'
                   ? 'bg-zinc-950 text-white font-bold shadow-xs'
                   : 'text-zinc-600 hover:text-zinc-950 hover:bg-zinc-50'
               }`}
             >
-              Disponibles Hoy ({artworksData.filter(a => a.status === 'disponible').length})
+              Disponibles ({artworksData.filter(a => a.status === 'disponible').length})
             </button>
             <button
               onClick={() => setAvailabilityFilter('coleccion-privada')}
-              className={`px-3.5 py-1.5 rounded-xl font-semibold transition-all cursor-pointer ${
+              className={`shrink-0 whitespace-nowrap px-3.5 py-1.5 rounded-xl font-semibold transition-all cursor-pointer ${
                 availabilityFilter === 'coleccion-privada'
                   ? 'bg-zinc-950 text-white font-bold shadow-xs'
                   : 'text-zinc-600 hover:text-zinc-950 hover:bg-zinc-50'
@@ -85,14 +85,14 @@ export default function PortfolioSection({ onSelectArtwork, onOpenInquiry, onOpe
         </div>
 
         {/* Secondary Bar: Thematic Filters & Sorter */}
-        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-12">
-          {/* Filter Pills */}
-          <div className="flex flex-wrap gap-1.5 p-1 bg-white rounded-2xl border border-zinc-200 shadow-xs">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-10">
+          {/* Filter Pills with Horizontal Swipe on Mobile */}
+          <div className="flex items-center gap-1.5 p-1 bg-white rounded-2xl border border-zinc-200 shadow-xs overflow-x-auto no-scrollbar max-w-full">
             {categories.map((cat) => (
               <button
                 key={cat.id}
                 onClick={() => setActiveCategory(cat.id)}
-                className={`text-xs uppercase tracking-wider font-semibold px-3.5 py-1.5 rounded-xl transition-all cursor-pointer ${
+                className={`shrink-0 whitespace-nowrap text-xs uppercase tracking-wider font-semibold px-3.5 py-1.5 rounded-xl transition-all cursor-pointer ${
                   activeCategory === cat.id
                     ? 'bg-zinc-950 text-white font-bold shadow-xs'
                     : 'text-zinc-600 hover:text-zinc-950 hover:bg-zinc-50'
@@ -104,7 +104,7 @@ export default function PortfolioSection({ onSelectArtwork, onOpenInquiry, onOpe
           </div>
 
           {/* Sorter Selector */}
-          <div className="flex items-center gap-2 bg-white px-3 py-1.5 rounded-xl border border-zinc-200 text-xs shadow-xs">
+          <div className="flex items-center self-start sm:self-auto gap-2 bg-white px-3 py-1.5 rounded-xl border border-zinc-200 text-xs shadow-xs">
             <SlidersHorizontal className="w-3.5 h-3.5 text-zinc-500 shrink-0" />
             <select
               value={sortBy}

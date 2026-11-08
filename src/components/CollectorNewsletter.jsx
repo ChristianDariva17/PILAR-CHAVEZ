@@ -32,7 +32,7 @@ export default function CollectorNewsletter() {
   return (
     <section id="newsletter" className="py-24 bg-[#faf9f5] relative border-t border-zinc-200/80">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="bg-white border border-zinc-200/90 rounded-3xl p-8 sm:p-12 lg:p-16 shadow-sm relative">
+        <div className="bg-white border border-zinc-200/90 rounded-3xl p-6 sm:p-12 lg:p-16 shadow-sm relative">
           
           {/* Top pill */}
           <div className="flex justify-center mb-6">

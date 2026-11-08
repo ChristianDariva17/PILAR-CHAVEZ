@@ -75,11 +75,11 @@ export default function Navbar({ onOpenInquiry }) {
             </button>
           </div>
 
-          {/* Mobile menu trigger */}
+          {/* Mobile menu trigger with 48px touch target */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="md:hidden text-zinc-800 hover:text-black p-2"
-            aria-label="Abrir menú"
+            className="md:hidden text-zinc-800 hover:text-black p-2.5 min-w-[44px] min-h-[44px] flex items-center justify-center cursor-pointer rounded-lg hover:bg-zinc-100"
+            aria-label={mobileMenuOpen ? "Cerrar menú" : "Abrir menú"}
           >
             {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>

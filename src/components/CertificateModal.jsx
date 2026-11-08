@@ -16,7 +16,7 @@ export default function CertificateModal({ artwork, open, onClose, onClosed, res
       <Dialog.Portal>
         <Dialog.Overlay className="fixed inset-0 z-50 bg-black/80 backdrop-blur-md print:hidden" />
         <Dialog.Content
-          className="fixed z-50 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[calc(100%-1.5rem)] max-w-3xl max-h-[calc(100dvh-1.5rem)] overflow-y-auto bg-white border border-zinc-200/90 rounded-3xl p-6 sm:p-10 shadow-2xl animate-in fade-in zoom-in-95 duration-200 text-zinc-900 print:fixed print:inset-0 print:translate-x-0 print:translate-y-0 print:w-full print:max-w-none print:max-h-none print:rounded-none print:border-none print:shadow-none print:p-8"
+          className="fixed z-50 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[calc(100%-1.5rem)] max-w-3xl max-h-[calc(100dvh-1.5rem)] overflow-y-auto bg-white border border-zinc-200/90 rounded-2xl sm:rounded-3xl p-4 sm:p-10 shadow-2xl animate-in fade-in zoom-in-95 duration-200 text-zinc-900 print:fixed print:inset-0 print:translate-x-0 print:translate-y-0 print:w-full print:max-w-none print:max-h-none print:rounded-none print:border-none print:shadow-none print:p-8"
           onCloseAutoFocus={(event) => {
             event.preventDefault();
             restoreFocusRef.current?.focus();

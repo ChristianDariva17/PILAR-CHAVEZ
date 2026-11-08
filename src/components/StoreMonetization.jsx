@@ -35,11 +35,11 @@ export default function StoreMonetization({ onOpenInquiry, onSelectWorkshop }) {
             </p>
           </div>
 
-          {/* Toggle buttons */}
-          <div className="bg-white p-1 rounded-2xl border border-zinc-200 shadow-xs flex flex-wrap gap-1">
+          {/* Toggle buttons with Horizontal Scroll on Mobile */}
+          <div className="bg-white p-1 rounded-2xl border border-zinc-200 shadow-xs flex items-center gap-1 overflow-x-auto no-scrollbar max-w-full">
             <button
               onClick={() => setActiveTab('comisiones')}
-              className={`text-xs uppercase tracking-wider font-semibold px-4 py-2 rounded-xl transition-all flex items-center gap-1.5 cursor-pointer ${
+              className={`shrink-0 whitespace-nowrap text-xs uppercase tracking-wider font-semibold px-4 py-2 rounded-xl transition-all flex items-center gap-1.5 cursor-pointer ${
                 activeTab === 'comisiones'
                   ? 'bg-zinc-950 text-white font-bold shadow-xs'
                   : 'text-zinc-600 hover:text-zinc-950'
@@ -51,7 +51,7 @@ export default function StoreMonetization({ onOpenInquiry, onSelectWorkshop }) {
 
             <button
               onClick={() => setActiveTab('prints')}
-              className={`text-xs uppercase tracking-wider font-semibold px-4 py-2 rounded-xl transition-all flex items-center gap-1.5 cursor-pointer ${
+              className={`shrink-0 whitespace-nowrap text-xs uppercase tracking-wider font-semibold px-4 py-2 rounded-xl transition-all flex items-center gap-1.5 cursor-pointer ${
                 activeTab === 'prints'
                   ? 'bg-zinc-950 text-white font-bold shadow-xs'
                   : 'text-zinc-600 hover:text-zinc-950'
@@ -63,7 +63,7 @@ export default function StoreMonetization({ onOpenInquiry, onSelectWorkshop }) {
 
             <button
               onClick={() => setActiveTab('murales')}
-              className={`text-xs uppercase tracking-wider font-semibold px-4 py-2 rounded-xl transition-all flex items-center gap-1.5 cursor-pointer ${
+              className={`shrink-0 whitespace-nowrap text-xs uppercase tracking-wider font-semibold px-4 py-2 rounded-xl transition-all flex items-center gap-1.5 cursor-pointer ${
                 activeTab === 'murales'
                   ? 'bg-zinc-950 text-white font-bold shadow-xs'
                   : 'text-zinc-600 hover:text-zinc-950'
@@ -75,7 +75,7 @@ export default function StoreMonetization({ onOpenInquiry, onSelectWorkshop }) {
 
             <button
               onClick={() => setActiveTab('workshops')}
-              className={`text-xs uppercase tracking-wider font-semibold px-4 py-2 rounded-xl transition-all flex items-center gap-1.5 cursor-pointer ${
+              className={`shrink-0 whitespace-nowrap text-xs uppercase tracking-wider font-semibold px-4 py-2 rounded-xl transition-all flex items-center gap-1.5 cursor-pointer ${
                 activeTab === 'workshops'
                   ? 'bg-zinc-950 text-white font-bold shadow-xs'
                   : 'text-zinc-600 hover:text-zinc-950'
