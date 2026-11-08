@@ -3,4 +3,7 @@ dist
 .DS_Store
 *.local
 .playwright-mcp/
+.atl/
+.claude/
+
 
