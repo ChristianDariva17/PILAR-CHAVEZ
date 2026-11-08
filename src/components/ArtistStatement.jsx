@@ -88,7 +88,7 @@ export default function ArtistStatement({ onOpenInquiry }) {
               <div className="relative rounded-2xl overflow-hidden border border-emerald-500/30 shadow-2xl bg-[#08140e] aspect-[4/5]">
                 <img
                   src={artistInfo.bio.avatar}
-                  alt={`Obra representativa de ${artistInfo.fullName}`}
+                  alt={`Fotografía de ${artistInfo.fullName} pintando al aire libre en Pucallpa`}
                   className="w-full h-full object-cover object-center group-hover:scale-102 transition duration-700"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/20 to-transparent"></div>

@@ -27,8 +27,8 @@ export const artistInfo = {
       "Esto le ha permitido participar en concursos de pintura rápida y murales, dándole mayor versatilidad y seguridad en su arte, además de ayudar a forjar su carácter artístico.",
       "Hoy en día, Elena del Pilar se perfila como una artista integral que combina la frescura de sus raíces pucallpinas con la solidez de una formación académica en curso. Su obra es un diálogo constante entre la diversidad de la selva y el cuidado y preservación de la misma."
     ],
-    avatar: "/obras/mujer-del-amazonas.jpg",
-    studioImage: "/obras/garza-solitaria.jpg"
+    avatar: "/obras/elena-chavez-perfil.jpg",
+    studioImage: "/obras/elena-chavez-perfil.jpg"
   },
   contact: {
     email: "contacto@elenachavez.art",
