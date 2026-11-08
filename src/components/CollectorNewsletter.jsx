@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Mail, Sparkles, Check, Lock, ShieldCheck, ArrowRight, Download, Gift } from 'lucide-react';
+import { Mail, Sparkles, Check, Lock, ShieldCheck, ArrowRight, Download } from 'lucide-react';
 
 export default function CollectorNewsletter() {
   const [email, setEmail] = useState('');
@@ -30,76 +30,73 @@ export default function CollectorNewsletter() {
   };
 
   return (
-    <section id="newsletter" className="py-24 bg-[#06100a] relative border-t border-emerald-500/15 overflow-hidden">
-      {/* Background radial gradient */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-emerald-600/10 via-transparent to-transparent pointer-events-none" />
-
+    <section id="newsletter" className="py-24 bg-[#faf9f5] relative border-t border-zinc-200/80">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="bg-gradient-to-b from-[#0b1c13] to-[#08140e] border border-emerald-500/30 rounded-3xl p-8 sm:p-12 lg:p-16 shadow-2xl relative">
+        <div className="bg-white border border-zinc-200/90 rounded-3xl p-8 sm:p-12 lg:p-16 shadow-sm relative">
           
           {/* Top pill */}
           <div className="flex justify-center mb-6">
-            <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-950 border border-emerald-500/30 text-xs font-bold uppercase tracking-widest text-emerald-300">
-              <Sparkles className="w-3.5 h-3.5 text-amber-400" />
-              <span>Pilar 3: Club Privado de Coleccionistas & Audiencia Directa</span>
+            <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-zinc-100 border border-zinc-200 text-xs font-mono font-bold uppercase tracking-widest text-zinc-800">
+              <Sparkles className="w-3.5 h-3.5 text-amber-700" />
+              <span>Círculo Privado de Coleccionistas</span>
             </span>
           </div>
 
           <div className="text-center max-w-2xl mx-auto space-y-4">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black uppercase font-display tracking-tight text-white">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black uppercase font-display tracking-tight text-zinc-950">
               Preventas Privadas & Acceso Exclusivo
             </h2>
-            <p className="text-sm sm:text-base text-zinc-300 font-light leading-relaxed">
-              Sé el primero en ver las nuevas obras de Elena del Pilar antes de que se anuncien en redes sociales o se exhiban en galerías. Sin depender de algoritmos.
+            <p className="text-sm sm:text-base text-zinc-600 font-light leading-relaxed">
+              Sé el primero en conocer las nuevas obras originales de Elena del Pilar antes de su difusión pública en exposiciones o redes sociales.
             </p>
           </div>
 
           {/* Pillars of value */}
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 my-10 max-w-3xl mx-auto border-y border-white/10 py-8">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 my-10 max-w-3xl mx-auto border-y border-zinc-100 py-8">
             <div className="text-center sm:text-left space-y-1">
-              <span className="text-xs font-mono font-bold text-emerald-400">01 / PREVENTA 48H</span>
-              <p className="text-xs font-bold text-white">Catálogo Prioritario</p>
-              <p className="text-[11px] text-zinc-400">Reserva de piezas originales a precio de lanzamiento antes de salir al público general.</p>
+              <span className="text-xs font-mono font-bold text-zinc-950">01 / PREVENTA 48H</span>
+              <p className="text-xs font-bold text-zinc-900">Catálogo Prioritario</p>
+              <p className="text-[11px] text-zinc-500 font-light">Reserva de piezas originales a precio de taller antes del lanzamiento general.</p>
             </div>
             <div className="text-center sm:text-left space-y-1">
-              <span className="text-xs font-mono font-bold text-amber-400">02 / VISITAS AL TALLER</span>
-              <p className="text-xs font-bold text-white">Open Studio Pucallpa</p>
-              <p className="text-[11px] text-zinc-400">Invitaciones exclusivas para ver lienzos en proceso y conversar directamente con la artista.</p>
+              <span className="text-xs font-mono font-bold text-zinc-950">02 / VISITAS AL ESTUDIO</span>
+              <p className="text-xs font-bold text-zinc-900">Open Studio Pucallpa</p>
+              <p className="text-[11px] text-zinc-500 font-light">Invitaciones exclusivas para ver lienzos en proceso y dialogar con la artista.</p>
             </div>
             <div className="text-center sm:text-left space-y-1">
-              <span className="text-xs font-mono font-bold text-cyan-400">03 / REGALO DIGITAL</span>
-              <p className="text-xs font-bold text-white">Wallpaper HD de Yanapuma</p>
-              <p className="text-[11px] text-zinc-400">Descarga gratuita en alta definición para tu móvil o monitor al unirte al club.</p>
+              <span className="text-xs font-mono font-bold text-zinc-950">03 / REGALO DIGITAL</span>
+              <p className="text-xs font-bold text-zinc-900">Fondo HD de Yanapuma</p>
+              <p className="text-[11px] text-zinc-500 font-light">Descarga en alta definición para tu monitor o dispositivo al registrarte.</p>
             </div>
           </div>
 
           {/* Form / Submitted state */}
           {submitted ? (
-            <div className="max-w-md mx-auto p-6 rounded-2xl bg-[#082215] border border-emerald-500/40 text-center space-y-3 shadow-xl">
-              <div className="w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center mx-auto">
+            <div className="max-w-md mx-auto p-6 rounded-2xl bg-zinc-50 border border-zinc-200 text-center space-y-3">
+              <div className="w-12 h-12 rounded-full bg-emerald-100 text-emerald-800 flex items-center justify-center mx-auto">
                 <Check className="w-6 h-6" />
               </div>
-              <h3 className="text-lg font-bold text-white font-display">
+              <h3 className="text-lg font-bold text-zinc-950 font-display">
                 ¡Bienvenido/a al Círculo de Coleccionistas!
               </h3>
-              <p className="text-xs text-zinc-300">
-                Hemos registrado a <strong className="text-white">{email}</strong>. Ya tienes acceso preferente a las nuevas obras de Elena del Pilar.
+              <p className="text-xs text-zinc-600">
+                Hemos registrado a <strong className="text-zinc-950">{email}</strong>. Recibirás en tu correo los accesos prioritarios a las nuevas obras de Elena del Pilar.
               </p>
               
               <div className="pt-2">
                 <a
                   href="/obras/yanapuma.jpg"
                   download="Yanapuma_Elena_Chavez_Wallpaper.jpg"
-                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-zinc-950 font-bold text-xs uppercase tracking-wider transition-all"
+                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-zinc-950 hover:bg-zinc-800 text-white font-bold text-xs uppercase tracking-wider transition-all"
                 >
                   <Download className="w-4 h-4" />
-                  <span>Descargar Wallpaper de Regalo</span>
+                  <span>Descargar Obra Digital en HD</span>
                 </a>
               </div>
 
               <button
                 onClick={() => setSubmitted(false)}
-                className="text-xs text-emerald-400 underline hover:text-emerald-300 font-mono block mx-auto pt-2 cursor-pointer"
+                className="text-xs text-zinc-600 underline hover:text-zinc-900 font-mono block mx-auto pt-2 cursor-pointer"
               >
                 Registrar otro contacto
               </button>
@@ -112,7 +109,7 @@ export default function CollectorNewsletter() {
                   placeholder="Tu nombre completo"
                   value={name}
                   onChange={(e) => setName(e.target.value)}
-                  className="w-full bg-[#06100a] border border-emerald-500/20 rounded-xl px-4 py-3 text-xs text-white placeholder-zinc-500 focus:outline-none focus:border-emerald-400 transition-colors"
+                  className="w-full bg-white border border-zinc-300 rounded-xl px-4 py-3 text-xs text-zinc-950 placeholder-zinc-400 focus:outline-none focus:border-zinc-950 transition-colors"
                   required
                 />
                 <input
@@ -120,14 +117,14 @@ export default function CollectorNewsletter() {
                   placeholder="Tu correo electrónico *"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  className="w-full bg-[#06100a] border border-emerald-500/20 rounded-xl px-4 py-3 text-xs text-white placeholder-zinc-500 focus:outline-none focus:border-emerald-400 transition-colors"
+                  className="w-full bg-white border border-zinc-300 rounded-xl px-4 py-3 text-xs text-zinc-950 placeholder-zinc-400 focus:outline-none focus:border-zinc-950 transition-colors"
                   required
                 />
               </div>
 
               {/* Interest Selector */}
-              <div className="flex flex-col sm:flex-row items-center justify-between gap-3 bg-[#06100a] p-3 rounded-xl border border-emerald-500/10 text-xs text-zinc-400">
-                <span className="text-[11px] font-semibold text-zinc-300">Principal interés:</span>
+              <div className="flex flex-col sm:flex-row items-center justify-between gap-3 bg-zinc-50 p-3 rounded-xl border border-zinc-200 text-xs text-zinc-600">
+                <span className="text-[11px] font-semibold text-zinc-800">Interés preferente:</span>
                 <div className="flex items-center gap-4">
                   <label className="flex items-center gap-1.5 cursor-pointer">
                     <input
@@ -136,7 +133,7 @@ export default function CollectorNewsletter() {
                       value="originales"
                       checked={interest === 'originales'}
                       onChange={() => setInterest('originales')}
-                      className="accent-emerald-500"
+                      className="accent-zinc-950"
                     />
                     <span>Obras Originales</span>
                   </label>
@@ -147,7 +144,7 @@ export default function CollectorNewsletter() {
                       value="comisiones"
                       checked={interest === 'comisiones'}
                       onChange={() => setInterest('comisiones')}
-                      className="accent-emerald-500"
+                      className="accent-zinc-950"
                     />
                     <span>Encargos a Medida</span>
                   </label>
@@ -158,9 +155,9 @@ export default function CollectorNewsletter() {
                       value="workshops"
                       checked={interest === 'workshops'}
                       onChange={() => setInterest('workshops')}
-                      className="accent-emerald-500"
+                      className="accent-zinc-950"
                     />
-                    <span>Talleres / Plein Air</span>
+                    <span>Talleres</span>
                   </label>
                 </div>
               </div>
@@ -168,19 +165,19 @@ export default function CollectorNewsletter() {
               {/* Submit Button */}
               <button
                 type="submit"
-                className="w-full py-4 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-zinc-950 font-black text-xs uppercase tracking-wider transition-all shadow-xl shadow-emerald-500/25 flex items-center justify-center gap-2 cursor-pointer"
+                className="w-full py-4 rounded-xl bg-zinc-950 hover:bg-zinc-800 text-white font-bold text-xs uppercase tracking-wider transition-all shadow-md flex items-center justify-center gap-2 cursor-pointer"
               >
-                <span>Unirme y Recibir Wallpaper de Regalo</span>
+                <span>Acceder a Preventas Privadas</span>
                 <ArrowRight className="w-4 h-4" />
               </button>
 
-              <div className="flex items-center justify-center gap-4 pt-2 text-[11px] text-zinc-400">
+              <div className="flex items-center justify-center gap-4 pt-2 text-[11px] text-zinc-500">
                 <span className="flex items-center gap-1">
-                  <Lock className="w-3 h-3 text-zinc-500" />
+                  <Lock className="w-3 h-3" />
                   Privacidad estricta, cero spam
                 </span>
                 <span>•</span>
-                <span>Cancela cuando quieras</span>
+                <span>Cancela cuando desees</span>
               </div>
             </form>
           )}

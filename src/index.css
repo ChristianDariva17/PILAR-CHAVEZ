@@ -5,19 +5,20 @@
   --font-serif: 'Playfair Display', serif;
   --font-sans: 'Plus Jakarta Sans', sans-serif;
 
-  --color-jungle-950: #050d08;
-  --color-jungle-900: #08140e;
-  --color-jungle-850: #0b1a13;
-  --color-jungle-800: #10261c;
-  --color-kene-cyan: #38bdf8;
-  --color-amazon-gold: #f59e0b;
-  --color-amazon-emerald: #10b981;
+  --color-gallery-ivory: #faf9f5;
+  --color-gallery-cream: #f4f2eb;
+  --color-gallery-white: #ffffff;
+  --color-gallery-card: #ffffff;
+  --color-gallery-border: #e7e5df;
+  --color-gallery-carbon: #18181b;
+  --color-gallery-forest: #14532d;
+  --color-gallery-gold: #b45309;
 }
 
 body {
   font-family: var(--font-sans);
-  background-color: #060e09;
-  color: #f1f5f3;
+  background-color: #faf9f5;
+  color: #18181b;
 }
 
 h1, h2, h3, .font-display {
@@ -28,34 +29,24 @@ h1, h2, h3, .font-display {
   font-family: var(--font-serif);
 }
 
-/* Subtle Amazonian organic pattern */
-.bg-jungle-radial {
-  background: radial-gradient(circle at 50% 20%, rgba(16, 185, 129, 0.08) 0%, transparent 70%);
+/* Subtle Gallery texture */
+.bg-gallery-paper {
+  background-color: #faf9f5;
 }
 
-.kene-border {
-  background-image: repeating-linear-gradient(
-    45deg,
-    rgba(56, 189, 248, 0.15) 0px,
-    rgba(56, 189, 248, 0.15) 2px,
-    transparent 2px,
-    transparent 8px
-  );
-}
-
-/* Custom aesthetic scrollbar */
+/* Custom aesthetic minimalist scrollbar */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 7px;
 }
 ::-webkit-scrollbar-track {
-  background: #060e09;
+  background: #faf9f5;
 }
 ::-webkit-scrollbar-thumb {
-  background: #143023;
+  background: #d4d4d8;
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #10b981;
+  background: #a1a1aa;
 }
 
 @media print {

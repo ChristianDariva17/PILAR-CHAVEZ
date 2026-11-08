@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { MessageCircle, X, ArrowUpRight } from 'lucide-react';
+import { MessageCircle, X } from 'lucide-react';
 import { artistInfo } from '../data/content';
 
 export default function FloatingWhatsApp({ onOpenInquiry }) {
@@ -10,31 +10,31 @@ export default function FloatingWhatsApp({ onOpenInquiry }) {
     <div className="fixed bottom-6 right-6 z-40 flex flex-col items-end">
       {/* Floating Card Popup */}
       {isOpen && (
-        <div className="mb-3 w-80 bg-[#0b1c13] border border-emerald-500/30 rounded-2xl p-4 shadow-2xl backdrop-blur-xl animate-in fade-in slide-in-from-bottom-4 duration-200">
-          <div className="flex items-center justify-between pb-3 border-b border-emerald-500/20">
+        <div className="mb-3 w-80 bg-white border border-zinc-200 rounded-2xl p-5 shadow-2xl backdrop-blur-xl animate-in fade-in slide-in-from-bottom-4 duration-200 text-zinc-900">
+          <div className="flex items-center justify-between pb-3.5 border-b border-zinc-100">
             <div className="flex items-center gap-2.5">
               <div className="relative">
                 <img
                   src={artistInfo.bio.avatar}
                   alt={artistInfo.name}
-                  className="w-9 h-9 rounded-full object-cover border border-emerald-500/40"
+                  className="w-10 h-10 rounded-full object-cover border border-zinc-200 shadow-xs"
                 />
-                <span className="absolute bottom-0 right-0 w-2.5 h-2.5 rounded-full bg-emerald-400 border-2 border-[#0b1c13]"></span>
+                <span className="absolute bottom-0 right-0 w-2.5 h-2.5 rounded-full bg-emerald-600 border-2 border-white"></span>
               </div>
               <div>
-                <p className="text-xs font-bold text-white font-display">Estudio Arte Pilar</p>
-                <p className="text-[10px] text-emerald-400">● En línea para coleccionistas</p>
+                <p className="text-xs font-bold text-zinc-950 font-display">Estudio Arte Pilar</p>
+                <p className="text-[10px] text-zinc-500 font-mono">● En línea para coleccionistas</p>
               </div>
             </div>
             <button
               onClick={() => setIsOpen(false)}
-              className="text-zinc-400 hover:text-white p-1 rounded-full hover:bg-white/10 transition-colors"
+              className="text-zinc-400 hover:text-zinc-900 p-1 rounded-full hover:bg-zinc-100 transition-colors cursor-pointer"
             >
               <X className="w-4 h-4" />
             </button>
           </div>
 
-          <div className="py-3 text-xs text-zinc-300 space-y-2">
+          <div className="py-3 text-xs text-zinc-600 space-y-2 font-light leading-relaxed">
             <p>
               ¡Hola! Si deseas consultar la disponibilidad de una obra original, cotizar un encargo a medida o coordinar una visita a nuestro taller en Pucallpa (Ucayali), conversemos directamente.
             </p>
@@ -47,9 +47,9 @@ export default function FloatingWhatsApp({ onOpenInquiry }) {
               )}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full py-2.5 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-zinc-950 font-bold text-xs flex items-center justify-center gap-2 transition-all shadow-lg shadow-emerald-500/20"
+              className="w-full py-2.5 rounded-xl bg-zinc-950 hover:bg-zinc-800 text-white font-bold text-xs flex items-center justify-center gap-2 transition-all shadow-sm"
             >
-              <MessageCircle className="w-4 h-4" />
+              <MessageCircle className="w-4 h-4 text-emerald-400" />
               <span>Chatear por WhatsApp</span>
             </a>
 
@@ -58,7 +58,7 @@ export default function FloatingWhatsApp({ onOpenInquiry }) {
                 setIsOpen(false);
                 onOpenInquiry(null);
               }}
-              className="w-full py-2 rounded-xl bg-white/5 hover:bg-white/10 text-zinc-300 text-[11px] font-semibold border border-white/5 transition-colors"
+              className="w-full py-2 rounded-xl bg-zinc-100 hover:bg-zinc-200 text-zinc-800 text-[11px] font-semibold border border-zinc-200 transition-colors"
             >
               Enviar consulta formal al estudio
             </button>
@@ -69,15 +69,14 @@ export default function FloatingWhatsApp({ onOpenInquiry }) {
       {/* Main Floating Trigger Button */}
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="group flex items-center gap-2 bg-[#25D366] hover:bg-[#20ba59] text-white px-4 py-3 rounded-full shadow-2xl hover:shadow-emerald-500/25 transition-all duration-300 hover:scale-105 cursor-pointer"
+        className="group flex items-center gap-2 bg-zinc-950 hover:bg-zinc-800 text-white px-4 py-3 rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 cursor-pointer border border-zinc-700"
         aria-label="Atención para coleccionistas vía WhatsApp"
       >
-        <MessageCircle className="w-5 h-5 fill-current" />
-        <span className="text-xs font-bold tracking-wide uppercase font-sans">
-          Coleccionistas
+        <MessageCircle className="w-5 h-5 text-emerald-400 fill-emerald-400" />
+        <span className="text-xs font-bold tracking-wide uppercase font-mono">
+          Estudio
         </span>
       </button>
     </div>
   );
 }
-

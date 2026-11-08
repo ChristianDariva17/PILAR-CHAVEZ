@@ -19,37 +19,37 @@ export default function Footer({ onOpenInquiry }) {
   };
 
   return (
-    <footer className="bg-[#050b07] border-t border-emerald-500/20 pt-16 pb-12 text-zinc-400 text-xs">
+    <footer className="bg-[#f4f3ef] border-t border-zinc-200/80 pt-16 pb-12 text-zinc-600 text-xs">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 pb-12 border-b border-white/10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 pb-12 border-b border-zinc-200">
           
           {/* Brand & Mission (4 cols) */}
           <div className="lg:col-span-4 space-y-4">
             <div className="flex items-center gap-2">
-              <span className="text-2xl font-black tracking-tighter uppercase font-display text-white">
+              <span className="text-2xl font-serif font-bold tracking-tight text-zinc-900">
                 {artistInfo.brandName}
               </span>
-              <span className="text-[10px] font-mono text-emerald-400 border border-emerald-500/30 px-2 py-0.5 rounded">
+              <span className="text-[10px] font-mono text-zinc-600 border border-zinc-300 px-2 py-0.5 rounded-full bg-white shadow-xs">
                 Pucallpa
               </span>
             </div>
-            <p className="text-zinc-300 text-xs leading-relaxed max-w-sm font-light">
-              Plataforma oficial y archivo curatorial de la artista profesional <strong className="text-white">{artistInfo.fullName}</strong>. Extensión digital de su obra, estudio en Pucallpa (Ucayali) y proyectos de arte público.
+            <p className="text-zinc-600 text-xs leading-relaxed max-w-sm font-light">
+              Plataforma oficial y archivo curatorial de la artista profesional <strong className="text-zinc-900 font-medium">{artistInfo.fullName}</strong>. Extensión digital de su obra, estudio en Pucallpa (Ucayali) y proyectos de arte público.
             </p>
             <div className="pt-2 flex items-center gap-3">
               <a
                 href="https://instagram.com"
                 target="_blank"
                 rel="noreferrer"
-                className="w-9 h-9 rounded-full bg-white/5 hover:bg-emerald-500 hover:text-zinc-950 text-white flex items-center justify-center transition-all border border-white/10"
+                className="w-9 h-9 rounded-full bg-white hover:bg-zinc-900 hover:text-white text-zinc-700 flex items-center justify-center transition-all border border-zinc-200 shadow-xs"
                 aria-label="Instagram"
               >
                 <InstagramIcon className="w-4 h-4" />
               </a>
               <a
                 href={`mailto:${artistInfo.contact.email}`}
-                className="w-9 h-9 rounded-full bg-white/5 hover:bg-emerald-500 hover:text-zinc-950 text-white flex items-center justify-center transition-all border border-white/10"
+                className="w-9 h-9 rounded-full bg-white hover:bg-zinc-900 hover:text-white text-zinc-700 flex items-center justify-center transition-all border border-zinc-200 shadow-xs"
                 aria-label="Email"
               >
                 <Mail className="w-4 h-4" />
@@ -58,7 +58,7 @@ export default function Footer({ onOpenInquiry }) {
                 href={`https://wa.me/${cleanPhone}`}
                 target="_blank"
                 rel="noreferrer"
-                className="w-9 h-9 rounded-full bg-white/5 hover:bg-emerald-500 hover:text-zinc-950 text-white flex items-center justify-center transition-all border border-white/10"
+                className="w-9 h-9 rounded-full bg-white hover:bg-zinc-900 hover:text-white text-zinc-700 flex items-center justify-center transition-all border border-zinc-200 shadow-xs"
                 aria-label="WhatsApp"
               >
                 <Phone className="w-4 h-4" />
@@ -68,37 +68,37 @@ export default function Footer({ onOpenInquiry }) {
 
           {/* Nav: Objetivos Estratégicos (3 cols) */}
           <div className="lg:col-span-3 space-y-3">
-            <p className="text-xs font-bold uppercase tracking-widest text-emerald-400">
+            <p className="text-xs font-bold uppercase tracking-widest text-zinc-900">
               Estructura Curatorial
             </p>
             <ul className="space-y-2 text-xs">
               <li>
-                <a href="#portafolio" className="hover:text-emerald-300 transition-colors">
+                <a href="#portafolio" className="hover:text-zinc-950 transition-colors">
                   1. Obras Originales (S/. 150 - S/. 800)
                 </a>
               </li>
               <li>
-                <a href="#el-artista" className="hover:text-emerald-300 transition-colors">
+                <a href="#el-artista" className="hover:text-zinc-950 transition-colors">
                   2. El Viaje de Elena & Declaración
                 </a>
               </li>
               <li>
-                <a href="#comisiones" className="hover:text-emerald-300 transition-colors">
+                <a href="#comisiones" className="hover:text-zinc-950 transition-colors">
                   3. Encargos a Medida de Fauna
                 </a>
               </li>
               <li>
-                <a href="#comisiones" className="hover:text-emerald-300 transition-colors">
+                <a href="#comisiones" className="hover:text-zinc-950 transition-colors">
                   4. Muralismo para Hoteles & Espacios
                 </a>
               </li>
               <li>
-                <a href="#workshops" className="hover:text-emerald-300 transition-colors">
+                <a href="#workshops" className="hover:text-zinc-950 transition-colors">
                   5. Talleres & Plein Air Yarinacocha
                 </a>
               </li>
               <li>
-                <a href="#curriculum" className="hover:text-emerald-300 transition-colors">
+                <a href="#curriculum" className="hover:text-zinc-950 transition-colors">
                   6. CV Oficial & Dossier en PDF
                 </a>
               </li>
@@ -107,25 +107,25 @@ export default function Footer({ onOpenInquiry }) {
 
           {/* Contacto & Ubicación (3 cols) */}
           <div className="lg:col-span-3 space-y-3">
-            <p className="text-xs font-bold uppercase tracking-widest text-emerald-400">
+            <p className="text-xs font-bold uppercase tracking-widest text-zinc-900">
               Taller & Contacto Directo
             </p>
-            <div className="space-y-2 text-xs text-zinc-300">
+            <div className="space-y-2 text-xs text-zinc-600">
               <p className="flex items-start gap-2">
-                <MapPin className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
+                <MapPin className="w-4 h-4 text-zinc-800 shrink-0 mt-0.5" />
                 <span>{artistInfo.contact.location}</span>
               </p>
               <p className="flex items-center gap-2">
-                <Mail className="w-4 h-4 text-zinc-500 shrink-0" />
+                <Mail className="w-4 h-4 text-zinc-400 shrink-0" />
                 <span>{artistInfo.contact.email}</span>
               </p>
               <p className="flex items-center gap-2">
-                <Phone className="w-4 h-4 text-zinc-500 shrink-0" />
+                <Phone className="w-4 h-4 text-zinc-400 shrink-0" />
                 <span>{artistInfo.contact.phone}</span>
               </p>
             </div>
 
-            <div className="pt-2 text-[11px] text-zinc-400">
+            <div className="pt-2 text-[11px] text-zinc-500">
               <p>● Envíos a todo el Perú (Olva Courier / Shalom)</p>
               <p>● Pagos vía Yape, Plin y Transferencia</p>
             </div>
@@ -135,13 +135,13 @@ export default function Footer({ onOpenInquiry }) {
           <div className="lg:col-span-2 flex flex-col justify-between items-start lg:items-end">
             <button
               onClick={scrollToTop}
-              className="flex items-center gap-2 text-xs uppercase font-bold text-zinc-300 hover:text-white bg-white/5 hover:bg-emerald-950 px-4 py-2.5 rounded-full border border-emerald-500/20 transition-colors cursor-pointer"
+              className="flex items-center gap-2 text-xs uppercase font-bold text-zinc-700 hover:text-zinc-950 bg-white hover:bg-zinc-100 px-4 py-2.5 rounded-full border border-zinc-200 transition-colors cursor-pointer shadow-xs"
             >
               <span>Subir</span>
               <ArrowUp className="w-3.5 h-3.5" />
             </button>
-            <div className="text-[11px] text-zinc-400 mt-6 lg:mt-0 flex items-center gap-1.5">
-              <ShieldCheck className="w-4 h-4 text-emerald-400" />
+            <div className="text-[11px] text-zinc-500 mt-6 lg:mt-0 flex items-center gap-1.5">
+              <ShieldCheck className="w-4 h-4 text-zinc-700" />
               <span>Certificado de Autoría</span>
             </div>
           </div>

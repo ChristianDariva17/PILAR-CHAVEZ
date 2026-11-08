@@ -82,11 +82,11 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-[#060e09] text-zinc-100 selection:bg-emerald-500 selection:text-zinc-950">
+    <div className="min-h-screen bg-[#faf9f5] text-zinc-900 selection:bg-[#14532d] selection:text-white">
       {/* Skip to Content for Accessibility (WCAG 2.2) */}
       <a
         href="#portafolio"
-        className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-emerald-400 focus:text-zinc-950 focus:font-bold focus:rounded-xl focus:shadow-2xl focus:outline-none"
+        className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-zinc-900 focus:text-white focus:font-bold focus:rounded-xl focus:shadow-2xl focus:outline-none"
       >
         Saltar directamente al catálogo de obras
       </a>
