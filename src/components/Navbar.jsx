@@ -80,6 +80,8 @@ export default function Navbar({ onOpenInquiry }) {
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             className="md:hidden text-zinc-800 hover:text-black p-2.5 min-w-[44px] min-h-[44px] flex items-center justify-center cursor-pointer rounded-lg hover:bg-zinc-100"
             aria-label={mobileMenuOpen ? "Cerrar menú" : "Abrir menú"}
+            aria-expanded={mobileMenuOpen}
+            aria-controls="mobile-navigation-menu"
           >
             {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
@@ -87,7 +89,7 @@ export default function Navbar({ onOpenInquiry }) {
 
         {/* Mobile Dropdown */}
         {mobileMenuOpen && (
-          <div className="md:hidden mt-3 p-5 bg-white border border-zinc-200 rounded-2xl shadow-xl animate-in fade-in slide-in-from-top-2 duration-200">
+          <div id="mobile-navigation-menu" className="md:hidden mt-3 p-5 bg-white border border-zinc-200 rounded-2xl shadow-xl animate-in fade-in slide-in-from-top-2 duration-200">
             <nav className="flex flex-col gap-3">
               {navLinks.map((link) => (
                 <a

@@ -6,7 +6,7 @@ export default function CredibilityAgenda({ onOpenInquiry, onOpenDossier, onOpen
   const [cvTab, setCvTab] = useState('individuales');
 
   return (
-    <section id="curriculum" className="py-24 bg-[#f4f3ef] relative border-t border-zinc-200/80">
+    <section id="curriculum" className="py-24 bg-[#f4f3ef] relative border-t border-zinc-200/80 content-auto">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Section Header */}

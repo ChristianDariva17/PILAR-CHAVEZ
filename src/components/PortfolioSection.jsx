@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useMemo } from 'react';
 import { Truck, SlidersHorizontal, ShieldCheck } from 'lucide-react';
 import { artworksData } from '../data/content';
 import ArtworkCanvasCard from './ArtworkCanvasCard';
@@ -16,17 +16,20 @@ export default function PortfolioSection({ onSelectArtwork, onOpenInquiry, onOpe
     { id: 'paisaje-mistico', label: 'Mística & Agua' },
   ];
 
-  let filteredArtworks = artworksData.filter((item) => {
-    const matchCategory = activeCategory === 'todas' || item.category === activeCategory;
-    const matchAvailability = availabilityFilter === 'todas' || item.status === availabilityFilter;
-    return matchCategory && matchAvailability;
-  });
+  const filteredArtworks = useMemo(() => {
+    const list = artworksData.filter((item) => {
+      const matchCategory = activeCategory === 'todas' || item.category === activeCategory;
+      const matchAvailability = availabilityFilter === 'todas' || item.status === availabilityFilter;
+      return matchCategory && matchAvailability;
+    });
 
-  if (sortBy === 'price-asc') {
-    filteredArtworks.sort((a, b) => a.priceNum - b.priceNum);
-  } else if (sortBy === 'price-desc') {
-    filteredArtworks.sort((a, b) => b.priceNum - a.priceNum);
-  }
+    if (sortBy === 'price-asc') {
+      return [...list].sort((a, b) => a.priceNum - b.priceNum);
+    } else if (sortBy === 'price-desc') {
+      return [...list].sort((a, b) => b.priceNum - a.priceNum);
+    }
+    return list;
+  }, [activeCategory, availabilityFilter, sortBy]);
 
   return (
     <section id="portafolio" className="py-24 bg-[#faf9f5] relative border-t border-zinc-200/80">
@@ -48,9 +51,10 @@ export default function PortfolioSection({ onSelectArtwork, onOpenInquiry, onOpe
           </div>
 
           {/* Availability Pills (Disponibles vs Colección Privada) */}
-          <div className="flex items-center gap-1.5 p-1 bg-white rounded-2xl border border-zinc-200 shadow-xs text-xs overflow-x-auto no-scrollbar max-w-full">
+          <div className="flex items-center gap-1.5 p-1 bg-white rounded-2xl border border-zinc-200 shadow-xs text-xs overflow-x-auto no-scrollbar max-w-full" role="group" aria-label="Filtro de disponibilidad">
             <button
               onClick={() => setAvailabilityFilter('todas')}
+              aria-pressed={availabilityFilter === 'todas'}
               className={`shrink-0 whitespace-nowrap px-3.5 py-1.5 rounded-xl font-semibold transition-all cursor-pointer ${
                 availabilityFilter === 'todas'
                   ? 'bg-zinc-950 text-white font-bold shadow-xs'
@@ -61,6 +65,7 @@ export default function PortfolioSection({ onSelectArtwork, onOpenInquiry, onOpe
             </button>
             <button
               onClick={() => setAvailabilityFilter('disponible')}
+              aria-pressed={availabilityFilter === 'disponible'}
               className={`shrink-0 whitespace-nowrap px-3.5 py-1.5 rounded-xl font-semibold transition-all cursor-pointer ${
                 availabilityFilter === 'disponible'
                   ? 'bg-zinc-950 text-white font-bold shadow-xs'
@@ -71,6 +76,7 @@ export default function PortfolioSection({ onSelectArtwork, onOpenInquiry, onOpe
             </button>
             <button
               onClick={() => setAvailabilityFilter('coleccion-privada')}
+              aria-pressed={availabilityFilter === 'coleccion-privada'}
               className={`shrink-0 whitespace-nowrap px-3.5 py-1.5 rounded-xl font-semibold transition-all cursor-pointer ${
                 availabilityFilter === 'coleccion-privada'
                   ? 'bg-zinc-950 text-white font-bold shadow-xs'
@@ -85,11 +91,12 @@ export default function PortfolioSection({ onSelectArtwork, onOpenInquiry, onOpe
         {/* Secondary Bar: Thematic Filters & Sorter */}
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-10">
           {/* Filter Pills with Horizontal Swipe on Mobile */}
-          <div className="flex items-center gap-1.5 p-1 bg-white rounded-2xl border border-zinc-200 shadow-xs overflow-x-auto no-scrollbar max-w-full">
+          <div className="flex items-center gap-1.5 p-1 bg-white rounded-2xl border border-zinc-200 shadow-xs overflow-x-auto no-scrollbar max-w-full" role="group" aria-label="Filtro por temática pictórica">
             {categories.map((cat) => (
               <button
                 key={cat.id}
                 onClick={() => setActiveCategory(cat.id)}
+                aria-pressed={activeCategory === cat.id}
                 className={`shrink-0 whitespace-nowrap text-xs uppercase tracking-wider font-semibold px-3.5 py-1.5 rounded-xl transition-all cursor-pointer ${
                   activeCategory === cat.id
                     ? 'bg-zinc-950 text-white font-bold shadow-xs'

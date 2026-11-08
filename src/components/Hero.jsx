@@ -130,9 +130,12 @@ export default function Hero({ onOpenInquiry, onSelectArtwork }) {
                 <div className="relative overflow-hidden rounded-xl bg-zinc-100 aspect-[4/5] shadow-inner">
                   <img
                     src={featuredArtwork.image}
-                    alt={featuredArtwork.title}
+                    alt={`${featuredArtwork.title} — Pintura original en acrílico sobre lienzo por Pilar Chávez`}
                     width="600"
                     height="750"
+                    loading="eager"
+                    fetchPriority="high"
+                    decoding="sync"
                     className="w-full h-full object-cover object-center transition duration-700"
                   />
 

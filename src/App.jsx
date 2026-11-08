@@ -102,7 +102,7 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-[#faf9f5] text-zinc-900 selection:bg-[#14532d] selection:text-white">
+    <div className="min-h-screen bg-gallery-paper text-zinc-900 selection:bg-[#14532d] selection:text-white">
       {/* Skip to Content for Accessibility (WCAG 2.2) */}
       <a
         href="#portafolio"

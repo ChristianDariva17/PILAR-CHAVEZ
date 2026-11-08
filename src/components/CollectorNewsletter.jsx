@@ -30,7 +30,7 @@ export default function CollectorNewsletter() {
   };
 
   return (
-    <section id="newsletter" className="py-24 bg-[#faf9f5] relative border-t border-zinc-200/80">
+    <section id="newsletter" className="py-24 bg-[#faf9f5] relative border-t border-zinc-200/80 content-auto">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="bg-white border border-zinc-200/90 rounded-3xl p-6 sm:p-12 lg:p-16 shadow-sm relative">
           
@@ -72,7 +72,7 @@ export default function CollectorNewsletter() {
 
           {/* Form / Submitted state */}
           {submitted ? (
-            <div className="max-w-md mx-auto p-6 rounded-2xl bg-zinc-50 border border-zinc-200 text-center space-y-3">
+            <div role="status" aria-live="polite" className="max-w-md mx-auto p-6 rounded-2xl bg-zinc-50 border border-zinc-200 text-center space-y-3">
               <div className="w-12 h-12 rounded-full bg-emerald-100 text-emerald-800 flex items-center justify-center mx-auto">
                 <Check className="w-6 h-6" />
               </div>

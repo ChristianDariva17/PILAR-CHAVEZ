@@ -78,7 +78,7 @@ export default function InquiryModal({ selectedItem, open, onClose, onClosed, re
         </div>
 
         {submitted ? (
-          <div className="py-8 text-center space-y-4">
+          <div role="status" aria-live="polite" className="py-8 text-center space-y-4">
             <div className="w-14 h-14 rounded-full bg-zinc-100 text-zinc-900 border border-zinc-200 flex items-center justify-center mx-auto shadow-xs">
               <Check className="w-7 h-7" />
             </div>

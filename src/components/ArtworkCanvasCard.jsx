@@ -107,8 +107,9 @@ export default function ArtworkCanvasCard({ artwork, onSelectArtwork, onOpenInqu
             >
               <img
                 src={artwork.image}
-                alt={artwork.title}
+                alt={`${artwork.title} — ${artwork.technique} por Pilar Chávez`}
                 loading="lazy"
+                decoding="async"
                 className="w-full h-full object-cover object-center group-hover/canvas:scale-104 transition-transform duration-700"
               />
 
