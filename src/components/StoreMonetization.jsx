@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { Palette, Building2, Calendar, Users, Clock, Check, ArrowUpRight, MessageCircle, Sparkles, Printer, ShieldCheck } from 'lucide-react';
-import { workshopsData, artworksData, printsData, artistInfo } from '../data/content';
+import { Palette, Building2, Calendar, Users, Clock, Check, ArrowUpRight, MessageCircle, Sparkles } from 'lucide-react';
+import { workshopsData, printsData, artistInfo } from '../data/content';
 
 export default function StoreMonetization({ onOpenInquiry, onSelectWorkshop }) {
   const [activeTab, setActiveTab] = useState('comisiones'); // 'comisiones' | 'prints' | 'murales' | 'workshops'

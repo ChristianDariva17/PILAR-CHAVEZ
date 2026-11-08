@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion, useReducedMotion } from 'motion/react';
-import { ArrowUpRight, Eye, ShieldCheck, Sparkles, MapPin, Palette } from 'lucide-react';
+import { ArrowUpRight, Eye } from 'lucide-react';
 import { artistInfo } from '../data/content';
 
 export default function Hero({ onOpenInquiry, onSelectArtwork }) {

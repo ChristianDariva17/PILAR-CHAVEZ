@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { X, Calendar, Clock, MapPin, Users, Check, MessageCircle, Coffee, Sparkles } from 'lucide-react';
+import { X, Calendar, Clock, MapPin, Users, Check, MessageCircle } from 'lucide-react';
 import * as Dialog from '@radix-ui/react-dialog';
 import { artistInfo, openStudioInfo } from '../data/content';
 

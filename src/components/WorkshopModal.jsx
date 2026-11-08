@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { X, Calendar, Clock, MapPin, Users, Check, ArrowRight, Shield } from 'lucide-react';
+import { X, Calendar, Clock, MapPin, Users, Check, ArrowRight } from 'lucide-react';
 import * as Dialog from '@radix-ui/react-dialog';
 
 export default function WorkshopModal({ workshop, open, onClose, onClosed, restoreFocusRef }) {

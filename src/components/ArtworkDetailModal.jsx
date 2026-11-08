@@ -1,5 +1,5 @@
 import React, { useState, useRef } from 'react';
-import { X, ArrowUpRight, CheckCircle2, ShieldCheck, Eye, Layers, Truck, MessageCircle, Search, Sun, Moon, Sparkles } from 'lucide-react';
+import { X, ArrowUpRight, ShieldCheck, Eye, Layers, Truck, MessageCircle, Search, Sun, Moon, Sparkles } from 'lucide-react';
 import * as Dialog from '@radix-ui/react-dialog';
 import Lightbox from 'yet-another-react-lightbox';
 import Inline from 'yet-another-react-lightbox/plugins/inline';

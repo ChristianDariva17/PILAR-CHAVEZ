@@ -1,5 +1,5 @@
 import React from 'react';
-import { X, Printer, Download, Award, MapPin, GraduationCap, CheckCircle } from 'lucide-react';
+import { X, Printer, Download, Award, MapPin, GraduationCap } from 'lucide-react';
 import { artistInfo, cvData, artworksData } from '../data/content';
 
 export default function DossierModal({ onClose }) {

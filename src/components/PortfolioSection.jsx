@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { motion, useReducedMotion } from 'motion/react';
 import { Truck, SlidersHorizontal, ShieldCheck } from 'lucide-react';
 import { artworksData } from '../data/content';
 import ArtworkCanvasCard from './ArtworkCanvasCard';
@@ -8,7 +7,6 @@ export default function PortfolioSection({ onSelectArtwork, onOpenInquiry, onOpe
   const [activeCategory, setActiveCategory] = useState('todas');
   const [availabilityFilter, setAvailabilityFilter] = useState('todas'); // 'todas' | 'disponible' | 'coleccion-privada'
   const [sortBy, setSortBy] = useState('curatorial'); // 'curatorial' | 'price-asc' | 'price-desc'
-  const shouldReduceMotion = useReducedMotion();
 
   const categories = [
     { id: 'todas', label: `Todas (${artworksData.length})` },

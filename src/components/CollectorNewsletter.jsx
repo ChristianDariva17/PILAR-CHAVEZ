@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Mail, Sparkles, Check, Lock, ShieldCheck, ArrowRight, Download } from 'lucide-react';
+import { Sparkles, Check, Lock, ShieldCheck, ArrowRight, Download } from 'lucide-react';
 
 export default function CollectorNewsletter() {
   const [email, setEmail] = useState('');

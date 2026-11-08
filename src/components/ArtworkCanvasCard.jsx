@@ -1,6 +1,6 @@
 import React, { useRef, useState } from 'react';
 import { motion, useMotionValue, useSpring, useTransform, useReducedMotion } from 'motion/react';
-import { ZoomIn, Eye, ArrowUpRight, Layers } from 'lucide-react';
+import { ZoomIn, ArrowUpRight, Layers } from 'lucide-react';
 
 export default function ArtworkCanvasCard({ artwork, onSelectArtwork, onOpenInquiry, index = 0 }) {
   const cardRef = useRef(null);
