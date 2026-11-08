@@ -37,7 +37,7 @@ export default function WorkshopModal({ workshop, open, onClose, onClosed, resto
       <Dialog.Portal>
         <Dialog.Overlay className="fixed inset-0 z-50 bg-black/85 backdrop-blur-md" />
         <Dialog.Content
-        className="fixed z-50 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[calc(100%-2rem)] max-w-2xl max-h-[calc(100dvh-2rem)] overflow-y-auto bg-[#131417] border border-white/15 rounded-3xl p-6 sm:p-8 shadow-2xl animate-in fade-in zoom-in-95 duration-200"
+        className="fixed z-50 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[calc(100%-2rem)] max-w-2xl max-h-[calc(100dvh-2rem)] overflow-y-auto bg-[#08140e] border border-emerald-500/30 rounded-3xl p-6 sm:p-8 shadow-2xl animate-in fade-in zoom-in-95 duration-200 text-zinc-100"
         onCloseAutoFocus={(event) => {
           event.preventDefault();
           restoreFocusRef.current?.focus();
@@ -54,7 +54,7 @@ export default function WorkshopModal({ workshop, open, onClose, onClosed, resto
         </Dialog.Close>
 
         <div className="mb-6">
-          <span className="text-[10px] uppercase font-bold tracking-widest text-[#ff3366] bg-[#ff3366]/10 px-2.5 py-1 rounded-full border border-[#ff3366]/30">
+          <span className="text-[10px] uppercase font-bold tracking-widest text-emerald-300 bg-emerald-950/80 px-2.5 py-1 rounded-full border border-emerald-500/30">
             Reserva de Cupo Oficial
           </span>
           <Dialog.Title className="text-2xl font-black text-white mt-2 font-display">
@@ -64,9 +64,9 @@ export default function WorkshopModal({ workshop, open, onClose, onClosed, resto
             Formulario de pre-reserva y detalles del taller seleccionado.
           </Dialog.Description>
           
-          <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 mt-3 pt-3 border-t border-white/10 text-xs text-zinc-300">
+          <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 mt-3 pt-3 border-t border-emerald-500/20 text-xs text-zinc-300">
             <div className="flex items-center gap-1.5">
-              <Calendar className="w-3.5 h-3.5 text-[#ff3366]" />
+              <Calendar className="w-3.5 h-3.5 text-emerald-400" />
               <span>{workshop.dates}</span>
             </div>
             <div className="flex items-center gap-1.5">
@@ -93,21 +93,21 @@ export default function WorkshopModal({ workshop, open, onClose, onClosed, resto
             </p>
             <button
               onClick={onClose}
-              className="px-6 py-2.5 rounded-xl bg-[#ff3366] text-white text-xs font-bold uppercase tracking-wider cursor-pointer"
+              className="px-6 py-2.5 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-zinc-950 text-xs font-bold uppercase tracking-wider cursor-pointer shadow-lg shadow-emerald-500/20"
             >
               Finalizar
             </button>
           </div>
         ) : (
           <form onSubmit={handleSubmit} className="space-y-4">
-            <div className="p-3.5 rounded-xl bg-white/[0.03] border border-white/5 space-y-2 text-xs">
-              <p className="text-[11px] font-bold uppercase tracking-wider text-zinc-400">
+            <div className="p-3.5 rounded-xl bg-black/40 border border-emerald-500/20 space-y-2 text-xs">
+              <p className="text-[11px] font-bold uppercase tracking-wider text-emerald-400">
                 Temario y Contenidos de la Experiencia:
               </p>
               <ul className="space-y-1 text-zinc-300">
                 {workshop.syllabus.map((s, idx) => (
                   <li key={idx} className="flex items-start gap-1.5">
-                    <span className="text-[#ff3366] font-bold">●</span>
+                    <span className="text-emerald-400 font-bold">●</span>
                     <span>{s}</span>
                   </li>
                 ))}
@@ -125,7 +125,7 @@ export default function WorkshopModal({ workshop, open, onClose, onClosed, resto
                   value={name}
                   onChange={(e) => setName(e.target.value)}
                   placeholder="Ej. Sofía Mendoza"
-                  className="w-full bg-white/5 border border-white/10 rounded-xl px-3.5 py-2.5 text-xs text-white placeholder-zinc-500 focus:outline-none focus:border-[#ff3366]"
+                  className="w-full bg-black/40 border border-emerald-500/25 rounded-xl px-3.5 py-2.5 text-xs text-white placeholder-zinc-500 focus:outline-none focus:border-emerald-400"
                 />
               </div>
 
@@ -139,7 +139,7 @@ export default function WorkshopModal({ workshop, open, onClose, onClosed, resto
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="tu@email.com"
-                  className="w-full bg-white/5 border border-white/10 rounded-xl px-3.5 py-2.5 text-xs text-white placeholder-zinc-500 focus:outline-none focus:border-[#ff3366]"
+                  className="w-full bg-black/40 border border-emerald-500/25 rounded-xl px-3.5 py-2.5 text-xs text-white placeholder-zinc-500 focus:outline-none focus:border-emerald-400"
                 />
               </div>
             </div>
@@ -155,7 +155,7 @@ export default function WorkshopModal({ workshop, open, onClose, onClosed, resto
                   value={phone}
                   onChange={(e) => setPhone(e.target.value)}
                   placeholder="+51 999 000 111"
-                  className="w-full bg-white/5 border border-white/10 rounded-xl px-3.5 py-2.5 text-xs text-white placeholder-zinc-500 focus:outline-none focus:border-[#ff3366]"
+                  className="w-full bg-black/40 border border-emerald-500/25 rounded-xl px-3.5 py-2.5 text-xs text-white placeholder-zinc-500 focus:outline-none focus:border-emerald-400"
                 />
               </div>
 
@@ -166,24 +166,24 @@ export default function WorkshopModal({ workshop, open, onClose, onClosed, resto
                 <select
                   value={experience}
                   onChange={(e) => setExperience(e.target.value)}
-                  className="w-full bg-zinc-900 border border-white/10 rounded-xl px-3.5 py-2.5 text-xs text-white focus:outline-none focus:border-[#ff3366]"
+                  className="w-full bg-[#050e09] border border-emerald-500/25 rounded-xl px-3.5 py-2.5 text-xs text-white focus:outline-none focus:border-emerald-400"
                 >
-                  <option value="principiante">Principiante / Sin experiencia</option>
+                  <option value="principiante">Principiante / Sin experiencia previa</option>
                   <option value="intermedio">Intermedio / Estudiante de arte o diseño</option>
                   <option value="avanzado">Avanzado / Artista en ejercicio</option>
                 </select>
               </div>
             </div>
 
-            <div className="pt-2 flex items-center justify-between border-t border-white/10">
+            <div className="pt-2 flex items-center justify-between border-t border-emerald-500/20">
               <div>
                 <span className="text-[10px] text-zinc-400 uppercase tracking-wider block">Inversión Total</span>
-                <span className="text-xl font-bold font-mono text-white">{workshop.price}</span>
+                <span className="text-xl font-bold font-mono text-emerald-400">{workshop.price}</span>
               </div>
 
               <button
                 type="submit"
-                className="py-3 px-6 rounded-xl bg-[#ff3366] hover:bg-[#ff1751] text-white font-bold text-xs uppercase tracking-wider transition-all flex items-center gap-2 cursor-pointer shadow-lg shadow-[#ff3366]/25"
+                className="py-3 px-6 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-zinc-950 font-bold text-xs uppercase tracking-wider transition-all flex items-center gap-2 cursor-pointer shadow-lg shadow-emerald-500/25"
               >
                 <span>Confirmar Pre-Reserva</span>
                 <ArrowRight className="w-4 h-4" />

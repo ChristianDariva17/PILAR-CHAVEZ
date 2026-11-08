@@ -4,21 +4,22 @@ import { artistInfo } from '../data/content';
 
 export default function FloatingWhatsApp({ onOpenInquiry }) {
   const [isOpen, setIsOpen] = useState(false);
+  const cleanPhone = (artistInfo.contact.whatsapp || "+51961000000").replace(/[^0-9]/g, '');
 
   return (
     <div className="fixed bottom-6 right-6 z-40 flex flex-col items-end">
       {/* Floating Card Popup */}
       {isOpen && (
-        <div className="mb-3 w-80 bg-[#16171b] border border-white/15 rounded-2xl p-4 shadow-2xl backdrop-blur-xl animate-in fade-in slide-in-from-bottom-4 duration-200">
-          <div className="flex items-center justify-between pb-3 border-b border-white/10">
+        <div className="mb-3 w-80 bg-[#0b1c13] border border-emerald-500/30 rounded-2xl p-4 shadow-2xl backdrop-blur-xl animate-in fade-in slide-in-from-bottom-4 duration-200">
+          <div className="flex items-center justify-between pb-3 border-b border-emerald-500/20">
             <div className="flex items-center gap-2.5">
               <div className="relative">
                 <img
                   src={artistInfo.bio.avatar}
                   alt={artistInfo.name}
-                  className="w-9 h-9 rounded-full object-cover border border-white/20"
+                  className="w-9 h-9 rounded-full object-cover border border-emerald-500/40"
                 />
-                <span className="absolute bottom-0 right-0 w-2.5 h-2.5 rounded-full bg-emerald-500 border-2 border-[#16171b]"></span>
+                <span className="absolute bottom-0 right-0 w-2.5 h-2.5 rounded-full bg-emerald-400 border-2 border-[#0b1c13]"></span>
               </div>
               <div>
                 <p className="text-xs font-bold text-white font-display">Estudio Arte Pilar</p>
@@ -35,18 +36,18 @@ export default function FloatingWhatsApp({ onOpenInquiry }) {
 
           <div className="py-3 text-xs text-zinc-300 space-y-2">
             <p>
-              ¡Hola! Si deseas consultar la disponibilidad de una obra, cotizar un encargo o agendar una visita al taller en Barranco, escríbenos directamente.
+              ¡Hola! Si deseas consultar la disponibilidad de una obra original, cotizar un encargo a medida o coordinar una visita a nuestro taller en Pucallpa (Ucayali), conversemos directamente.
             </p>
           </div>
 
           <div className="pt-2 flex flex-col gap-2">
             <a
-              href={`https://wa.me/51987654321?text=${encodeURIComponent(
-                "Hola Pilar, visité tu sitio web y me gustaría recibir información sobre tus obras disponibles y catálogo curatorial."
+              href={`https://wa.me/${cleanPhone}?text=${encodeURIComponent(
+                "Hola Elena, visité el sitio oficial de Arte Pilar y me gustaría recibir información sobre tus obras en lienzo y catálogo disponible."
               )}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs flex items-center justify-center gap-2 transition-all shadow-lg shadow-emerald-950/40"
+              className="w-full py-2.5 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-zinc-950 font-bold text-xs flex items-center justify-center gap-2 transition-all shadow-lg shadow-emerald-500/20"
             >
               <MessageCircle className="w-4 h-4" />
               <span>Chatear por WhatsApp</span>
@@ -59,7 +60,7 @@ export default function FloatingWhatsApp({ onOpenInquiry }) {
               }}
               className="w-full py-2 rounded-xl bg-white/5 hover:bg-white/10 text-zinc-300 text-[11px] font-semibold border border-white/5 transition-colors"
             >
-              Enviar correo formal al estudio
+              Enviar consulta formal al estudio
             </button>
           </div>
         </div>

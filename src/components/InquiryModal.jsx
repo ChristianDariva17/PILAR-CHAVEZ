@@ -38,6 +38,8 @@ export default function InquiryModal({ selectedItem, open, onClose, onClosed, re
     setSubmitted(true);
   };
 
+  const cleanPhone = (artistInfo.contact.whatsapp || "+51961000000").replace(/[^0-9]/g, '');
+
   const whatsappMessage = encodeURIComponent(
     `Hola Elena, soy ${name || 'un coleccionista'}${city ? ` desde ${city}` : ''}.\nQuisiera consultar sobre: ${selectedItem?.title || 'obras en lienzo'}.\nMensaje: ${message}`
   );
@@ -88,7 +90,7 @@ export default function InquiryModal({ selectedItem, open, onClose, onClosed, re
             </p>
             <div className="pt-4 flex flex-col sm:flex-row gap-3 justify-center">
               <a
-                href={`https://wa.me/51961000000?text=${whatsappMessage}`}
+                href={`https://wa.me/${cleanPhone}?text=${whatsappMessage}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-zinc-950 text-xs font-black uppercase tracking-wider"
@@ -179,7 +181,7 @@ export default function InquiryModal({ selectedItem, open, onClose, onClosed, re
 
             <div className="pt-2 flex flex-col sm:flex-row gap-3">
               <a
-                href={`https://wa.me/51961000000?text=${whatsappMessage}`}
+                href={`https://wa.me/${cleanPhone}?text=${whatsappMessage}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex-1 py-3.5 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-zinc-950 font-black text-xs uppercase tracking-wider transition-all flex items-center justify-center gap-2 cursor-pointer shadow-lg shadow-emerald-500/20"

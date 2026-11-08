@@ -12,9 +12,11 @@ export default function ArtworkDetailModal({ artwork, open, onClose, onClosed, o
 
   const [viewMode, setViewMode] = useState('detalle'); // 'detalle' | 'en_pared'
 
+  const cleanPhone = (artistInfo.contact.whatsapp || "+51961000000").replace(/[^0-9]/g, '');
+
   // Pre-configured WhatsApp text for Peruvian buyers
-  const whatsappBuyUrl = `https://wa.me/51961000000?text=${encodeURIComponent(
-    `Hola Elena, me interesa adquirir tu obra original "${artwork.title}" (${artwork.dimensions}, precio ${artwork.price}). ¿Sigue disponible y haces envíos a mi ciudad?`
+  const whatsappBuyUrl = `https://wa.me/${cleanPhone}?text=${encodeURIComponent(
+    `Hola Elena, me interesa adquirir tu obra original "${artwork.title}" (${artwork.dimensions}, precio ${artwork.price}). ¿Sigue disponible y cómo coordinamos el envío?`
   )}`;
 
   return (

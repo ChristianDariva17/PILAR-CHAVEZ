@@ -10,7 +10,7 @@ export default function DossierModal({ onClose }) {
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/90 backdrop-blur-md overflow-y-auto print:p-0 print:bg-white print:fixed print:inset-0">
       <div 
-        className="relative w-full max-w-4xl bg-[#111215] border border-white/20 rounded-3xl p-6 sm:p-10 shadow-2xl my-auto print:bg-white print:text-black print:border-none print:shadow-none print:p-8 animate-in fade-in zoom-in-95 duration-200"
+        className="relative w-full max-w-4xl bg-[#08140e] border border-emerald-500/30 rounded-3xl p-6 sm:p-10 shadow-2xl my-auto print:bg-white print:text-black print:border-none print:shadow-none print:p-8 animate-in fade-in zoom-in-95 duration-200"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Top Actions (hidden on print) */}

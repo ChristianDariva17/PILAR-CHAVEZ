@@ -13,6 +13,7 @@ function InstagramIcon({ className = "w-4 h-4" }) {
 }
 
 export default function Footer({ onOpenInquiry }) {
+  const cleanPhone = (artistInfo.contact.whatsapp || "+51961000000").replace(/[^0-9]/g, '');
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
@@ -54,7 +55,7 @@ export default function Footer({ onOpenInquiry }) {
                 <Mail className="w-4 h-4" />
               </a>
               <a
-                href={`https://wa.me/51961000000`}
+                href={`https://wa.me/${cleanPhone}`}
                 target="_blank"
                 rel="noreferrer"
                 className="w-9 h-9 rounded-full bg-white/5 hover:bg-emerald-500 hover:text-zinc-950 text-white flex items-center justify-center transition-all border border-white/10"

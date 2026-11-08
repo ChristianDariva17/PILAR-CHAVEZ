@@ -80,7 +80,14 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-[#0c0d0e] text-zinc-100 selection:bg-[#ff3366] selection:text-white">
+    <div className="min-h-screen bg-[#060e09] text-zinc-100 selection:bg-emerald-500 selection:text-zinc-950">
+      {/* Skip to Content for Accessibility (WCAG 2.2) */}
+      <a
+        href="#portafolio"
+        className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-emerald-400 focus:text-zinc-950 focus:font-bold focus:rounded-xl focus:shadow-2xl focus:outline-none"
+      >
+        Saltar directamente al catálogo de obras
+      </a>
       {/* Top Navigation */}
       <Navbar onOpenInquiry={handleOpenInquiry} />
 
