@@ -109,7 +109,11 @@ export default function ArtworkDetailModal({ artwork, open, onClose, onClosed, o
                   <div 
                     className="relative shadow-2xl transition-all duration-300"
                     style={{
-                      width: artwork.dimensions.includes('129') ? '240px' : artwork.dimensions.includes('69') ? '170px' : '110px',
+                      width: artwork.dimensions.includes('129')
+                        ? '240px'
+                        : (artwork.dimensions.includes('69') || artwork.dimensions.includes('60'))
+                        ? '175px'
+                        : '110px',
                       boxShadow: '0 20px 40px rgba(0,0,0,0.8), 0 0 10px rgba(0,0,0,0.5)'
                     }}
                   >

@@ -6,11 +6,11 @@ export default function PortfolioSection({ onSelectArtwork, onOpenInquiry }) {
   const [activeCategory, setActiveCategory] = useState('todas');
 
   const categories = [
-    { id: 'todas', label: 'Todas las Obras' },
-    { id: 'fauna-mistica', label: 'Fauna Sagrada (Yanapuma / Aves)' },
+    { id: 'todas', label: `Todas las Obras (${artworksData.length})` },
+    { id: 'fauna-mistica', label: 'Fauna Amazónica' },
+    { id: 'aves-amazonia', label: 'Aves & Colibríes' },
     { id: 'identidad-amazona', label: 'Identidad & Retrato' },
-    { id: 'gran-formato', label: 'Gran Formato (Garza)' },
-    { id: 'paisaje-sensorial', label: 'Flora & Micro-fauna' },
+    { id: 'paisaje-mistico', label: 'Mística & Agua' },
   ];
 
   const filteredArtworks = activeCategory === 'todas'
