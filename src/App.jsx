@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useRef, useState, lazy, Suspense } from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import PortfolioSection from './components/PortfolioSection';
@@ -8,10 +8,12 @@ import CollectorNewsletter from './components/CollectorNewsletter';
 import CredibilityAgenda from './components/CredibilityAgenda';
 import Footer from './components/Footer';
 import FloatingWhatsApp from './components/FloatingWhatsApp';
-import ArtworkDetailModal from './components/ArtworkDetailModal';
-import InquiryModal from './components/InquiryModal';
-import WorkshopModal from './components/WorkshopModal';
-import DossierModal from './components/DossierModal';
+
+// Lazy-load heavier modal components (React Best Practices - bundle optimization)
+const ArtworkDetailModal = lazy(() => import('./components/ArtworkDetailModal'));
+const InquiryModal = lazy(() => import('./components/InquiryModal'));
+const WorkshopModal = lazy(() => import('./components/WorkshopModal'));
+const DossierModal = lazy(() => import('./components/DossierModal'));
 
 export default function App() {
   const [selectedArtwork, setSelectedArtwork] = useState(null);
@@ -127,44 +129,46 @@ export default function App() {
       {/* Floating Collector WhatsApp Widget */}
       <FloatingWhatsApp onOpenInquiry={handleOpenInquiry} />
 
-      {/* Modals */}
-      {artworkDialogMounted && (
-        <ArtworkDetailModal
-          artwork={selectedArtwork}
-          open={artworkDialogOpen}
-          onClose={() => setArtworkDialogOpen(false)}
-          onClosed={handleArtworkClosed}
-          onOpenInquiry={handleOpenInquiry}
-          restoreFocusRef={restoreFocusRef}
-          skipFocusRestoreRef={skipArtworkFocusRestoreRef}
-        />
-      )}
+      {/* Lazy Modals with Suspense */}
+      <Suspense fallback={null}>
+        {artworkDialogMounted && (
+          <ArtworkDetailModal
+            artwork={selectedArtwork}
+            open={artworkDialogOpen}
+            onClose={() => setArtworkDialogOpen(false)}
+            onClosed={handleArtworkClosed}
+            onOpenInquiry={handleOpenInquiry}
+            restoreFocusRef={restoreFocusRef}
+            skipFocusRestoreRef={skipArtworkFocusRestoreRef}
+          />
+        )}
 
-      {inquiryDialogMounted && (
-        <InquiryModal
-          selectedItem={inquiryItem}
-          open={inquiryModalOpen}
-          onClose={handleCloseInquiry}
-          onClosed={handleInquiryClosed}
-          restoreFocusRef={restoreFocusRef}
-        />
-      )}
+        {inquiryDialogMounted && (
+          <InquiryModal
+            selectedItem={inquiryItem}
+            open={inquiryModalOpen}
+            onClose={handleCloseInquiry}
+            onClosed={handleInquiryClosed}
+            restoreFocusRef={restoreFocusRef}
+          />
+        )}
 
-      {workshopDialogMounted && (
-        <WorkshopModal
-          workshop={selectedWorkshop}
-          open={workshopDialogOpen}
-          onClose={() => setWorkshopDialogOpen(false)}
-          onClosed={handleWorkshopClosed}
-          restoreFocusRef={restoreFocusRef}
-        />
-      )}
+        {workshopDialogMounted && (
+          <WorkshopModal
+            workshop={selectedWorkshop}
+            open={workshopDialogOpen}
+            onClose={() => setWorkshopDialogOpen(false)}
+            onClosed={handleWorkshopClosed}
+            restoreFocusRef={restoreFocusRef}
+          />
+        )}
 
-      {dossierModalOpen && (
-        <DossierModal
-          onClose={() => setDossierModalOpen(false)}
-        />
-      )}
+        {dossierModalOpen && (
+          <DossierModal
+            onClose={() => setDossierModalOpen(false)}
+          />
+        )}
+      </Suspense>
     </div>
   );
 }

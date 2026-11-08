@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
+import { motion, useReducedMotion } from 'motion/react';
 import { Eye, ZoomIn, FileText, ArrowUpRight, Layers, ShieldCheck, Truck, CheckCircle2 } from 'lucide-react';
 import { artworksData } from '../data/content';
 
 export default function PortfolioSection({ onSelectArtwork, onOpenInquiry }) {
   const [activeCategory, setActiveCategory] = useState('todas');
+  const shouldReduceMotion = useReducedMotion();
 
   const categories = [
     { id: 'todas', label: `Todas las Obras (${artworksData.length})` },
@@ -56,9 +58,13 @@ export default function PortfolioSection({ onSelectArtwork, onOpenInquiry }) {
 
         {/* Gallery Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {filteredArtworks.map((artwork) => (
-            <div
+          {filteredArtworks.map((artwork, idx) => (
+            <motion.div
               key={artwork.id}
+              initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 25 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-40px" }}
+              transition={{ duration: shouldReduceMotion ? 0.01 : 0.5, delay: shouldReduceMotion ? 0 : (idx % 3) * 0.1, ease: [0.22, 1, 0.36, 1] }}
               className="group relative bg-[#0b1c13] rounded-2xl overflow-hidden border border-emerald-500/20 hover:border-emerald-500/45 transition-all duration-300 flex flex-col justify-between shadow-xl"
             >
               {/* Artwork Image Container */}
@@ -71,6 +77,8 @@ export default function PortfolioSection({ onSelectArtwork, onOpenInquiry }) {
                 <img
                   src={artwork.image}
                   alt={artwork.title}
+                  width="400"
+                  height="300"
                   className="w-full h-full object-cover object-center group-hover:scale-105 transition duration-500"
                   loading="lazy"
                 />
@@ -157,7 +165,7 @@ export default function PortfolioSection({ onSelectArtwork, onOpenInquiry }) {
                 </div>
 
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
 
