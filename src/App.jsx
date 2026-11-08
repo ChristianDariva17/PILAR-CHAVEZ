@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import PortfolioSection from './components/PortfolioSection';
@@ -15,19 +15,68 @@ import DossierModal from './components/DossierModal';
 
 export default function App() {
   const [selectedArtwork, setSelectedArtwork] = useState(null);
+  const [artworkDialogOpen, setArtworkDialogOpen] = useState(false);
+  const [artworkDialogMounted, setArtworkDialogMounted] = useState(false);
   const [inquiryModalOpen, setInquiryModalOpen] = useState(false);
+  const [inquiryDialogMounted, setInquiryDialogMounted] = useState(false);
   const [inquiryItem, setInquiryItem] = useState(null);
   const [selectedWorkshop, setSelectedWorkshop] = useState(null);
+  const [workshopDialogOpen, setWorkshopDialogOpen] = useState(false);
+  const [workshopDialogMounted, setWorkshopDialogMounted] = useState(false);
   const [dossierModalOpen, setDossierModalOpen] = useState(false);
+  const restoreFocusRef = useRef(null);
+  const skipArtworkFocusRestoreRef = useRef(false);
 
-  const handleOpenInquiry = (item = null) => {
+  const rememberActiveElement = () => {
+    if (document.activeElement instanceof HTMLElement) {
+      restoreFocusRef.current = document.activeElement;
+    }
+  };
+
+  const handleSelectArtwork = (artwork) => {
+    rememberActiveElement();
+    setSelectedArtwork(artwork);
+    setArtworkDialogMounted(true);
+    setArtworkDialogOpen(true);
+  };
+
+  const handleSelectWorkshop = (workshop) => {
+    rememberActiveElement();
+    setSelectedWorkshop(workshop);
+    setWorkshopDialogMounted(true);
+    setWorkshopDialogOpen(true);
+  };
+
+  const handleOpenInquiry = (item = null, options = {}) => {
+    if (options.handoff) {
+      skipArtworkFocusRestoreRef.current = true;
+      setArtworkDialogOpen(false);
+    } else {
+      rememberActiveElement();
+    }
     setInquiryItem(item);
+    setInquiryDialogMounted(true);
     setInquiryModalOpen(true);
   };
 
   const handleCloseInquiry = () => {
     setInquiryModalOpen(false);
+  };
+
+  const handleInquiryClosed = () => {
     setInquiryItem(null);
+    setInquiryDialogMounted(false);
+    skipArtworkFocusRestoreRef.current = false;
+  };
+
+  const handleArtworkClosed = () => {
+    setSelectedArtwork(null);
+    setArtworkDialogMounted(false);
+  };
+
+  const handleWorkshopClosed = () => {
+    setSelectedWorkshop(null);
+    setWorkshopDialogMounted(false);
   };
 
   return (
@@ -42,7 +91,7 @@ export default function App() {
 
         {/* 1. Portafolio Digital de Alta Calidad (Impacto visual + Fichas Técnicas) */}
         <PortfolioSection 
-          onSelectArtwork={(artwork) => setSelectedArtwork(artwork)} 
+          onSelectArtwork={handleSelectArtwork}
           onOpenInquiry={handleOpenInquiry}
         />
 
@@ -52,7 +101,7 @@ export default function App() {
         {/* 2. Facilitar la venta y monetización (Prints directos, Cotizaciones, Workshops) */}
         <StoreMonetization 
           onOpenInquiry={handleOpenInquiry} 
-          onSelectWorkshop={(workshop) => setSelectedWorkshop(workshop)}
+          onSelectWorkshop={handleSelectWorkshop}
         />
 
         {/* 3. Captar coleccionistas y construir audiencia (Newsletter / Club VIP) */}
@@ -72,25 +121,35 @@ export default function App() {
       <FloatingWhatsApp onOpenInquiry={handleOpenInquiry} />
 
       {/* Modals */}
-      {selectedArtwork && (
+      {artworkDialogMounted && (
         <ArtworkDetailModal
           artwork={selectedArtwork}
-          onClose={() => setSelectedArtwork(null)}
+          open={artworkDialogOpen}
+          onClose={() => setArtworkDialogOpen(false)}
+          onClosed={handleArtworkClosed}
           onOpenInquiry={handleOpenInquiry}
+          restoreFocusRef={restoreFocusRef}
+          skipFocusRestoreRef={skipArtworkFocusRestoreRef}
         />
       )}
 
-      {inquiryModalOpen && (
+      {inquiryDialogMounted && (
         <InquiryModal
           selectedItem={inquiryItem}
+          open={inquiryModalOpen}
           onClose={handleCloseInquiry}
+          onClosed={handleInquiryClosed}
+          restoreFocusRef={restoreFocusRef}
         />
       )}
 
-      {selectedWorkshop && (
+      {workshopDialogMounted && (
         <WorkshopModal
           workshop={selectedWorkshop}
-          onClose={() => setSelectedWorkshop(null)}
+          open={workshopDialogOpen}
+          onClose={() => setWorkshopDialogOpen(false)}
+          onClosed={handleWorkshopClosed}
+          restoreFocusRef={restoreFocusRef}
         />
       )}
 
@@ -102,4 +161,3 @@ export default function App() {
     </div>
   );
 }
-

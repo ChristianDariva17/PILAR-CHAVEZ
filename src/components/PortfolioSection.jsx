@@ -62,9 +62,11 @@ export default function PortfolioSection({ onSelectArtwork, onOpenInquiry }) {
               className="group relative bg-[#0b1c13] rounded-2xl overflow-hidden border border-emerald-500/20 hover:border-emerald-500/45 transition-all duration-300 flex flex-col justify-between shadow-xl"
             >
               {/* Artwork Image Container */}
-              <div 
-                className="relative overflow-hidden aspect-[4/3] bg-zinc-950 cursor-pointer"
+              <button
+                type="button"
+                className="relative block w-full overflow-hidden aspect-[4/3] bg-zinc-950 text-left cursor-pointer focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-emerald-400"
                 onClick={() => onSelectArtwork(artwork)}
+                aria-label={`Ver detalles de ${artwork.title}`}
               >
                 <img
                   src={artwork.image}
@@ -90,7 +92,7 @@ export default function PortfolioSection({ onSelectArtwork, onOpenInquiry }) {
                     "{artwork.description}"
                   </p>
                 </div>
-              </div>
+              </button>
 
               {/* Ficha Técnica Card Summary */}
               <div className="p-5 flex-1 flex flex-col justify-between">
@@ -100,11 +102,14 @@ export default function PortfolioSection({ onSelectArtwork, onOpenInquiry }) {
                     <span className="font-mono text-xs">{artwork.year}</span>
                   </div>
 
-                  <h3 
-                    onClick={() => onSelectArtwork(artwork)}
-                    className="text-lg font-bold text-white group-hover:text-emerald-300 transition-colors cursor-pointer font-display"
-                  >
-                    {artwork.title}
+                  <h3 className="text-lg font-bold font-display">
+                    <button
+                      type="button"
+                      onClick={() => onSelectArtwork(artwork)}
+                      className="text-left text-white group-hover:text-emerald-300 transition-colors cursor-pointer focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-400"
+                    >
+                      {artwork.title}
+                    </button>
                   </h3>
 
                   {/* Ficha Técnica Details */}

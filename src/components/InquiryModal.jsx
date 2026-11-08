@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import { X, Send, Check, MessageCircle, ShieldCheck, Truck } from 'lucide-react';
+import * as Dialog from '@radix-ui/react-dialog';
 import { artistInfo } from '../data/content';
 
-export default function InquiryModal({ selectedItem, onClose }) {
+export default function InquiryModal({ selectedItem, open, onClose, onClosed, restoreFocusRef }) {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [phone, setPhone] = useState('');
@@ -42,28 +43,36 @@ export default function InquiryModal({ selectedItem, onClose }) {
   );
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/90 backdrop-blur-md overflow-y-auto">
-      <div 
-        className="relative w-full max-w-xl bg-[#08140e] border border-emerald-500/30 rounded-3xl p-6 sm:p-8 shadow-2xl my-auto animate-in fade-in zoom-in-95 duration-200 text-zinc-100"
-        onClick={(e) => e.stopPropagation()}
+    <Dialog.Root open={open} onOpenChange={(isOpen) => !isOpen && onClose()}>
+      <Dialog.Portal>
+        <Dialog.Overlay className="fixed inset-0 z-50 bg-black/90 backdrop-blur-md" />
+        <Dialog.Content
+        className="fixed z-50 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[calc(100%-2rem)] max-w-xl max-h-[calc(100dvh-2rem)] overflow-y-auto bg-[#08140e] border border-emerald-500/30 rounded-3xl p-6 sm:p-8 shadow-2xl animate-in fade-in zoom-in-95 duration-200 text-zinc-100"
+        onCloseAutoFocus={(event) => {
+          event.preventDefault();
+          restoreFocusRef.current?.focus();
+          onClosed();
+        }}
       >
+        <Dialog.Close asChild>
         <button
-          onClick={onClose}
+          aria-label="Cerrar formulario de consulta"
           className="absolute top-4 right-4 text-zinc-400 hover:text-white p-2 rounded-full hover:bg-white/10 transition-colors cursor-pointer"
         >
           <X className="w-5 h-5" />
         </button>
+        </Dialog.Close>
 
         <div className="mb-6">
           <span className="text-[10px] uppercase font-bold tracking-widest text-emerald-400 bg-emerald-950 px-2.5 py-1 rounded-full border border-emerald-500/30">
             Atención Directa del Estudio en Pucallpa
           </span>
-          <h3 className="text-2xl font-black text-white mt-2 font-display">
+          <Dialog.Title className="text-2xl font-black text-white mt-2 font-display">
             {selectedItem?.title ? `Consulta: ${selectedItem.title}` : 'Contacto con Elena del Pilar'}
-          </h3>
-          <p className="text-xs text-zinc-300 mt-1">
+          </Dialog.Title>
+          <Dialog.Description className="text-xs text-zinc-300 mt-1">
             Ficha técnica, coordinación de pago por Yape / Transferencia y cotización de envío por Olva/Shalom.
-          </p>
+          </Dialog.Description>
         </div>
 
         {submitted ? (
@@ -194,7 +203,8 @@ export default function InquiryModal({ selectedItem, onClose }) {
             </div>
           </form>
         )}
-      </div>
-    </div>
+        </Dialog.Content>
+      </Dialog.Portal>
+    </Dialog.Root>
   );
 }

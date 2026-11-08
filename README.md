@@ -34,6 +34,10 @@ Plataforma web diseñada a medida para el sector del **arte y las artes plástic
 
 ## 🚀 Cómo ejecutar el proyecto en tu máquina
 
+### Navegación accesible de obras
+
+Los botones de imagen y título de cada obra abren su ficha con teclado o puntero. En la ficha, el visor permite ampliar y desplazar la imagen; el control de escala en pared mantiene la simulación de tamaño de la obra. Los diálogos de obra, consulta y taller mantienen el foco dentro de la ventana y lo devuelven al elemento que la abrió al cerrarse.
+
 1. **Instalar dependencias** (ya están instaladas en este entorno):
    ```bash
    npm install
@@ -78,4 +82,3 @@ Arte_Pilar/
         ├── WorkshopModal.jsx     # Modal de inscripción a talleres y mentorías
         └── Footer.jsx            # Pie de página y enlaces institucionales
 ```
-

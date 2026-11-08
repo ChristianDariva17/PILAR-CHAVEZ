@@ -1,8 +1,13 @@
 import React, { useState } from 'react';
 import { X, ArrowUpRight, CheckCircle2, ShieldCheck, Eye, Layers, Truck, MessageCircle, HelpCircle } from 'lucide-react';
+import * as Dialog from '@radix-ui/react-dialog';
+import Lightbox from 'yet-another-react-lightbox';
+import Inline from 'yet-another-react-lightbox/plugins/inline';
+import Zoom from 'yet-another-react-lightbox/plugins/zoom';
+import 'yet-another-react-lightbox/styles.css';
 import { artistInfo } from '../data/content';
 
-export default function ArtworkDetailModal({ artwork, onClose, onOpenInquiry }) {
+export default function ArtworkDetailModal({ artwork, open, onClose, onClosed, onOpenInquiry, restoreFocusRef, skipFocusRestoreRef }) {
   if (!artwork) return null;
 
   const [viewMode, setViewMode] = useState('detalle'); // 'detalle' | 'en_pared'
@@ -13,10 +18,16 @@ export default function ArtworkDetailModal({ artwork, onClose, onOpenInquiry }) 
   )}`;
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 bg-black/95 backdrop-blur-md overflow-y-auto">
-      <div 
-        className="relative w-full max-w-5xl bg-[#08140e] border border-emerald-500/20 rounded-3xl overflow-hidden shadow-2xl my-auto animate-in fade-in zoom-in-95 duration-200 text-zinc-100"
-        onClick={(e) => e.stopPropagation()}
+    <Dialog.Root open={open} onOpenChange={(isOpen) => !isOpen && onClose()}>
+      <Dialog.Portal>
+        <Dialog.Overlay className="fixed inset-0 z-50 bg-black/95 backdrop-blur-md" />
+        <Dialog.Content
+        className="fixed z-50 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[calc(100%-1.5rem)] max-w-5xl max-h-[calc(100dvh-1.5rem)] overflow-y-auto bg-[#08140e] border border-emerald-500/20 rounded-3xl shadow-2xl animate-in fade-in zoom-in-95 duration-200 text-zinc-100"
+        onCloseAutoFocus={(event) => {
+          event.preventDefault();
+          if (!skipFocusRestoreRef.current) restoreFocusRef.current?.focus();
+          onClosed();
+        }}
       >
         {/* Top bar with Close & View Switcher */}
         <div className="flex items-center justify-between px-6 py-4 border-b border-white/10 bg-[#060e09]">
@@ -50,27 +61,39 @@ export default function ArtworkDetailModal({ artwork, onClose, onOpenInquiry }) 
               </button>
             </div>
 
-            <button
-              onClick={onClose}
-              className="w-8 h-8 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center transition-colors cursor-pointer"
-            >
-              <X className="w-4 h-4" />
-            </button>
+              <Dialog.Close asChild>
+              <button
+                aria-label="Cerrar detalles de la obra"
+                className="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center transition-colors cursor-pointer focus-visible:outline focus-visible:outline-2 focus-visible:outline-emerald-400"
+              >
+                <X className="w-4 h-4" />
+              </button>
+              </Dialog.Close>
           </div>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 max-h-[80vh] overflow-y-auto">
           
           {/* Left Column: Image viewer or Room scale simulator (7 cols) */}
-          <div className="lg:col-span-7 bg-[#050b07] flex items-center justify-center p-6 sm:p-8 relative min-h-[380px]">
+          <div className="lg:col-span-7 bg-[#050b07] flex items-center justify-center p-4 sm:p-8 relative min-h-[320px] sm:min-h-[380px] min-w-0">
             {viewMode === 'detalle' ? (
-              <div className="relative group w-full flex items-center justify-center">
-                <img
-                  src={artwork.image}
-                  alt={artwork.title}
-                  className="max-h-[65vh] w-auto max-w-full object-contain rounded-lg shadow-2xl border border-white/10"
+              <div className="relative w-full h-[min(65vh,560px)] min-h-[280px]">
+                <Lightbox
+                  slides={[{ src: artwork.image, alt: artwork.title }]}
+                  plugins={[Inline, Zoom]}
+                  inline={{ style: { width: '100%', height: '100%' } }}
+                  carousel={{ finite: true }}
+                  render={{
+                    buttonPrev: () => null,
+                    buttonNext: () => null,
+                  }}
+                  labels={{
+                    'Close': 'Cerrar visor de imagen',
+                    'Zoom in': 'Ampliar imagen',
+                    'Zoom out': 'Reducir imagen',
+                  }}
                 />
-                <div className="absolute bottom-3 inset-x-4 flex justify-between items-center text-[10px] text-zinc-400 font-mono bg-black/70 backdrop-blur-md px-3 py-1.5 rounded-full border border-white/10">
+                <div className="absolute bottom-3 inset-x-2 sm:inset-x-4 z-10 flex flex-wrap justify-between items-center gap-1 text-[10px] text-zinc-200 font-mono bg-black/80 backdrop-blur-md px-3 py-1.5 rounded-full border border-white/10 pointer-events-none">
                   <span>● Fotografía original de la obra</span>
                   <span>Formato real: {artwork.dimensions}</span>
                 </div>
@@ -121,9 +144,12 @@ export default function ArtworkDetailModal({ artwork, onClose, onOpenInquiry }) 
                 <span className="text-[10px] uppercase font-bold tracking-widest text-emerald-400 bg-emerald-950 px-2.5 py-1 rounded-full border border-emerald-500/30">
                   {artwork.series}
                 </span>
-                <h2 className="text-2xl sm:text-3xl font-black text-white mt-2 font-display">
+                <Dialog.Title className="text-2xl sm:text-3xl font-black text-white mt-2 font-display">
                   {artwork.title}
-                </h2>
+                </Dialog.Title>
+                <Dialog.Description className="sr-only">
+                  Ficha técnica, historia y opciones para consultar esta obra.
+                </Dialog.Description>
                 <p className="text-xs text-zinc-400 mt-1">
                   Año: <span className="font-mono text-zinc-200 font-bold">{artwork.year}</span> • Pucallpa, Ucayali
                 </p>
@@ -203,10 +229,7 @@ export default function ArtworkDetailModal({ artwork, onClose, onOpenInquiry }) 
                 </a>
 
                 <button
-                  onClick={() => {
-                    onClose();
-                    onOpenInquiry(artwork);
-                  }}
+                  onClick={() => onOpenInquiry(artwork, { handoff: true })}
                   className="w-full py-3 rounded-xl bg-white/10 hover:bg-white/15 text-white font-bold text-xs uppercase tracking-wider transition-all flex items-center justify-center gap-1.5 cursor-pointer border border-white/10"
                 >
                   <span>Formulario / Cotizar</span>
@@ -218,7 +241,8 @@ export default function ArtworkDetailModal({ artwork, onClose, onOpenInquiry }) 
           </div>
 
         </div>
-      </div>
-    </div>
+        </Dialog.Content>
+      </Dialog.Portal>
+    </Dialog.Root>
   );
 }

@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { X, Calendar, Clock, MapPin, Users, Check, ArrowRight, Shield } from 'lucide-react';
+import * as Dialog from '@radix-ui/react-dialog';
 
-export default function WorkshopModal({ workshop, onClose }) {
+export default function WorkshopModal({ workshop, open, onClose, onClosed, restoreFocusRef }) {
   if (!workshop) return null;
 
   const [name, setName] = useState('');
@@ -32,25 +33,36 @@ export default function WorkshopModal({ workshop, onClose }) {
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-md overflow-y-auto">
-      <div 
-        className="relative w-full max-w-2xl bg-[#131417] border border-white/15 rounded-3xl p-6 sm:p-8 shadow-2xl my-auto animate-in fade-in zoom-in-95 duration-200"
-        onClick={(e) => e.stopPropagation()}
+    <Dialog.Root open={open} onOpenChange={(isOpen) => !isOpen && onClose()}>
+      <Dialog.Portal>
+        <Dialog.Overlay className="fixed inset-0 z-50 bg-black/85 backdrop-blur-md" />
+        <Dialog.Content
+        className="fixed z-50 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[calc(100%-2rem)] max-w-2xl max-h-[calc(100dvh-2rem)] overflow-y-auto bg-[#131417] border border-white/15 rounded-3xl p-6 sm:p-8 shadow-2xl animate-in fade-in zoom-in-95 duration-200"
+        onCloseAutoFocus={(event) => {
+          event.preventDefault();
+          restoreFocusRef.current?.focus();
+          onClosed();
+        }}
       >
+        <Dialog.Close asChild>
         <button
-          onClick={onClose}
+          aria-label="Cerrar inscripción al taller"
           className="absolute top-4 right-4 text-zinc-400 hover:text-white p-2 rounded-full hover:bg-white/10 transition-colors cursor-pointer"
         >
           <X className="w-5 h-5" />
         </button>
+        </Dialog.Close>
 
         <div className="mb-6">
           <span className="text-[10px] uppercase font-bold tracking-widest text-[#ff3366] bg-[#ff3366]/10 px-2.5 py-1 rounded-full border border-[#ff3366]/30">
             Reserva de Cupo Oficial
           </span>
-          <h3 className="text-2xl font-black text-white mt-2 font-display">
+          <Dialog.Title className="text-2xl font-black text-white mt-2 font-display">
             {workshop.title}
-          </h3>
+          </Dialog.Title>
+          <Dialog.Description className="sr-only">
+            Formulario de pre-reserva y detalles del taller seleccionado.
+          </Dialog.Description>
           
           <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 mt-3 pt-3 border-t border-white/10 text-xs text-zinc-300">
             <div className="flex items-center gap-1.5">
@@ -179,8 +191,8 @@ export default function WorkshopModal({ workshop, onClose }) {
             </div>
           </form>
         )}
-      </div>
-    </div>
+        </Dialog.Content>
+      </Dialog.Portal>
+    </Dialog.Root>
   );
 }
-
