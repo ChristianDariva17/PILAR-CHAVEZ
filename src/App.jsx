@@ -4,7 +4,6 @@ import Hero from './components/Hero';
 import PortfolioSection from './components/PortfolioSection';
 import ArtistStatement from './components/ArtistStatement';
 import StoreMonetization from './components/StoreMonetization';
-import CollectorNewsletter from './components/CollectorNewsletter';
 import CredibilityAgenda from './components/CredibilityAgenda';
 import Footer from './components/Footer';
 import FloatingWhatsApp from './components/FloatingWhatsApp';
@@ -121,27 +120,23 @@ export default function App() {
         {/* 1. Narrativa del Artista (Statement + Biografía + Enfoque) */}
         <ArtistStatement onOpenInquiry={handleOpenInquiry} />
 
-        {/* 2. Portafolio Digital de Alta Calidad (Impacto visual + Fichas Técnicas) */}
+        {/* 2. Trayectoria Curatorial & Exposiciones */}
+        <CredibilityAgenda 
+          onOpenDossier={() => setDossierModalOpen(true)}
+          onOpenStudioVisit={handleOpenStudioVisit}
+        />
+
+        {/* 3. Portafolio Digital de Alta Calidad (Impacto visual + Fichas Técnicas) */}
         <PortfolioSection 
           onSelectArtwork={handleSelectArtwork}
           onOpenInquiry={handleOpenInquiry}
           onOpenCertificate={handleOpenCertificate}
         />
 
-        {/* 2. Facilitar la venta y monetización (Prints directos, Cotizaciones, Workshops) */}
+        {/* 4. Facilitar la venta y monetización (Prints directos, Cotizaciones, Workshops) */}
         <StoreMonetization 
           onOpenInquiry={handleOpenInquiry} 
           onSelectWorkshop={handleSelectWorkshop}
-        />
-
-        {/* 3. Captar coleccionistas y construir audiencia (Newsletter / Club VIP) */}
-        <CollectorNewsletter />
-
-        {/* 4. Generar credibilidad y difundir tu agenda (CV artístico + Calendario) */}
-        <CredibilityAgenda 
-          onOpenInquiry={handleOpenInquiry} 
-          onOpenDossier={() => setDossierModalOpen(true)}
-          onOpenStudioVisit={handleOpenStudioVisit}
         />
       </main>
 

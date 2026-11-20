@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
-import { Award, Calendar, Download, Newspaper, MapPin, ChevronRight } from 'lucide-react';
-import { cvData, agendaEvents } from '../data/content';
+import { Award, Calendar, Download, Newspaper } from 'lucide-react';
+import { cvData } from '../data/content';
 
-export default function CredibilityAgenda({ onOpenInquiry, onOpenDossier, onOpenStudioVisit }) {
+export default function CredibilityAgenda({ onOpenDossier, onOpenStudioVisit }) {
   const [cvTab, setCvTab] = useState(cvData.soloExhibitions.length > 0 ? 'individuales' : 'colectivas');
 
   return (
-    <section id="curriculum" className="py-24 bg-[#f4f3ef] relative border-t border-zinc-200/80 content-auto">
+    <section id="curriculum" className="py-24 bg-[#faf9f5] relative border-t border-zinc-200/80 content-auto">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Section Header */}
@@ -14,13 +14,13 @@ export default function CredibilityAgenda({ onOpenInquiry, onOpenDossier, onOpen
           <div>
             <div className="inline-flex items-center gap-2 text-xs font-mono font-bold uppercase tracking-widest text-zinc-500 mb-2">
               <span className="w-4 h-[1.5px] bg-zinc-950"></span>
-              <span>Registro Curatorial & Agenda Oficial</span>
+              <span>Registro Curatorial & Exposiciones</span>
             </div>
             <h2 className="text-4xl sm:text-5xl font-black uppercase font-display tracking-tight text-zinc-950">
-              Trayectoria Curatorial & Agenda
+              Trayectoria Curatorial
             </h2>
             <p className="text-sm sm:text-base text-zinc-600 mt-2 max-w-xl font-light leading-relaxed">
-              Registro documentado de exposiciones, premios en concursos de pintura rápida, intervenciones murales y calendario de actividades artísticas.
+              Registro documentado de exposiciones colectivas, concursos de muralismo, formación artística y menciones en prensa.
             </p>
           </div>
 
@@ -35,10 +35,10 @@ export default function CredibilityAgenda({ onOpenInquiry, onOpenDossier, onOpen
           </div>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
           
-          {/* Left Column: Curricular Exhibitions & Awards (7 cols) */}
-          <div className="lg:col-span-7 space-y-8">
+          {/* Left Column: Curricular Exhibitions & Awards (8 cols) */}
+          <div className="lg:col-span-8 space-y-8">
             <div className="bg-white rounded-3xl border border-zinc-200/90 p-6 sm:p-8 shadow-xs">
               
               <div className="flex flex-wrap items-center justify-between gap-4 pb-6 border-b border-zinc-100">
@@ -164,89 +164,30 @@ export default function CredibilityAgenda({ onOpenInquiry, onOpenDossier, onOpen
             </div>
           </div>
 
-          {/* Right Column: Live Agenda & Event Calendar (5 cols) */}
-          <div id="agenda" className="lg:col-span-5 space-y-6">
-            <div className="bg-white rounded-3xl border border-zinc-200/90 p-6 sm:p-8 shadow-xs">
-              
-              <div className="flex items-center justify-between pb-6 border-b border-zinc-100">
-                <h3 className="text-xl font-black uppercase tracking-tight text-zinc-950 font-display flex items-center gap-2">
-                  <Calendar className="w-5 h-5 text-zinc-900" />
-                  <span>Calendario de Eventos</span>
-                </h3>
-                <span className="text-[10px] uppercase font-bold px-2.5 py-1 rounded bg-zinc-100 text-zinc-800 border border-zinc-200">
-                  Agenda Oficial
+          {/* Right Column: Studio Visit Card (4 cols) */}
+          <div className="lg:col-span-4 space-y-6">
+            <div className="bg-white rounded-3xl border border-zinc-200/90 p-6 sm:p-8 shadow-xs space-y-4">
+              <div className="flex items-center justify-between">
+                <span className="text-[10px] uppercase font-mono font-bold tracking-widest text-zinc-700 bg-zinc-100 px-2.5 py-0.5 rounded border border-zinc-200">
+                  Open Studio
                 </span>
+                <span className="text-[11px] font-mono text-zinc-600">Pucallpa, Ucayali</span>
               </div>
-
-              <div className="mt-6 space-y-4">
-                {agendaEvents.map((evt) => (
-                  <div
-                    key={evt.id}
-                    className="p-4 rounded-2xl bg-zinc-50 hover:bg-zinc-100/70 border border-zinc-200/80 transition-colors space-y-2"
-                  >
-                    <div className="flex items-center justify-between gap-2">
-                      <span className="text-xs font-mono font-bold text-zinc-900 bg-white border border-zinc-200 px-2 py-0.5 rounded">
-                        {evt.date}
-                      </span>
-                      <span className="text-[10px] uppercase font-semibold text-zinc-500">
-                        {evt.type}
-                      </span>
-                    </div>
-
-                    <h4 className="text-sm font-bold text-zinc-950 font-display">
-                      {evt.title}
-                    </h4>
-
-                    <p className="text-xs text-zinc-500 flex items-center gap-1.5 font-light">
-                      <MapPin className="w-3.5 h-3.5 text-zinc-400 shrink-0" />
-                      <span>{evt.location}</span>
-                    </p>
-
-                    <p className="text-xs text-zinc-600 font-light leading-relaxed">
-                      {evt.description}
-                    </p>
-
-                    <div className="pt-2 flex items-center justify-between border-t border-zinc-200/60">
-                      <span className="text-[10px] text-emerald-800 font-medium font-mono">
-                        ● {evt.status}
-                      </span>
-                      <button
-                        onClick={() => onOpenInquiry({ title: evt.title, isEventReservation: true })}
-                        className="text-xs font-bold text-zinc-900 hover:text-black flex items-center gap-1 cursor-pointer transition-colors"
-                      >
-                        <span>Confirmar Asistencia</span>
-                        <ChevronRight className="w-3.5 h-3.5" />
-                      </button>
-                    </div>
-                  </div>
-                ))}
+              <div>
+                <h3 className="text-lg font-bold text-zinc-950 font-display">
+                  Visitas Guiadas al Taller de la Artista
+                </h3>
+                <p className="text-xs text-zinc-600 font-light leading-relaxed mt-1.5">
+                  Recorrido de 45 min por el estudio: observa lienzos en caballete, conoce los pigmentos amazónicos y conversa directamente con Elena del Pilar.
+                </p>
               </div>
-
-              {/* Studio visit box: Open Studio Pucallpa */}
-              <div className="mt-6 p-5 rounded-2xl bg-[#faf9f5] border border-zinc-200 text-left space-y-3">
-                <div className="flex items-center justify-between">
-                  <span className="text-[10px] uppercase font-mono font-bold tracking-widest text-zinc-700 bg-zinc-100 px-2.5 py-0.5 rounded border border-zinc-200">
-                    Open Studio
-                  </span>
-                  <span className="text-[11px] font-mono text-zinc-600">Pucallpa, Ucayali</span>
-                </div>
-                <div>
-                  <h4 className="text-sm font-bold text-zinc-950 font-display">
-                    Visitas Guiadas al Taller de la Artista
-                  </h4>
-                  <p className="text-xs text-zinc-600 font-light leading-relaxed mt-1">
-                    Recorrido de 45 min por el estudio: observa lienzos en caballete, conoce los pigmentos amazónicos y conversa directamente con Elena del Pilar.
-                  </p>
-                </div>
-                <button
-                  onClick={onOpenStudioVisit}
-                  className="w-full text-xs uppercase tracking-wider font-bold bg-zinc-950 hover:bg-zinc-800 text-white py-2.5 px-4 rounded-xl transition-all shadow-xs flex items-center justify-center gap-1.5 cursor-pointer"
-                >
-                  <Calendar className="w-3.5 h-3.5" />
-                  <span>Agendar Visita al Taller</span>
-                </button>
-              </div>
-
+              <button
+                onClick={onOpenStudioVisit}
+                className="w-full text-xs uppercase tracking-wider font-bold bg-zinc-950 hover:bg-zinc-800 text-white py-3 px-4 rounded-xl transition-all shadow-xs flex items-center justify-center gap-1.5 cursor-pointer"
+              >
+                <Calendar className="w-3.5 h-3.5" />
+                <span>Agendar Visita al Taller</span>
+              </button>
             </div>
           </div>
 

@@ -328,36 +328,6 @@ export const cvData = {
   ]
 };
 
-export const agendaEvents = [
-  {
-    id: "ev-01",
-    date: "14 — 15 Diciembre, 2024",
-    status: "Inscripciones Abiertas",
-    title: "Taller: Fauna Amazónica y Pintura en Acrílico",
-    location: "Taller de la Artista — Pucallpa, Ucayali",
-    type: "Workshop Presencial",
-    description: "Aprende a pintar aves amazónicas y jaguares con acrílico y veladuras de color junto a Elena del Pilar."
-  },
-  {
-    id: "ev-02",
-    date: "18 Enero, 2025",
-    status: "Cupos Confirmados",
-    title: "Pintura Rápida en Yarinacocha (Plein Air)",
-    location: "Laguna de Yarinacocha — Puerto Callao",
-    type: "Pintura al Aire Libre",
-    description: "Jornada de pintura en vivo capturando el reflejo del agua y las garzas en su entorno natural."
-  },
-  {
-    id: "ev-03",
-    date: "25 Febrero — 15 Marzo, 2025",
-    status: "Próximamente",
-    title: "Exposición: 'Organismo Vivo: Ecosistemas de Ucayali'",
-    location: "Sala de Exposiciones de Ucayali",
-    type: "Exposición Colectiva",
-    description: "Presentación de obras de gran formato en acrílico dedicadas a la flora, fauna y preservación de la selva."
-  }
-];
-
 export const printsData = [
   {
     id: "print-01",

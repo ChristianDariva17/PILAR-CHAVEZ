@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, ArrowUpRight, Sparkles } from 'lucide-react';
+import { Menu, X, ArrowUpRight } from 'lucide-react';
 import { artistInfo } from '../data/content';
 
 export default function Navbar({ onOpenInquiry }) {
@@ -16,11 +16,10 @@ export default function Navbar({ onOpenInquiry }) {
 
   const navLinks = [
     { label: 'La Artista', href: '#el-artista' },
+    { label: 'Trayectoria', href: '#curriculum' },
     { label: 'Obras', href: '#portafolio' },
     { label: 'Comisiones', href: '#comisiones' },
     { label: 'Workshops', href: '#workshops' },
-    { label: 'CV & Exposiciones', href: '#curriculum' },
-    { label: 'Agenda', href: '#agenda' },
   ];
 
   return (
@@ -59,13 +58,6 @@ export default function Navbar({ onOpenInquiry }) {
 
           {/* Desktop Actions */}
           <div className="hidden lg:flex items-center gap-3">
-            <a
-              href="#newsletter"
-              className="text-xs font-semibold text-zinc-700 hover:text-zinc-950 px-3.5 py-2 rounded-full border border-zinc-200 hover:border-zinc-400 transition-colors flex items-center gap-1.5 bg-white shadow-xs"
-            >
-              <Sparkles className="w-3.5 h-3.5 text-amber-600" />
-              <span>Coleccionistas</span>
-            </a>
             <button
               onClick={() => onOpenInquiry(null)}
               className="text-xs uppercase tracking-wider font-bold bg-zinc-950 hover:bg-zinc-800 text-white px-5 py-2.5 rounded-full transition-all shadow-md hover:shadow-lg flex items-center gap-1.5 cursor-pointer"
@@ -102,13 +94,6 @@ export default function Navbar({ onOpenInquiry }) {
                 </a>
               ))}
               <div className="pt-2 flex flex-col gap-2">
-                <a
-                  href="#newsletter"
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="text-center py-2.5 rounded-xl border border-zinc-300 text-xs font-semibold text-zinc-800"
-                >
-                  Club de Coleccionistas
-                </a>
                 <button
                   onClick={() => {
                     setMobileMenuOpen(false);
