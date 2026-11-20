@@ -105,28 +105,28 @@ export default function App() {
     <div className="min-h-screen bg-gallery-paper text-zinc-900 selection:bg-[#14532d] selection:text-white">
       {/* Skip to Content for Accessibility (WCAG 2.2) */}
       <a
-        href="#portafolio"
+        href="#el-artista"
         className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-zinc-900 focus:text-white focus:font-bold focus:rounded-xl focus:shadow-2xl focus:outline-none"
       >
-        Saltar directamente al catálogo de obras
+        Saltar a la biografía de la artista
       </a>
       {/* Top Navigation */}
       <Navbar onOpenInquiry={handleOpenInquiry} />
 
       {/* Main Content Sections */}
       <main>
-        {/* Hero Section */}
-        <Hero onOpenInquiry={handleOpenInquiry} />
+        {/* Hero Section: La Artista primero */}
+        <Hero />
 
-        {/* 1. Portafolio Digital de Alta Calidad (Impacto visual + Fichas Técnicas) */}
+        {/* 1. Narrativa del Artista (Statement + Biografía + Enfoque) */}
+        <ArtistStatement onOpenInquiry={handleOpenInquiry} />
+
+        {/* 2. Portafolio Digital de Alta Calidad (Impacto visual + Fichas Técnicas) */}
         <PortfolioSection 
           onSelectArtwork={handleSelectArtwork}
           onOpenInquiry={handleOpenInquiry}
           onOpenCertificate={handleOpenCertificate}
         />
-
-        {/* 1. Narrativa del Artista (Statement + Biografía + Enfoque) */}
-        <ArtistStatement onOpenInquiry={handleOpenInquiry} />
 
         {/* 2. Facilitar la venta y monetización (Prints directos, Cotizaciones, Workshops) */}
         <StoreMonetization 

@@ -15,11 +15,11 @@ export default function Navbar({ onOpenInquiry }) {
   }, []);
 
   const navLinks = [
-    { label: 'Obras', href: '#portafolio' },
     { label: 'La Artista', href: '#el-artista' },
+    { label: 'Obras', href: '#portafolio' },
     { label: 'Comisiones', href: '#comisiones' },
     { label: 'Workshops', href: '#workshops' },
-    { label: 'CV & Prensa', href: '#curriculum' },
+    { label: 'CV & Exposiciones', href: '#curriculum' },
     { label: 'Agenda', href: '#agenda' },
   ];
 

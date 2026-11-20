@@ -3,17 +3,8 @@ import { motion, useReducedMotion } from 'motion/react';
 import { ArrowUpRight, Eye } from 'lucide-react';
 import { artistInfo } from '../data/content';
 
-export default function Hero({ onOpenInquiry, onSelectArtwork }) {
+export default function Hero() {
   const shouldReduceMotion = useReducedMotion();
-
-  const featuredArtwork = {
-    title: "Yanapuma (Jaguar Negro Protector)",
-    dimensions: "30 x 40 cm",
-    price: "S/. 150",
-    technique: "Acrílico sobre lienzo con patrones Kené",
-    image: "/obras/yanapuma.jpg",
-    id: "obra-01"
-  };
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -75,26 +66,26 @@ export default function Hero({ onOpenInquiry, onSelectArtwork }) {
             {/* CTAs with Mobile Full-Width Responsive Hierarchy */}
             <motion.div variants={itemVariants} className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-4 pt-2">
               <a
-                href="#portafolio"
+                href="#el-artista"
                 className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-zinc-950 hover:bg-zinc-800 text-white font-bold px-7 py-3.5 rounded-full text-xs uppercase tracking-wider transition-all shadow-md hover:shadow-xl active:scale-98"
               >
-                <span>Explorar Obras Originales</span>
-                <Eye className="w-4 h-4 text-zinc-300" />
+                <span>Biografía & Trayectoria</span>
+                <ArrowUpRight className="w-4 h-4 text-zinc-300" />
               </a>
 
               <a
-                href="#comisiones"
+                href="#portafolio"
                 className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-white hover:bg-zinc-50 text-zinc-900 border border-zinc-300 font-bold px-7 py-3.5 rounded-full text-xs uppercase tracking-wider transition-all shadow-xs active:scale-98"
               >
-                <span>Encargar Obra a Medida</span>
-                <ArrowUpRight className="w-4 h-4 text-emerald-800" />
+                <span>Explorar Obras Originales</span>
+                <Eye className="w-4 h-4 text-emerald-800" />
               </a>
 
               <a
-                href="#el-artista"
+                href="#curriculum"
                 className="text-center sm:text-left inline-flex items-center justify-center gap-2 text-zinc-600 hover:text-zinc-950 font-medium text-xs uppercase tracking-wider px-3 py-2 transition-colors"
               >
-                <span>Biografía & Trayectoria</span>
+                <span>Exposiciones</span>
               </a>
             </motion.div>
 
@@ -115,7 +106,7 @@ export default function Hero({ onOpenInquiry, onSelectArtwork }) {
             </motion.div>
           </motion.div>
 
-          {/* Right Column: Hero Artwork Feature (Pristine Museum Display) */}
+          {/* Right Column: Hero Artist Portrait Feature (Pristine Museum Display) */}
           <motion.div 
             className="lg:col-span-5 relative"
             initial={{ opacity: 0, scale: shouldReduceMotion ? 1 : 0.96 }}
@@ -129,8 +120,8 @@ export default function Hero({ onOpenInquiry, onSelectArtwork }) {
                 
                 <div className="relative overflow-hidden rounded-xl bg-zinc-100 aspect-[4/5] shadow-inner">
                   <img
-                    src={featuredArtwork.image}
-                    alt={`${featuredArtwork.title} — Pintura original en acrílico sobre lienzo por Pilar Chávez`}
+                    src={artistInfo.bio.avatar}
+                    alt={`${artistInfo.fullName} — Artista Plástica Profesional en Pucallpa`}
                     width="600"
                     height="750"
                     loading="eager"
@@ -142,44 +133,44 @@ export default function Hero({ onOpenInquiry, onSelectArtwork }) {
                   {/* Clean badge */}
                   <div className="absolute top-3 left-3 z-10 flex gap-2">
                     <span className="text-[10px] uppercase font-bold tracking-widest text-zinc-800 bg-white/95 backdrop-blur-md px-2.5 py-1 rounded-md border border-zinc-200 shadow-xs">
-                      Obra Disponible
+                      La Artista
                     </span>
                     <span className="text-[10px] font-mono text-zinc-700 bg-white/90 backdrop-blur-md px-2 py-1 rounded-md border border-zinc-200">
-                      Kené
+                      Pucallpa
                     </span>
                   </div>
                 </div>
 
-                {/* Artwork Card Info */}
+                {/* Artist Card Info */}
                 <div className="pt-4 space-y-2">
                   <div className="flex items-center justify-between text-xs text-zinc-500">
                     <span className="font-mono text-[11px] uppercase tracking-wider font-semibold">
-                      CAT. Nº 001/09
+                      ARTISTA PLÁSTICA PROFESIONAL
                     </span>
-                    <span className="font-mono text-xs">{featuredArtwork.dimensions}</span>
+                    <span className="font-mono text-xs">Ucayali, Perú</span>
                   </div>
 
                   <h3 className="text-xl font-bold text-zinc-950 font-display">
-                    {featuredArtwork.title}
+                    {artistInfo.fullName}
                   </h3>
                   
                   <p className="text-xs text-zinc-600 font-light">
-                    {featuredArtwork.technique} • Lienzo sobre bastidor de madera
+                    ESFAP "Eduardo Meza Saravia" • Exposiciones en Perú y Bélgica
                   </p>
                   
                   <div className="flex items-center justify-between pt-3 border-t border-zinc-100 mt-2">
                     <div>
-                      <span className="text-[10px] text-zinc-500 uppercase tracking-wider block font-mono">Inversión</span>
-                      <span className="text-xl font-black font-mono text-zinc-950">{featuredArtwork.price} PEN</span>
+                      <span className="text-[10px] text-zinc-500 uppercase tracking-wider block font-mono">Especialidad</span>
+                      <span className="text-sm font-bold font-mono text-zinc-950">Acrílico & Muralismo</span>
                     </div>
 
-                    <button
-                      onClick={() => onOpenInquiry(featuredArtwork)}
+                    <a
+                      href="#el-artista"
                       className="text-xs font-bold uppercase tracking-wider bg-zinc-950 hover:bg-zinc-800 text-white px-5 py-2.5 rounded-xl transition-all shadow-sm flex items-center gap-1.5 cursor-pointer"
                     >
-                      <span>Consultar</span>
+                      <span>Ver Biografía</span>
                       <ArrowUpRight className="w-3.5 h-3.5" />
-                    </button>
+                    </a>
                   </div>
                 </div>
 

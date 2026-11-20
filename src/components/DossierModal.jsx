@@ -82,26 +82,28 @@ export default function DossierModal({ onClose }) {
             </p>
           </div>
 
-          {/* Exposiciones en dos columnas */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-2">
+          {/* Exposiciones */}
+          <div className={`grid grid-cols-1 ${cvData.soloExhibitions.length > 0 ? 'sm:grid-cols-2' : ''} gap-6 pt-2`}>
             
             {/* Solo Exhibitions */}
-            <div className="space-y-2">
-              <h3 className="text-[11px] font-bold uppercase tracking-wider text-zinc-900 print:text-black pb-1 border-b border-zinc-200 print:border-zinc-300">
-                Exposiciones Individuales
-              </h3>
-              <ul className="space-y-2">
-                {cvData.soloExhibitions.map((item, idx) => (
-                  <li key={idx} className="flex gap-2">
-                    <span className="font-mono text-zinc-900 print:text-zinc-900 font-bold">{item.year}</span>
-                    <div>
-                      <span className="font-semibold text-zinc-900 print:text-black block">"{item.title}"</span>
-                      <span className="text-zinc-500 print:text-zinc-600 text-[11px]">{item.gallery} • {item.city}</span>
-                    </div>
-                  </li>
-                ))}
-              </ul>
-            </div>
+            {cvData.soloExhibitions.length > 0 && (
+              <div className="space-y-2">
+                <h3 className="text-[11px] font-bold uppercase tracking-wider text-zinc-900 print:text-black pb-1 border-b border-zinc-200 print:border-zinc-300">
+                  Exposiciones Individuales
+                </h3>
+                <ul className="space-y-2">
+                  {cvData.soloExhibitions.map((item, idx) => (
+                    <li key={idx} className="flex gap-2">
+                      <span className="font-mono text-zinc-900 print:text-zinc-900 font-bold">{item.year}</span>
+                      <div>
+                        <span className="font-semibold text-zinc-900 print:text-black block">"{item.title}"</span>
+                        <span className="text-zinc-500 print:text-zinc-600 text-[11px]">{item.gallery} • {item.city}</span>
+                      </div>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
 
             {/* Group Exhibitions */}
             <div className="space-y-2">

@@ -310,22 +310,16 @@ export const workshopsData = [
 ];
 
 export const cvData = {
-  statementSummary: "Artista Plástica Profesional nacida en Pucallpa (Ucayali) con trayectoria en acrílico sobre lienzo, concursos de pintura rápida y muralismo de conservación ambiental.",
-  soloExhibitions: [
-    { year: "2024", title: "El Alma Vigilante de Ucayali", gallery: "Galería de Arte Regional", city: "Pucallpa, Ucayali" },
-    { year: "2023", title: "Luz y Misterio de la Selva", gallery: "Espacio Cultural Amazónico", city: "Pucallpa, Perú" },
-    { year: "2022", title: "Vivencia Sensorial", gallery: "Muestra de Obra Independiente", city: "Pucallpa, Perú" }
-  ],
+  statementSummary: "Artista Plástica Profesional nacida en Pucallpa (Ucayali), formada en la Escuela Superior de Formación Artística Pública 'Eduardo Meza Saravia', con exposiciones colectivas nacionales e internacionales y trayectoria en acrílico sobre lienzo y muralismo.",
+  soloExhibitions: [],
   groupExhibitions: [
-    { year: "2024", title: "Muestra Colectiva de Artistas Profesionales", gallery: "Salón de Bellas Artes", city: "Lima, Perú" },
-    { year: "2023", title: "Voces de la Amazonía Viva", gallery: "Centro Cultural de Pucallpa", city: "Ucayali, Perú" },
-    { year: "2022", title: "Salón de Jóvenes Creadores Amazónicos", gallery: "Galería Municipal", city: "Iquitos / Pucallpa" }
+    { year: "Internacional", title: "Exposición Colectiva en Westerlo, Bélgica", gallery: "Muestra Internacional Colectiva", city: "Westerlo, Bélgica" },
+    { year: "Colectiva", title: "Exposición Pictórica Colectiva \"Ancestralidad Viva\"", gallery: "Muestra Pictórica Colectiva", city: "Perú" },
+    { year: "Académica", title: "Exposición Pictórica ESFAP \"Eduardo Meza Saravia\"", gallery: "Escuela Superior de Formación Artística Pública \"Eduardo Meza Saravia\"", city: "Pucallpa, Ucayali" }
   ],
   awardsAndResidencies: [
-    { year: "2024", title: "Participación Destacada en Concurso de Pintura Rápida al Aire Libre", entity: "Certamen Regional Ucayali" },
-    { year: "2023", title: "Ejecución de Mural Comunitario sobre Preservación Ambiental", entity: "Proyecto de Conservación de Ecosistemas" },
-    { year: "2022", title: "Selección en Proyecto de Muralismo Urbano", entity: "Pucallpa, Ucayali" },
-    { year: "2021", title: "Formación en la Carrera Profesional de Artes Plásticas", entity: "Escuela Superior de Formación Artística" }
+    { year: "Muralismo", title: "Concurso de Murales \"Un Mundo con Energía\"", entity: "Certamen de Muralismo" },
+    { year: "Formación", title: "Formación en Artes Plásticas", entity: "Escuela Superior de Formación Artística Pública \"Eduardo Meza Saravia\" — Pucallpa" }
   ],
   press: [
     { media: "Diario Ahora Ucayali", quote: "Elena Chávez combina con maestría la frescura de sus raíces amazónicas con la disciplina y el rigor del estudio formal de la pintura." },

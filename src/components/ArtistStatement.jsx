@@ -15,14 +15,14 @@ export default function ArtistStatement({ onOpenInquiry }) {
     {
       period: "Trayectoria Formal",
       tag: "Formación Profesional",
-      title: "La Decisión Académica: Rigor y Maestría Técnica",
-      text: "Lejos de conformarse con las ventas tempranas, Elena decidió profundizar en el lenguaje visual a través del estudio formal en la carrera de Artista Profesional, un proceso que ha transformado su técnica, su manejo del color, la composición y su solidez conceptual."
+      title: "Escuela Superior de Formación Artística Pública \"Eduardo Meza Saravia\"",
+      text: "Lejos de conformarse con las ventas tempranas, Elena decidió profundizar en el lenguaje visual a través de su formación en la ESFAP \"Eduardo Meza Saravia\", participando en su exposición pictórica y perfeccionando su técnica, manejo del color, composición y solidez conceptual."
     },
     {
-      period: "Presente & Futuro",
-      tag: "Calle y Caballete",
-      title: "Plein Air en Yarinacocha y Muralismo de Preservación",
-      text: "Su versatilidad se consolida en la participación en concursos de pintura rápida al aire libre (captando los cambios lumínicos del río y la laguna) y en la ejecución de murales comunitarios que alertan sobre la fragilidad del ecosistema amazónico ante la huella humana."
+      period: "Exposiciones & Muralismo",
+      tag: "Proyección Internacional",
+      title: "De Pucallpa a Westerlo (Bélgica) y Concurso de Murales",
+      text: "Su obra ha formado parte de muestras colectivas como \"Ancestralidad Viva\" y la Exposición Colectiva en Westerlo, Bélgica, además de su participación en el Concurso de Murales \"Un Mundo con Energía\"."
     }
   ];
 

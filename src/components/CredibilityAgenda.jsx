@@ -3,7 +3,7 @@ import { Award, Calendar, Download, Newspaper, MapPin, ChevronRight } from 'luci
 import { cvData, agendaEvents } from '../data/content';
 
 export default function CredibilityAgenda({ onOpenInquiry, onOpenDossier, onOpenStudioVisit }) {
-  const [cvTab, setCvTab] = useState('individuales');
+  const [cvTab, setCvTab] = useState(cvData.soloExhibitions.length > 0 ? 'individuales' : 'colectivas');
 
   return (
     <section id="curriculum" className="py-24 bg-[#f4f3ef] relative border-t border-zinc-200/80 content-auto">
@@ -49,21 +49,23 @@ export default function CredibilityAgenda({ onOpenInquiry, onOpenDossier, onOpen
 
                 {/* Sub-tabs for CV */}
                 <div className="flex items-center gap-1 bg-zinc-100 p-1 rounded-xl border border-zinc-200">
-                  <button
-                    onClick={() => setCvTab('individuales')}
-                    className={`text-[11px] font-bold uppercase tracking-wider px-3.5 py-1.5 rounded-lg transition-all cursor-pointer ${
-                      cvTab === 'individuales' ? 'bg-zinc-950 text-white font-black shadow-xs' : 'text-zinc-600 hover:text-zinc-950'
-                    }`}
-                  >
-                    Individuales
-                  </button>
+                  {cvData.soloExhibitions.length > 0 && (
+                    <button
+                      onClick={() => setCvTab('individuales')}
+                      className={`text-[11px] font-bold uppercase tracking-wider px-3.5 py-1.5 rounded-lg transition-all cursor-pointer ${
+                        cvTab === 'individuales' ? 'bg-zinc-950 text-white font-black shadow-xs' : 'text-zinc-600 hover:text-zinc-950'
+                      }`}
+                    >
+                      Individuales
+                    </button>
+                  )}
                   <button
                     onClick={() => setCvTab('colectivas')}
                     className={`text-[11px] font-bold uppercase tracking-wider px-3.5 py-1.5 rounded-lg transition-all cursor-pointer ${
                       cvTab === 'colectivas' ? 'bg-zinc-950 text-white font-black shadow-xs' : 'text-zinc-600 hover:text-zinc-950'
                     }`}
                   >
-                    Colectivas
+                    Exposiciones
                   </button>
                   <button
                     onClick={() => setCvTab('premios')}
@@ -71,7 +73,7 @@ export default function CredibilityAgenda({ onOpenInquiry, onOpenDossier, onOpen
                       cvTab === 'premios' ? 'bg-zinc-950 text-white font-black shadow-xs' : 'text-zinc-600 hover:text-zinc-950'
                     }`}
                   >
-                    Premios & Murales
+                    Concursos & Formación
                   </button>
                 </div>
               </div>
